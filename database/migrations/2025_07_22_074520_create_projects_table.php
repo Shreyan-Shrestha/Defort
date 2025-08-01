@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('projectname');
             $table->string('clientname');
-            $table->boolean('projectstatus');
+            $table->boolean('status');
             $table->text('description');
             $table->string('category');
             $table->string('location');
