@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('category');
             $table->string('location');
             $table->date('startdate');
-            $table->date('completedate');
+            $table->date('completeddate');
             $table->timestamps();
         });
     }
