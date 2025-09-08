@@ -11,17 +11,17 @@
         }
     </style>
     <div class="content py-5">
-        <h2 class="text-center mb-4">Completed Projects</h2>
+        <h1 class="text-center mb-4">Our Projects</h1>
 
         @if($projects->isEmpty())
             <div class="alert alert-info text-center">
-                No active projects found.
+                Please stay tuned for more info.
             </div>
         @else
             <div class="d-flex flex-row flex-wrap">
                 @foreach($projects as $project)
                     <div class="flex-fill w-50 w-lg-16 mb-4 px-2">
-                        <div class="card shadow-sm h-100">
+                        <div class="card shadow h-100">
                             <div class="card-header bg-primary text-white text-center">
                                 <h3 class="mb-0 fs-5">{{ $project->projectname }}</h3>
                             </div>

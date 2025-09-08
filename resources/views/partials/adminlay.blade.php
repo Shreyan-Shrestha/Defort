@@ -9,23 +9,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>@yield('title', 'DE-FORT | Admin Panel')</title>
     <style>
-    
-    html, body {
+        html,
+        body {
             scrollbar-width: none;
         }
-        body{
+
+        body {
             height: auto;
         }
+
         ::-webkit-scrollbar {
             width: 0;
         }
-         .flex-container {
+
+        .flex-container {
             min-height: 100vh;
             height: auto;
             display: flex;
             flex-direction: row;
-             border: 2px solid blue;
+            border: 2px solid blue;
         }
+
         /* Content wrapper grows with content */
         .content-wrapper {
             flex-grow: 1;
@@ -33,19 +37,23 @@
             overflow-x: auto;
             border: 2px solid red;
         }
+
         /* Navbar stretches to full container height */
         .navbar {
             min-height: 100%;
         }
+
         /* Responsive adjustments */
         @media (max-width: 991.98px) {
             .flex-container {
                 flex-direction: column;
             }
+
             .navbar {
-                width: 100% !important;
+                width: 40% !important;
                 height: 160vh !important;
             }
+
             .content-wrapper {
                 width: 100%;
             }
@@ -87,6 +95,32 @@
         </nav>
         <!-- Main Content -->
         <div class="flex-grow-1 content-wrapper p-3">
+            <div>
+                @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-message">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const successMessage = document.getElementById('success-message');
+                        if (successMessage) {
+                            setTimeout(() => {
+                                successMessage.classList.remove('show');
+                                successMessage.classList.add('fade');
+                                // Optionally remove the element from DOM after fade-out
+                                setTimeout(() => {
+                                    successMessage.remove();
+                                }, 500); // Match Bootstrap's fade transition duration
+                            }, 2000); // 2-second delay autoclose
+                        }
+                    });
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            </div>
+
             @yield('content')
         </div>
     </div>

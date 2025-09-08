@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContactRequest;
 use App\Models\Projects;
 use App\Http\Requests\ProjectRequest;
-
+use App\Models\Contact;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Logger\ConsoleLogger;
@@ -40,7 +41,7 @@ class AdminController extends Controller
     {
             $validated = $request->validated();
 
-            // Handle file upload
+            // Handling the image file upload
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imageName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
@@ -54,8 +55,16 @@ class AdminController extends Controller
             return redirect('/adminprojects')->with('success', 'Added Project successfully!');
     }
 
+    //Contact
     public function contact()
     {
-        return view('admin.contact');
+        $contacts= Contact::latest()->get();
+        return view('admin.contact.contact', ['contacts' => $contacts]);
     }
+
+    public function destroycontact($id){
+        Contact::where('id', $id)->delete();
+        return redirect('/admincontact')->with('success', 'Message has been deleted');
+    }
+    
 }

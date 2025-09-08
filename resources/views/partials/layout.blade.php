@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +10,19 @@
     <title>@yield('title', 'DE-FORT Tech and Health')</title>
 
     <style>
-        html, body {
+        html,
+        body {
             scrollbar-width: none;
         }
+
         ::-webkit-scrollbar {
             width: 0;
         }
     </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">DE-FORT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#projects" aria-controls="projects" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,8 +47,33 @@
         </div>
     </nav>
 
+    @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-message">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const successMessage = document.getElementById('success-message');
+            if (successMessage) {
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                    successMessage.classList.add('fade');
+                    // Optionally remove the element from DOM after fade-out
+                    setTimeout(() => {
+                        successMessage.remove();
+                    }, 500); // Match Bootstrap's fade transition duration
+                }, 2000); // 5-second delay
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <div class="container">
         @yield('content')
     </div>
 </body>
+
 </html>

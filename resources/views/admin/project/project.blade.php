@@ -10,7 +10,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
-            <div class="card shadow-sm">
+            <div class="card shadow-sm px-3" >
                 <div class="card-body p-4">
                     <h2 class="text-center mb-4">Add a Project</h2>
 

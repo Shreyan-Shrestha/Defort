@@ -24,7 +24,7 @@
               </div>
             @endif
 
-            <form method="POST" action="/contact">
+            <form method="POST" action="/addcontact">
               @csrf
               <div class="mb-3">
                 <label for="name" class="form-label"><b>Name</b></label>
