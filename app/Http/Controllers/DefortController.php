@@ -6,6 +6,7 @@ use App\Models\Projects;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
+use App\Models\About;
 
 class DefortController extends Controller
 {
@@ -29,4 +30,8 @@ class DefortController extends Controller
         return redirect('/')->with('success','Message received successfully!');
     }
 
+    public function about(){
+        $about = About::where('id', 1)->first();
+        return view('about', ['about' => $about]);
+    }
 }
