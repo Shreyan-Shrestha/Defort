@@ -23,7 +23,13 @@ class AdminController extends Controller
 
     public function projects()
     {
-        return view('admin.project.project');
+        $projects = Projects::latest()->get();
+        return view('admin.project.projectlist', ['projects' => $projects]);
+    }
+
+    public function addprojectform()
+    {
+        return view('admin.project.addproject');
     }
 
     public function addproject(ProjectRequest $request)
@@ -42,6 +48,51 @@ class AdminController extends Controller
         Projects::create($validated);
 
         return redirect('/adminprojects')->with('success', 'Added Project successfully!');
+    }
+
+    public function editproject($id)
+    {
+        $project = Projects::where('id', $id)->first();
+        return view('admin.project.editproject', ['project' => $project]);
+    }
+
+    public function editprojectsubmit(ProjectRequest $request)
+    {
+        $validated = $request->validated();
+
+        // Handling the image file upload
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('images', $imageName, 'public'); // Store in storage/app/public/images
+            $validated['image'] = 'images/' . $imageName; // Add image path to validated data
+
+            // Delete the old image file if it exists
+            $oldProject = Projects::where('id', $request['id'])->first();
+            if ($oldProject && $oldProject->image && Storage::disk('public')->exists($oldProject->image)) {
+                Storage::disk('public')->delete($oldProject->image);
+            }
+        }
+
+        // Update the project
+        Projects::where('id', $request['id'])->update($validated);
+
+        return redirect('/adminprojects')->with('success', 'Project updated successfully!');
+    }
+
+    public function delproject($id)
+    {
+        $project = Projects::where('id', $id)->first();
+
+        // Delete the image file if it exists
+        if ($project->image && Storage::disk('public')->exists($project->image)) {
+            Storage::disk('public')->delete($project->image);
+        }
+
+        // Delete the project record
+        Projects::where('id', $id)->delete();
+
+        return redirect('/adminprojects')->with('success', 'Project deleted successfully!');
     }
 
     //Contact

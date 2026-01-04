@@ -17,10 +17,13 @@
         ::-webkit-scrollbar {
             width: 0;
         }
+        a{
+            text-decoration: none;
+        }
     </style>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">DE-FORT</a>
@@ -69,11 +72,40 @@
             }
         });
     </script>
-   
 
-    <div class="container">
+    <div class="container-xxl">
         @yield('content')
     </div>
+
+    <footer class="mt-auto bg-dark text-white pt-4">
+        <div class="container">
+            <div class="row ms-2">
+                <div class="col-md-4">
+                    <h5>Contact Us:</h5>
+                    <h6>Phone no. +9771-5444086</h6>
+                    <h6>Email: info@defort.com</h6>
+                    <h6>Address: Jawalakhel, Lalitpur MC-03, Nepal</h6>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links:</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">Projects</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us:</h5>
+                    <a href="#" class="text-white me-2"><i class="fab fa-facebook">Facebook</i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-twitter">Twitter</i></a>
+                    <a href="#" class="text-white"><i class="fab fa-instagram">Instagram</i></a>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <p class="text-center mb-0">© 2025 DE-FORT. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

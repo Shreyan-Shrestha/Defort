@@ -19,6 +19,11 @@ class DefortController extends Controller
         return view('projects', ['projects' => $projects]);
     }
 
+    public function viewproject($id){
+        $project = Projects::where('id', $id)->first();
+        return view('viewproject', ['project' => $project]);
+    }
+
     //Contact
     public function contact(){
         return view('contact');

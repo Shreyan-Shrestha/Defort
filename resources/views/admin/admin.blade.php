@@ -4,7 +4,7 @@
 @section('content')
     <div>
         <h2>Welcome to Admin Panel</h2>
-        <p>Select to add and edit</p>
+        <p>Select from the sidebar to manage the data</p>
     </div>
 </div>
 @endsection

@@ -79,6 +79,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/admincontact"><h4><i class="bi bi-envelope me-2"></i>Messages</h4></a>
                         </li>
+                        <li class="nav-item mt-4">
+                            <a class="nav-link text-danger" href="/"><h4><i class="bi bi-box-arrow-right me-2"></i>Homepage</h4></a>
                     </ul>
                 </div>
             </div>

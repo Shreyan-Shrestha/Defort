@@ -26,9 +26,11 @@
                     </div>
                     @endif
 
-                    <form method="POST" action="/addproject" enctype="multipart/form-data">
+                    <form method="POST" action="/projectedit/{id}" enctype="multipart/form-data">
                         @csrf
-
+                        @method("PUT")
+                        <input value="{{ $project['id'] }}" name="id" hidden>
+                        <img id="imagePreview" src="#" alt="Image Preview" value="{{$project['image']}}" class="img-fluid mb-3" style="display: none; max-height: 200px;"/>
                         <div class="mb-3">
                             <label for="image" class="form-label"><b>Image of project</b></label>
                             <input type="file" class="form-control" id="image" name="image" accept="image/jpeg,image/png,image/jpg,image/gif,image/svg+xml">
@@ -37,18 +39,18 @@
 
                         <div class="mb-3">
                             <label for="projectname" class="form-label"><b>Project Name</b></label>
-                            <input type="text" class="form-control" id="projectname" name="projectname" placeholder="Enter Project Name" maxlength="255" required>
+                            <input type="text" class="form-control" id="projectname" name="projectname" value="{{$project['projectname']}}" maxlength="255" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="clientname" class="form-label"><b>Client Name</b></label>
-                            <input type="text" class="form-control" id="clientname" name="clientname" placeholder="Enter Client Name" maxlength="255">
+                            <input type="text" class="form-control" id="clientname" name="clientname" value="{{$project['clientname']}}" maxlength="255">
                             <small class="form-text text-muted">Optional</small>
                         </div>
 
                         <div class="mb-3">
                             <label for="status" class="form-label"><b>Status</b></label>
-                            <select class="form-select" id="status" name="status" required>
+                            <select class="form-select" id="status" name="status" value="{{$project['status']}}" required>
                                 <option value="1">Completed</option>
                                 <option value="0">Ongoing</option>
                             </select>
@@ -75,23 +77,23 @@
 
                         <div class="mb-3">
                             <label for="location" class="form-label"><b>Location</b></label>
-                            <input type="text" class="form-control" id="location" name="location" placeholder="Enter Location" maxlength="80" required>
+                            <input type="text" class="form-control" id="location" name="location" value="{{$project['location']}}" maxlength="80" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="startdate" class="form-label"><b>Start Date</b></label>
-                            <input type="text" class="form-control datepicker" id="startdate" name="startdate" placeholder="DD-MM-YYYY" data-date-format="dd-mm-yyyy">
+                            <input type="text" class="form-control datepicker" id="startdate" name="startdate" value="DD-MM-YYYY" data-date-format="dd-mm-yyyy">
                             <small class="form-text text-muted">Optional. Format: YYYY-MM-DD</small>
                         </div>
 
                         <div class="mb-3">
                             <label for="completeddate" class="form-label"><b>Completed Date</b></label>
-                            <input type="text" class="form-control datepicker" id="completeddate" name="completeddate" placeholder="DD-MM-YYYY" data-date-format="dd-mm-yyyy">
+                            <input type="text" class="form-control datepicker" id="completeddate" name="completeddate" value="DD-MM-YYYY" data-date-format="dd-mm-yyyy">
                             <small class="form-text text-muted">Optional. Format: YYYY-MM-DD</small>
                         </div>
 
                         <div class="d-flex justify-content-between">
-                            <a href="/" class="btn btn-secondary">Cancel</a>
+                            <a href="/adminprojects" class="btn btn-secondary">Cancel</a>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
@@ -122,9 +124,28 @@
                     ['clean']
                 ]
             },
-            placeholder: 'Enter Project Description'
+         value: 'Enter Project Description'
         });
 
+          @if($project && $project['description'])
+        quill.root.innerHTML = @json($project['description']);
+        @else
+        quill.root.innerHTML = '';
+        @endif
+
+        // Image preview
+        $('#image').change(function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    $('#imagePreview').attr('src', event.target.result).show();
+                }
+                reader.readAsDataURL(file);
+            } else {
+                $('#imagePreview').hide();
+            }
+        });
         // Sync Quill content to hidden input
         quill.on('text-change', function() {
             var content = quill.root.innerHTML;

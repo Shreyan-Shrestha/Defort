@@ -9,5 +9,5 @@ class About extends Model
 {
     use SoftDeletes;
     protected $table='abouts';
-    protected $fillable = ['about'];
+    protected $fillable = ['description'];
 }
