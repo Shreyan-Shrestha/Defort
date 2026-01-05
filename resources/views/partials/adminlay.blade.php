@@ -55,7 +55,7 @@
 </head>
 <body>
     <div class="flex-container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex flex-column" style="width: 20%;">
+        <nav class="navbar navbar-expand-lg bg-primary d-flex flex-column" data-bs-theme="dark" style="width: 18%; color: white;">
             <div class="container-fluid flex-column sticky-top h-75 justify-content-start align-items-center">
                 <div class="navbar-brand text-center mb-4">
                     <span class="fs-3 fw-bold">Admin Panel</span>
@@ -78,6 +78,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/admincontact"><h4><i class="bi bi-envelope me-2"></i>Messages</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog/admin/posts"><h4><i class="bi bi-journal-text me-2"></i>Blog Posts</h4></a>
                         </li>
                         <li class="nav-item mt-4">
                             <a class="nav-link text-danger" href="/"><h4><i class="bi bi-box-arrow-right me-2"></i>Homepage</h4></a>

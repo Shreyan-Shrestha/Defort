@@ -93,6 +93,7 @@
                         <li><a href="#" class="text-white">Projects</a></li>
                         <li><a href="#" class="text-white">Contact</a></li>
                         <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="/blog/admin/posts">Blog Admin</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
