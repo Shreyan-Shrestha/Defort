@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DefortController;
+use App\Http\Controllers\PostController;
 
 Route::get("/", [DefortController::class,'index']);
 //Projects
@@ -31,3 +32,19 @@ Route::get('/admincontact', [AdminController::class,'contact']);
 Route::delete('/delcontact/{id}',[AdminController::class,'destroycontact']);
 Route::get("/adminabout",[AdminController::class,'about']);
 Route::put("/addabout",[AdminController::class,'addabout']);
+
+// Blog Routes
+Route::prefix('blog')->name('blog.')->group(function () {
+    Route::get('/', [PostController::class, 'publicIndex'])->name('index');
+    Route::get('/{post:slug}', [PostController::class, 'show'])->name('show');
+});
+
+Route::prefix('blog/admin')->name('blog.admin.')->group(function () {
+    Route::get('/posts', [PostController::class, 'adminIndex'])->name('posts.index');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+    Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+    Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+    Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+    Route::post('/upload-image', [PostController::class, 'uploadImage'])->name('upload.image');
+});
