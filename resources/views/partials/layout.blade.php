@@ -24,14 +24,14 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow sticky-top">
+    <nav class="navbar justify-content-center navbar-dark navbar-expand-lg sticky-top" style="background: radial-gradient(circle, rgba(42, 108, 155, 1) 0%, rgba(0, 131, 224, 1) 64%, rgba(101, 179, 235, 1) 100%); padding: 10px 0;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">DE-FORT</a>
+            <a class="navbar-brand" href="/">DE-FORT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#projects" aria-controls="projects" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="projects">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <div class="collapse justify-content-center navbar-collapse" id="projects">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
@@ -40,6 +40,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>
