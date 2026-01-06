@@ -4,6 +4,7 @@
 <style>
     .main-carousel .carousel-item {
         height: 80vh;
+        min-height: 30vh;
     }
 
     .main-carousel img {
@@ -25,14 +26,16 @@
         border: 6px solid #fff;
         border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        position: relative;
     }
 
     #previewImg {
         object-fit: cover;
         width: 100%;
         height: 100%;
-        transition: opacity 0.3s ease;
+        transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out; /* Slide + fade */
+        transform: translateY(0); /* Default position */
+        opacity: 1;
     }
 
     .container-relative {
@@ -54,7 +57,7 @@
         </div>
     </div>
 
-    <div class="my-3 me-3">
+    <div class="my-3 me-lg-3 container-relative position-relative">
         <!-- Main Carousel with Fade -->
         <div id="mainCarousel" class="carousel slide carousel-fade main-carousel position-relative" style="width:60vh;" data-bs-ride="carousel" data-bs-interval="4000">
             <div class="carousel-inner rounded-4" style="height: 90%;">
@@ -62,10 +65,10 @@
                     <img src="{{ asset('images/carousel/carousel1.jpg') }}" alt="Slide 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('images/carousel/m10.jpg') }}" alt="Slide 2">
+                    <img src="{{ asset('images/carousel/carousel2.jpg') }}" alt="Slide 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('images/carousel/gagan.jpg') }}" alt="Slide 3">
+                    <img src="{{ asset('images/carousel/carousel3.jpg') }}" alt="Slide 3">
                 </div>
             </div>
 
@@ -80,8 +83,8 @@
             </button>
         </div>
 
-        <!-- Single Preview Thumbnail -->
-        <div id="previewThumbnail" class="position-absolute" style="height: 30%; width:50vh; top:65%; right: 15%;">
+        <!--Preview Thumbnail -->
+        <div id="previewThumbnail" class="position-absolute" style="height: 30%; width:50vh; top:70%; right: 35%;">
             <div class="preview-box">
                 <img id="previewImg" src="{{ asset('images/carousel/defort.jpg') }}" alt="Preview">
             </div>
@@ -93,68 +96,56 @@
     document.addEventListener('DOMContentLoaded', () => {
         const mainEl = document.getElementById('mainCarousel');
         const previewImg = document.getElementById('previewImg');
-        const mainCarousel = bootstrap.Carousel.getOrCreateInstance(mainEl);
+        const items = mainEl.querySelectorAll('.carousel-item');
 
-        // Update preview to always show the previous slide's image
-        const updatePreview = () => {
-            const activeIndex = mainCarousel._activeIndex;
-            const items = mainEl.querySelectorAll('.carousel-item');
-            const prevIndex = (activeIndex - 1 + items.length) % items.length;
-            previewImg.src = items[prevIndex].querySelector('img').src;
+        const getActiveIndex = () => {
+            const activeItem = mainEl.querySelector('.carousel-item.active');
+            return Array.from(items).indexOf(activeItem);
         };
 
-        mainEl.addEventListener('slid.bs.carousel', updatePreview);
+        const updatePreview = () => {
+            const activeIndex = getActiveIndex();
+            const prevIndex = (activeIndex - 1 + items.length) % items.length;
+            const newSrc = items[prevIndex].querySelector('img').src;
 
-        // Animation only on "next" (auto-cycle direction)
-        mainEl.addEventListener('slide.bs.carousel', (event) => {
-            if (event.direction !== 'left') return; // Only animate on next
+            // Preload new image
+            const loader = new Image();
+            loader.src = newSrc;
 
-            const activeItem = mainEl.querySelector('.carousel-item.active');
-            const activeImg = activeItem.querySelector('img');
-            const oldSrc = activeImg.src;
-
-            // Set preview to the outgoing image early (but hidden)
-            previewImg.src = oldSrc;
-            previewImg.style.opacity = '0';
-
-            // Clone the outgoing main image for animation
-            const clone = activeImg.cloneNode(true);
-            const rect = activeImg.getBoundingClientRect();
-            const previewRect = previewImg.getBoundingClientRect();
-
-            clone.style.position = 'fixed';
-            clone.style.top = `${rect.top}px`;
-            clone.style.left = `${rect.left}px`;
-            clone.style.width = `${rect.width}px`;
-            clone.style.height = `${rect.height}px`;
-            clone.style.zIndex = '1050';
-            clone.style.pointerEvents = 'none';
-            clone.style.transition = 'all 0.6s ease-in-out';
-            clone.style.transformOrigin = 'center center';
-
-            document.body.appendChild(clone);
-
-            // Force reflow
-            clone.offsetHeight;
-
-            // Calculate scale ratio and center deltas
-            const ratio = previewRect.width / rect.width;
-            const mainCenterX = rect.left + rect.width / 2;
-            const mainCenterY = rect.top + rect.height / 2;
-            const previewCenterX = previewRect.left + previewRect.width / 2;
-            const previewCenterY = previewRect.top + previewRect.height / 2;
-            const deltaX = previewCenterX - mainCenterX;
-            const deltaY = previewCenterY - mainCenterY;
-
-            // Apply final transform (move center + scale around center)
-            clone.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${ratio})`;
-
-            // On animation end: remove clone and reveal the real preview (same image = seamless)
-            clone.addEventListener('transitionend', () => {
-                clone.remove();
+            loader.onload = () => {
+                // Reset to top (off-screen) with low opacity
+                previewImg.style.transition = 'none'; // Instant reset
+                previewImg.style.transform = 'translateY(-100%)';
                 previewImg.style.opacity = '1';
-            });
-        });
+
+                // Force reflow to apply reset
+                previewImg.offsetHeight;
+
+                // Set new source
+                previewImg.src = newSrc;
+
+                // Enable transition and animate in
+                previewImg.style.transition = 'transform 0.6s ease-in-out, opacity 0.6s ease-in-out';
+                previewImg.style.transform = 'translateY(0)';
+                previewImg.style.opacity = '1';
+            };
+
+            // If image already cached, run immediately
+            if (loader.complete) {
+                // Same reset + animate sequence
+                previewImg.style.transition = 'none';
+                previewImg.style.transform = 'translateY(-100%)';
+                previewImg.style.opacity = '1';
+                previewImg.offsetHeight;
+                previewImg.src = newSrc;
+                previewImg.style.transition = 'transform 0.6s ease-in-out, opacity 0.8s ease-in-out';
+                previewImg.style.transform = 'translateY(0)';
+                previewImg.style.opacity = '1';
+            }
+        };
+
+        // Update + animate after every transition (next, prev, auto-cycle)
+        mainEl.addEventListener('slid.bs.carousel', updatePreview);
     });
 </script>
 
