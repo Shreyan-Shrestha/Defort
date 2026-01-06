@@ -76,7 +76,7 @@
         });
     </script>
 
-    <div class="container-xxl">
+    <div class="container-fullwidth flex-grow-1">
         @yield('content')
     </div>
 
