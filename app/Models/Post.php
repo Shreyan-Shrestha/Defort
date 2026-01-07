@@ -42,4 +42,10 @@ class Post extends Model
     {
         return $query->whereNotNull('published_at');
     }
+    public function getReadTimeAttribute()
+    {
+        $wordCount = str_word_count(strip_tags($this->body));
+        $minutes = max(1, ceil($wordCount / 200)); // ~200 words per minute
+        return $minutes . ' min read';
+    }
 }
