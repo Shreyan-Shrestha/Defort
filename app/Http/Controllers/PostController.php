@@ -11,16 +11,12 @@ use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
-    /**
-     * Public blog index – shows only published posts
-     */
     public function publicIndex()
     {
         $posts = Post::published()
-            ->with(['category', 'tags'])
+            ->with('category')
             ->latest('published_at')
-            ->paginate(10);
-
+            ->paginate(9);
         return view('posts.index', compact('posts'));
     }
 
@@ -52,12 +48,12 @@ class PostController extends Controller
      * Show create form
      */
     public function create()
-{
-    $post = new Post(); // This creates an empty Post object
-    $categories = Category::all();
+    {
+        $post = new Post(); // This creates an empty Post object
+        $categories = Category::all();
 
-    return view('admin.posts.form', compact('post', 'categories'));
-}
+        return view('admin.posts.form', compact('post', 'categories'));
+    }
 
     /**
      * Store new post
