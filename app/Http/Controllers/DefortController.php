@@ -7,11 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
 use App\Models\About;
+use App\Models\Post;
+use App\Http\Controllers\PostController;
 
 class DefortController extends Controller
 {
     public function index(){
-        return view('index');
+        $post=Post::published()
+            ->with('category')
+            ->latest('published_at')
+            ->paginate(3);
+        return view('index', ['post' => $post]);
     }
 
     public function projects(){
