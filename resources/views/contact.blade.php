@@ -27,7 +27,7 @@
         <p class="lead">Fill up the form to get in touch with us.</p>
       </div>
 
-      <div class="col-md-10 container-xxl w-100">
+      <div class="col-md-10 container-xxl w-100 mb-5">
         <div class="card shadow-sm">
           <div class="card-body d-flex flex-row p-4 justify-content-evenly">
             <div class="col-lg-6 p-lg-2 p-md-0 me-3" style="max-height: 55%; min-width:30%">
