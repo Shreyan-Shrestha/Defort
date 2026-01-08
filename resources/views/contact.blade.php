@@ -68,7 +68,7 @@
       <div class="row w-100 h-100 justify-content-between g-4">
         <div class="mapouter col-lg-6 col-md-6 m-0 w-50" style="height: 50vh;">
           <div class="gmap_canvas w-100 h-100" style="overflow:hidden; background:none!important;">
-            <iframe height="600px" style="border:0;" allowfullscreen="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=De-fort%2C%20Jawlakhel&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+            <iframe height="600px" style="border:0;" allowfullscreen="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=De-fort%2C%20Jawlakhel&key={{ config('services.google_maps.key') }}"></iframe>
           </div>
           <style>
 
