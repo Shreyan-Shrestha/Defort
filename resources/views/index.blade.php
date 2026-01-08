@@ -55,34 +55,61 @@
 </div>
 
 
-<div class="h-100 pt-5 px-5 pb-2 bg-body-tertiary border rounded-3 my-3">
-    <div class="h-100 pt-5 mt-3">
+<div class="pt-5 px-5 mb-3 pb-2 bg-body-tertiary my-3">
+    <div class="pt-5 mt-3">
         <div class="d-flex flex-column align-items-center mb-4">
             <div class="bg-primary-subtle text-primary rounded-3 px-3 mb-3">News and Updates</div>
             <h2 class="mb-3">Our Blogs</h2>
             <p class="lead text-center px-5">Latest updates, information, advice and news</p>
         </div>
         <div class="d-flex flex-row justify-content-between w-200 w-lg-50 mb-4 px-2">
-            <div class="card shadow h-100 pt-3">
-                <div class="card-body p-3">
-                    <img src="{{ asset('images/project/narapark.jpg') }}" class="card-img-top img-fluid rounded mb-3" alt="" style="max-height: 150px; object-fit: cover;"></a>
-                    <h5 class="card-title fs-4 text-center"><strong>Nara Park, Sankhamul</strong></h5>
+            @foreach($posts as $post)
+            <div class="col-md-4 col-sm-4">
+                <a href="{{ route('blog.show', $post) }}" class="text-decoration-none text-dark">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column px-3">
+                        <div class="position-relative">
+                            @if($post->featured_image)
+                            <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 250px; object-fit: cover;">
+                            @else
+                            <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}">
+                            @endif
 
-                    <hr style="border: 1px solid black; width: 100%;">
-                    </hr>
-                </div>
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">
+                                    {{ $post->category?->name ?? 'Uncategorized' }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex align-items-center mb-3 text-primary small">
+                                <span class="me-2">⏱</span>
+                                {{ $post->read_time ?? '5 min read' }}
+                            </div>
+
+                            <h5 class="card-title fw-bold mb-3">{{ $post->title }}</h5>
+
+                            <p class="card-text text-muted lead small flex-grow-1">{{ $post->excerpt }}...
+                            </p>
+
+                            <div class="d-flex align-items-center mt-4 text-primary small">
+                                <span class="me-2">📅</span>
+                                {{ $post->published_at?->format('jS M, Y') ?? 'Draft' }}
+                            </div>
+
+                        </div>
+                    </div>
+                </a>
             </div>
+            @endforeach
         </div>
-    </div>
-
-    <div class="container my-5 text-center">
-        <a href="{{ route('blog.index') }}" class="btn btn-primary btn-lg mx-3">
-            View Blog Posts
-        </a>
-
-        <a href="{{ route('blog.admin.posts.index') }}" class="btn btn-warning btn-lg mx-3">
-            Manage Blog (Admin)
+        <div class="container my-3 text-center">
+        <a href="{{ route('blog.index') }}" class="btn btn-primary btn-lg px-3 mx-3">
+            View All Blogs ->
         </a>
     </div>
+    </div>
+
+
 </div>
 @endsection

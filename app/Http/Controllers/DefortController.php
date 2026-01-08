@@ -13,11 +13,11 @@ use App\Http\Controllers\PostController;
 class DefortController extends Controller
 {
     public function index(){
-        $post=Post::published()
+        $posts=Post::published()
             ->with('category')
             ->latest('published_at')
             ->paginate(3);
-        return view('index', ['post' => $post]);
+        return view('index', ['posts' => $posts]);
     }
 
     public function projects(){
