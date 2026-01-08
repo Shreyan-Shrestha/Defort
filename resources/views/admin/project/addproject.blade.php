@@ -65,11 +65,15 @@
                             <label for="category" class="form-label"><b>Category</b></label>
                             <select class="form-select" id="category" name="category" required>
                                 <option value="" disabled selected>Select Category</option>
-                                <option value="Building">Building</option>
-                                <option value="Bank">Bank</option>
-                                <option value="Hospital">Hospital</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Government">Government</option>
+                                <option value="Architecture">Architecture</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Urban Design">Urban Design</option>
+                                <option value="Marketing">Construction</option>
+                                <option value="Valuation">Valuation</option>
+                                <option value="Project Management">Project Management</option>
+                                <option value="Health">Health</option>
+                                <option value="Interior Design">Interior Design</option>
+                                <option value="Landscape Design">Landscape Design</option>
                             </select>
                         </div>
 

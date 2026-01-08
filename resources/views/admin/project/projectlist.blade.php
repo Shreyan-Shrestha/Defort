@@ -2,6 +2,11 @@
 
 @section('title', 'Project List - DE-FORT Tech and Health')
 
+<style>
+    .td{
+        padding: 0;
+    }
+</style>
 @section('content')
     <div class="content" style="padding: 50px 0;">
         <h2 class="text-center" style="margin-bottom: 30px;">Project List</h2>
@@ -12,7 +17,7 @@
             </div>
         @else
             <div class="table-responsive">
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped align-middle">
                     <thead>
                         <tr>
                             <th>S.N</th>
@@ -31,13 +36,13 @@
                                 <td>{{ $project->clientname ?? 'Not specified' }}</td>
                                 <td>
                                     <span class="label {{ $project->status ? 'label-success' : 'label-default' }}">
-                                        {{ $project->status ? 'Active' : 'Inactive' }}
+                                        {{ $project->status ? 'Completed' : 'Ongoing' }}
                                     </span>
                                 </td>
                                 <td>
                                     @if($project->description && strip_tags($project->description))
                                         <div class="ql-editor" style="padding: 0;">
-                                            {!! \Illuminate\Support\Str::words(strip_tags($project->description), 50, '...') !!}
+                                            <p>{!! \Illuminate\Support\Str::words(strip_tags($project->description), 20, '...') !!}</p>
                                         </div>
                                     @else
                                         Not specified
