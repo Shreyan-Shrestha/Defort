@@ -56,29 +56,34 @@ class AdminController extends Controller
         return view('admin.project.editproject', ['project' => $project]);
     }
 
-    public function editprojectsubmit(ProjectRequest $request)
-    {
-        $validated = $request->validated();
+   public function editprojectsubmit(ProjectRequest $request)
+{
+    $validated = $request->validated();
 
-        // Handling the image file upload
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('images', $imageName, 'public'); // Store in storage/app/public/images
-            $validated['image'] = 'images/' . $imageName; // Add image path to validated data
+    $oldImagePath = null;
 
-            // Delete the old image file if it exists
-            $oldProject = Projects::where('id', $request['id'])->first();
-            if ($oldProject && $oldProject->image && Storage::disk('public')->exists($oldProject->image)) {
-                Storage::disk('public')->delete($oldProject->image);
-            }
-        }
+    // Handling the image file upload ONLY if a new one is provided
+    if ($request->hasFile('image')) {
+        $image = $request->file('image');
+        $imageName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
+        $image->storeAs('images', $imageName, 'public');
+        $validated['image'] = 'images/' . $imageName;
 
-        // Update the project
-        Projects::where('id', $request['id'])->update($validated);
-
-        return redirect('/adminprojects')->with('success', 'Project updated successfully!');
+        // Get the current (old) image path before updating
+        $project = Projects::find($request['id']);
+        $oldImagePath = $project->image;
     }
+
+    // Update the project
+    Projects::where('id', $request['id'])->update($validated);
+
+    // Delete old image file ONLY if a new one was uploaded
+    if ($oldImagePath && Storage::disk('public')->exists($oldImagePath)) {
+        Storage::disk('public')->delete($oldImagePath);
+    }
+
+    return redirect('/adminprojects')->with('success', 'Project updated successfully!');
+}
 
     public function delproject($id)
     {
