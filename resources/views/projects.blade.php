@@ -19,7 +19,7 @@
         <div class="card w-100 mb-4 border-0 bg-light" style="height: 40%;">
             <div class="row g-0">
                 <div class="col-lg-4 h-100 m-0 col-sm-4">
-                    <span class="badge bg-light-subtle" style="position:absolute; top:1.5rem; left: 1.5rem; color: #1f6cc4ff; z-index: 1;">{{ $project->category }}</span>
+                    <span class="badge bg-light-subtle" style="position:absolute; top:0.5rem; left: 0.5rem; color: #1f6cc4ff; z-index: 1;">{{ $project->category }}</span>
                     @if($project->image)
                     <img src="{{ asset('storage/' . $project->image) }}" class="card-img-start h-100 w-100" alt="{{ $project->projectname }}" style=" object-fit: cover;">
                     @else
@@ -40,12 +40,12 @@
                     <div class="row mb-2 justify-content-between">
                         <div class="col-md-6">
                             @if($project->clientname)
-                            <i class="bi bi-person"> </i><span class="lead"> Client: {{ $project->clientname }}</span>
+                            <i class="bi bi-person"> </i><span> Client: {{ $project->clientname }}</span>
                             @endif
                         </div>
                         <div class="col-md-6">
                             @if($project->completeddate)
-                            <span class="lead"><i class="bi bi-calendar-check"></i> Completed: {{ $project['completeddate'] }}</span>
+                            <span><i class="bi bi-calendar-check"></i> Completed: {{ $project['completeddate'] }}</span>
                             @endif
                         </div>
                     </div>
