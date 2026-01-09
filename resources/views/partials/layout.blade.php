@@ -31,10 +31,12 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar justify-content-center bg-primary navbar-dark navbar-expand-lg px-4" style="height: 80px;">
+    <nav class="navbar justify-content-center bg-primary navbar-dark navbar-expand-lg px-4" style="height: 5rem;">
         <div class="container-fluid h-100">
-            <div class="col-lg-1 overflow-hidden h-100 d-flex align-items-center">
-                <img class="p-1" src="{{ asset('images/logo.jpeg') }}" style="height: 100; width:150" alt="DE-FORT Logo">
+            <div class="d-flex align-items-center p-o m-0">
+            <a class="navbar-brand" href="/">
+                <img class="logo " src="{{ asset('images/logo.png') }}" style="height: 4.8rem; width:auto" alt="DE-FORT Logo">
+            </a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#projects" aria-controls="projects" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
