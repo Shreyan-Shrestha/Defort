@@ -18,21 +18,29 @@
         ::-webkit-scrollbar {
             width: 0;
         }
-        a{
+
+        a {
             text-decoration: none;
+        }
+
+        .nav-link {
+            color: #fff;
+            margin-left: 15px;
         }
     </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar justify-content-center navbar-dark navbar-expand-lg" style="background: radial-gradient(circle, rgba(0, 119, 203, 1) 0%, rgba(0, 131, 224, 1) 64%, rgba(16, 124, 255, 1) 100%); padding: 10px 0;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">DE-FORT</a>
+    <nav class="navbar justify-content-center bg-primary navbar-dark navbar-expand-lg px-4" style="height: 80px;">
+        <div class="container-fluid h-100">
+            <div class="col-lg-1 overflow-hidden h-100 d-flex align-items-center">
+                <img class="p-1" src="{{ asset('images/logo.jpeg') }}" style="height: 100; width:150" alt="DE-FORT Logo">
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#projects" aria-controls="projects" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse justify-content-center navbar-collapse" id="projects">
-                <ul class="navbar-nav mb-2 mb-lg-0">
+            <div class="collapse col-lg-10 justify-content-end navbar-collapse" id="projects">
+                <ul class="navbar-nav ms-3 mb-lg-0 align-items-center text-white">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
@@ -48,11 +56,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/blog">Blogs</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
+                    <li class="nav-item pe-0">
+                        <a class="nav-link pe-0" href="/contact"><button class="btn btn-light text-primary px-3">Contact Us</button></a>
                     </li>
                 </ul>
             </div>
+            
         </div>
     </nav>
 
