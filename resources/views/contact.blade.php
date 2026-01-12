@@ -77,89 +77,85 @@
     </div>
   </div>
 </div>
-    <div class="container-xxl mt-5 mb-5 rounded-4 shadow-sm bg-light p-0" style="height: 60%;">
-      <div class="row w-100 h-100 justify-content-between g-4">
-        <div class="mapouter col-lg-6 col-md-6 m-0 w-50" style="height: 50vh;">
-          <div class="gmap_canvas w-100 h-100" style="overflow:hidden; background:none!important;">
-            <iframe height="600px" style="border:0;" allowfullscreen="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=De-fort%2C%20Jawlakhel&key={{ config('services.google_maps.key') }}"></iframe>
-          </div>
-    </div>
-<div class="container my-5">
-  <div class="row align-items-stretch g-4 g-lg-5">
-
-    <!-- MAP COLUMN – left on lg+, top on mobile -->
-    <div class="col-lg-6 order-lg-1 order-1">
-      <div class="mapouter h-100 w-100 position-relative">
-        <div class="ratio ratio-16x9 h-100">  <!-- or ratio-4x3 / ratio-21x9 depending on preferred aspect -->
-          <iframe
-            class="w-100 h-100 position-absolute top-0 start-0"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?q=De-fort%2C%20Jawlakhel&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
-          </iframe>
-        </div>
+<div class="container-xxl mt-5 mb-5 rounded-4 shadow-sm bg-light p-0" style="height: 60%;">
+  <div class="row w-100 h-100 justify-content-between g-4">
+    <div class="mapouter col-lg-6 col-md-6 m-0 w-50" style="height: 50vh;">
+      <div class="gmap_canvas w-100 h-100" style="overflow:hidden; background:none!important;">
+        <iframe height="600px" style="border:0;" allowfullscreen="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=De-fort%2C%20Jawlakhel&key={{ config('services.google_maps.key') }}"></iframe>
       </div>
     </div>
+    <div class="container my-5">
+      <div class="row align-items-stretch g-4 g-lg-5">
 
-    <!-- 2×2 CONTACT GRID COLUMN – right on lg+, bottom on mobile -->
-    <div class="col-lg-6 order-lg-2 order-2">
-
-      <div class="d-flex flex-wrap justify-content-between align-content-between h-100 p-3 p-lg-4 gap-4">
-
-        <!-- Top Left - Visit Us -->
-        <div class="col-5">
-          <div class="card h-100 text-center border-0 bg-subtle text-primary">
-            <div class="card-body d-flex flex-column justify-content-center p-4">
-              <i class="bi bi-geo-alt-fill fs-1 contact-icon mb-3"></i>
-              <h5 class="card-title text-black">Visit Us</h5>
-              <p class="lead mb-0">Jawalakhel, Lalitpur<br>Metropolitan City</p>
+        <!-- MAP -->
+        <div class="col-lg-6 order-lg-1 order-1">
+          <div class="mapouter h-100 w-100 position-relative">
+            <div class="ratio ratio-16x9 h-100"> <!-- or ratio-4x3 / ratio-21x9 depending on preferred aspect -->
+              <iframe
+                class="w-100 h-100 position-absolute top-0 start-0"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?q=De-fort%2C%20Jawlakhel&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+              </iframe>
             </div>
           </div>
         </div>
 
-        <!-- Top Right - Call Us -->
-        <div class="col-5">
-          <div class="card h-100 text-center border-0 bg-transparent text-primary contact-card">
-            <a href="tel:+977-01-5444086" class="text-decoration-none text-primary stretched-link d-block h-100">
-              <div class="card-body d-flex flex-column justify-content-center p-4">
-                <i class="bi bi-telephone-fill fs-1 contact-icon mb-3"></i>
-                <h5 class="card-title text-black">Call Us</h5>
-                <p class="lead mb-0">+977-01-5444086</p>
-                <p class="lead mb-0">+977-985141235</p>
-              </div>
-            </a>
-          </div>
-        </div>
+        <!-- Contact Info Cards -->
+        <div class="col-lg-6 order-lg-2 order-2">
 
-        <!-- Bottom Left - Email Us -->
-        <div class="col-5">
-          <div class="card h-100 text-center border-0 bg-transparent text-primary" style="cursor: pointer;">
-            <a href="mailto:info@de-fortnp.com?subject=Inquiry%20from%20Website" class=" text-decoration-none text-primary stretched-link d-block h-100">
-              <div class="card-body d-flex flex-column justify-content-center p-4">
-                <i class="bi bi-envelope-fill fs-1 contact-icon mb-3"></i>
-                <h5 class="card-title text-black">Email Us</h5>
-                <p class="lead mb-0">info@de-fortnp.com</p>
-              </div>
-            </a>
-          </div>
-        </div>
+          <div class="d-flex flex-wrap justify-content-between align-content-between h-100 p-3 p-lg-4 gap-4">
 
-        <!-- Bottom Right - Hours -->
-        <div class="col-5">
-          <div class="card h-100 text-center border-0 bg-transparent text-primary contact-card">
-            <div class="card-body d-flex flex-column justify-content-center p-4">
-              <i class="bi bi-clock-fill fs-1 contact-icon mb-3"></i>
-              <h5 class="card-title text-black">Opening Time</h5>
-              <p class="lead mb-0">9 a.m to 5 p.m<br>Open</p>
+            <div class="col-5">
+              <div class="card h-100 text-center border-0 bg-subtle text-primary">
+                <div class="card-body d-flex flex-column justify-content-center p-4">
+                  <i class="bi bi-geo-alt-fill fs-1 contact-icon mb-3"></i>
+                  <h5 class="card-title text-black">Visit Us</h5>
+                  <p class="lead mb-0">Jawalakhel, Lalitpur<br>Metropolitan City</p>
+                </div>
+              </div>
             </div>
+
+            <div class="col-5">
+              <div class="card h-100 text-center border-0 bg-transparent text-primary contact-card">
+                <a href="tel:+977-01-5444086" class="text-decoration-none text-primary stretched-link d-block h-100">
+                  <div class="card-body d-flex flex-column justify-content-center p-4">
+                    <i class="bi bi-telephone-fill fs-1 contact-icon mb-3"></i>
+                    <h5 class="card-title text-black">Call Us</h5>
+                    <p class="lead mb-0">+977-01-5444086</p>
+                    <p class="lead mb-0">+977-985141235</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-5">
+              <div class="card h-100 text-center border-0 bg-transparent text-primary" style="cursor: pointer;">
+                <a href="mailto:info@de-fortnp.com?subject=Inquiry%20from%20Website" class=" text-decoration-none text-primary stretched-link d-block h-100">
+                  <div class="card-body d-flex flex-column justify-content-center p-4">
+                    <i class="bi bi-envelope-fill fs-1 contact-icon mb-3"></i>
+                    <h5 class="card-title text-black">Email Us</h5>
+                    <p class="lead mb-0">info@de-fortnp.com</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-5">
+              <div class="card h-100 text-center border-0 bg-transparent text-primary contact-card">
+                <div class="card-body d-flex flex-column justify-content-center p-4">
+                  <i class="bi bi-clock-fill fs-1 contact-icon mb-3"></i>
+                  <h5 class="card-title text-black">Opening Time</h5>
+                  <p class="lead mb-0">9 a.m to 5 p.m<br>Open</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
       </div>
     </div>
-
-  </div>
-</div>
-@endsection
+    @endsection
