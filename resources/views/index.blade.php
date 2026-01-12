@@ -20,7 +20,7 @@
 </div>
 
 
-<div class="container-fluid pt-5 px-5 mb-3 pb-2 bg-body-tertiary my-3">
+<section class="container-fluid pt-5 px-5 mb-3 pb-2 bg-body-tertiary my-3">
     <div class="pt-5 mt-3">
         <div class="d-flex flex-column mb-4">
             <div class="section-title d-flex align-items-center">
@@ -80,5 +80,5 @@
     </div>
 
 
-</div>
+</section>
 @endsection
