@@ -9,5 +9,5 @@ class Contact extends Model
 {
     use SoftDeletes;
     protected $table ='contacts';
-    protected $fillable = ['name','email','message'];
+    protected $fillable = ['firstname','lastname','subject','email','message'];
 }
