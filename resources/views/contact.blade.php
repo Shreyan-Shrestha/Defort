@@ -83,9 +83,7 @@
           <div class="gmap_canvas w-100 h-100" style="overflow:hidden; background:none!important;">
             <iframe height="600px" style="border:0;" allowfullscreen="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=De-fort%2C%20Jawlakhel&key={{ config('services.google_maps.key') }}"></iframe>
           </div>
-          <style>
-
-</div>
+    </div>
 <div class="container my-5">
   <div class="row align-items-stretch g-4 g-lg-5">
 
