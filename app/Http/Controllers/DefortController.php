@@ -6,7 +6,9 @@ use App\Models\Projects;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
+use App\Mail\ContactUs;
 use App\Models\About;
+use Illuminate\Support\Facades\Mail;
 
 class DefortController extends Controller
 {
@@ -32,7 +34,9 @@ class DefortController extends Controller
     public function addcontact(ContactRequest $request){
         $validated = $request->validated();
         Contact::create($validated);
-        return redirect('/')->with('success','Message received successfully!');
+        return redirect('/contact')->with('success','Message received successfully!');
+        $data = $request->all();
+        Mail::to('herbanjahn@gmail.com')->send(new ContactUs($data));
     }
 
     public function about(){
