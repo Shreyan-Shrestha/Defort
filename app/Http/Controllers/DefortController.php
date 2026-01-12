@@ -9,11 +9,17 @@ use App\Http\Requests\ContactRequest;
 use App\Mail\ContactUs;
 use App\Models\About;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Post;
+use App\Http\Controllers\PostController;
 
 class DefortController extends Controller
 {
     public function index(){
-        return view('index');
+        $posts=Post::published()
+            ->with('category')
+            ->latest('published_at')
+            ->paginate(3);
+        return view('index', ['posts' => $posts]);
     }
 
     public function projects(){

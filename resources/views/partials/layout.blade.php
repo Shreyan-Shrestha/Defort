@@ -25,7 +25,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar justify-content-center navbar-dark navbar-expand-lg sticky-top" style="background: radial-gradient(circle, rgba(42, 108, 155, 1) 0%, rgba(0, 131, 224, 1) 64%, rgba(101, 179, 235, 1) 100%); padding: 10px 0;">
+    <nav class="navbar justify-content-center navbar-dark navbar-expand-lg" style="background: radial-gradient(circle, rgba(0, 119, 203, 1) 0%, rgba(0, 131, 224, 1) 64%, rgba(16, 124, 255, 1) 100%); padding: 10px 0;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">DE-FORT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#projects" aria-controls="projects" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/projects">Projects</a>
@@ -81,7 +84,7 @@
         @yield('content')
     </div>
 
-    <footer class="mt-auto bg-dark text-white pt-4">
+    <footer class="mt-3 bg-dark text-white pt-4">
         <div class="container">
             <div class="row ms-2">
                 <div class="col-md-4">

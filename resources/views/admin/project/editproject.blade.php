@@ -30,11 +30,15 @@
                         @csrf
                         @method("PUT")
                         <input value="{{ $project['id'] }}" name="id" hidden>
-                        <img id="imagePreview" src="#" alt="Image Preview" value="{{$project['image']}}" class="img-fluid mb-3" style="display: none; max-height: 200px;"/>
+                        <div class=" d-flex justify-content-center">
+                        @if($project->image)
+                        <img id="imagePreview" src="{{ asset('storage/' . $project->image) }}" alt="Image Preview" value="{{$project['image']}}" class="img-fluid mb-3" style="max-height: 200px;"/>
+                        @endif
+                        </div>
                         <div class="mb-3">
-                            <label for="image" class="form-label"><b>Image of project</b></label>
+                            <label for="image" class="form-label"><b>Image</b></label>
                             <input type="file" class="form-control" id="image" name="image" accept="image/jpeg,image/png,image/jpg,image/gif,image/svg+xml">
-                            <small class="form-text text-muted">Optional. Max size: 10MB. Accepted formats: JPEG, PNG, JPG, GIF, SVG.</small>
+                            <small class="form-text text-muted">Optional. Max size: 10MB. Accepted formats: JPEG, PNG, JPG, GIF, SVG, WebP.</small>
                         </div>
 
                         <div class="mb-3">
@@ -66,12 +70,16 @@
                         <div class="mb-3">
                             <label for="category" class="form-label"><b>Category</b></label>
                             <select class="form-select" id="category" name="category" required>
-                                <option value="" disabled selected>Select Category</option>
-                                <option value="Building">Building</option>
-                                <option value="Bank">Bank</option>
-                                <option value="Hospital">Hospital</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Government">Government</option>
+                                <option value="{{$project['category']}}" disabled selected>{{$project['category']}}. Change Category</option>
+                                <option value="Architecture">Architecture</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Urban Design">Urban Design</option>
+                                <option value="Marketing">Construction</option>
+                                <option value="Valuation">Valuation</option>
+                                <option value="Project Management">Project Management</option>
+                                <option value="Health">Health</option>
+                                <option value="Interior Design">Interior Design</option>
+                                <option value="Landscape Design">Landscape Design</option>
                             </select>
                         </div>
 
@@ -82,13 +90,13 @@
 
                         <div class="mb-3">
                             <label for="startdate" class="form-label"><b>Start Date</b></label>
-                            <input type="text" class="form-control datepicker" id="startdate" name="startdate" value="DD-MM-YYYY" data-date-format="dd-mm-yyyy">
+                            <input type="text" class="form-control datepicker" id="startdate" name="startdate" value="{{ $project['startdate'] }}" data-date-format="dd-mm-yyyy">
                             <small class="form-text text-muted">Optional. Format: YYYY-MM-DD</small>
                         </div>
 
                         <div class="mb-3">
                             <label for="completeddate" class="form-label"><b>Completed Date</b></label>
-                            <input type="text" class="form-control datepicker" id="completeddate" name="completeddate" value="DD-MM-YYYY" data-date-format="dd-mm-yyyy">
+                            <input type="text" class="form-control datepicker" id="completeddate" name="completeddate" value="{{ $project['completeddate'] }}" data-date-format="dd-mm-yyyy">
                             <small class="form-text text-muted">Optional. Format: YYYY-MM-DD</small>
                         </div>
 

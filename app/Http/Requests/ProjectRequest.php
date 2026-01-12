@@ -22,7 +22,7 @@ class ProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:10000'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg,webp', 'max:10000'],
             'projectname' => ['required', 'string', 'max:255'],
             'clientname' => ['nullable', 'string', 'max:255'],
             'status' => ['required', 'in:0,1'],
@@ -44,8 +44,8 @@ class ProjectRequest extends FormRequest
             'status.required' => 'Please select a status.',
             'status.in' => 'The status must be Active or Inactive.',
             'image.image' => 'The file must be an image.',
-            'image.mimes' => 'The image must be a JPEG, PNG, JPG, or GIF.',
-            'image.max' => 'The image must not exceed 2MB.',
+            'image.mimes' => 'The image must be a JPEG, PNG, JPG, GIF, or WebP.',
+            'image.max' => 'The image must not exceed 9MB.',
             'startdate.date_format' => 'The start date must be in DD-MM-YYYY format.',
             'completeddate.date_format' => 'The completed date must be in DD-MM-YYYY format.',
             'description.max' => 'The description must not exceed 5000 characters.',
