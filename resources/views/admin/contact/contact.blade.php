@@ -14,6 +14,7 @@
                 <tr>
                     <th>Name</th>
                     <th>E-mail</th>
+                    <th>Subject</th>
                     <th>Message</th>
                     <th>Actions</th>
                 </tr>
@@ -21,8 +22,9 @@
             <tbody>
                 @foreach($contacts as $contact)
                     <tr>
-                        <td>{{$contact->name}}</td>
+                        <td>{{$contact->firstname}} {{$contact->lastname}}</td>
                         <td>{{$contact->email}}</td>
+                        <td>{{$contact->subject}}</td>
                         <td>{{$contact->message}}</td>
                         <td>
                             <form method="POST" action="/delcontact/{{$contact['id']}}">
