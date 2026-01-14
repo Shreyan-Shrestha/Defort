@@ -30,7 +30,7 @@
     </style>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column">
     <nav class="navbar justify-content-center bg-primary navbar-dark navbar-expand-lg px-4" style="height: 5rem;">
         <div class="container-fluid h-100">
             <div class="d-flex align-items-center p-o m-0">
@@ -91,7 +91,7 @@
         });
     </script>
 
-    <div class="container-fullwidth flex-grow-1">
+    <div class="container-fullwidth overflow-y-auto flex-grow-1 p-0 m-0">
         @yield('content')
     </div>
 

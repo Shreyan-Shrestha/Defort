@@ -4,20 +4,106 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="{{asset('css/index.css')}}">
 
+<style>
+    .diamond-image {
+        width: 100%;
+        max-width: 520px;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+    }
+
+    .diamond-clip {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    overflow: hidden;
+
+    box-shadow:
+        inset -12px 0 0 #007bff;   /* right side border */
+}
+
+    .diamond-clip img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1);
+     
+    }
+
+    @media (max-width: 991px) {
+        .diamond-image {
+            max-width: 380px;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+
+</style>
 @section('content')
-<div class="container row justify-content-between">
-    <div class="h-100 col-lg-8 mt-3">
+<section class="container row justify-content-between w-100 m-0 mb-5 p-0">
+    <div class="h-100 col-lg-9 mt-3">
         <div class="h-100 pt-5 px-5 mt-5">
-            <h1><span style="font-size: 4rem;">Technical excellence in</span> <span style="color: #007bff; font-size:4rem;">Engineering</span> <span style="font-size: 3.3rem;">and</span> <span style="color: #007bff; font-size:4rem;">Health</span> <span style="font-size: 4rem;">projects</span></h1>
-            <p class="lead text-wrap pe-3 mt-4" style="font-size: 1.5rem;">Delivering compliant, sustainable and technically sound architectural<br> & construction solutions | Advancing Health solutions.</p>
+            <div class="section-subtitle mb-5" style="font-stretch: expanded;">
+                <h1><span style="font-size: 4rem;">Technical excellence in</span> <span style="color: #007bff; font-size:4rem;">Engineering</span> <span style="font-size: 3.3rem;">and</span> <span style="color: #007bff; font-size:4rem;">Health</span> <span style="font-size: 4rem;">projects</span></h1>
+                <p class="lead text-wrap pe-3 mt-4" style="font-size: 1.5rem;">Delivering compliant, sustainable and technically sound architectural<br> & construction solutions | Advancing Health solutions.</p>
+            </div>
             <div class="d-flex pe-2 mt-5">
                 <a href="/contact" class="btn btn-primary btn-lg me-3 px-4">Book a Consultation</a>
                 <a href="/services" class="btn btn-outline-primary btn-lg px-4 ms-4">View all Services</a>
             </div>
         </div>
     </div>
+</section>
 
-</div>
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <!-- Diamond Image Column -->
+            <div class="col-lg-6 col-md-6 text-center">
+                <div class="diamond-image mx-auto">
+                    <div class="diamond-clip shadow-lg">
+                        <img src="{{ asset('images/carousel/carousel3.jpg') }}"
+                            class="img-fluid"
+                            alt="Engineering and Health Services">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Content Column -->
+            <div class="col-lg-6 col-md-6">
+                <div class="ps-lg-4">
+
+                    <div class="section-title d-flex align-items-center mb-4">
+                        <span class="line-divider d-inline-block me-3"
+                            style="background-color: #007bff; width:3.5rem; height:0.25rem;"></span>
+                        <h5 class="mb-0 fw-bold">Who We Are</h5>
+                    </div>
+
+                    <h1 class="mb-4">
+                        Building with <span class="text-primary">Integrity</span>,<br>
+                        Engineering with <span class="text-primary">Vision</span>
+                    </h1>
+
+                    <p class="lead mb-4">
+                        We are <strong>DE-FORT</strong>, a full-service civil, structural, and general engineering
+                        and construction firm dedicated to shaping resilient infrastructure and inspiring spaces.
+                    </p>
+
+                    <p class="lead">
+                        For over 20 years, we've transformed complex challenges into enduring solutions.
+                        Guided by an unwavering commitment to precision, true partnership, and continuous progress,
+                        we don't just build structures — we build trust, foster innovation, and deliver legacies
+                        that stand the test of time.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 
 <section class="container-fluid pt-5 px-5 mb-3 pb-2 bg-body-tertiary my-3">
@@ -38,42 +124,41 @@
                 </div>
             </div>
         </div>
-        <div class="d-md-flex flex-md-row mb-4 px-2">
+        <div class="d-md-flex flex-md-row mb-4 justify-content-between row">
             @foreach($posts as $post)
-            <div class=" col-lg-4 me-2 mb-sm-2">
-                <a href="{{ route('blog.show', $post) }}" class="text-decoration-none text-dark">
-                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column px-3">
-                        <div class="position-relative">
-                            @if($post->featured_image)
-                            <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 250px; object-fit: cover;">
-                            @else
-                            <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}">
-                            @endif
+            <div class=" row col-lg-4 mb-sm-2 d-flex align-items-stretch mt-3">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden d-flex h-100 flex-column p-3">
+                    <div class="position-relative">
+                        @if($post->featured_image)
+                        <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 250px; object-fit: cover;">
+                        @else
+                        <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}">
+                        @endif
 
-                            <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">
-                                    {{ $post->category?->name ?? 'Uncategorized' }}
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="card-body">
-                            <div class=" align-items-center mb-3 text-primary small">
-                                <span class="me-2">⏱</span>
-                                {{ $post->read_time ?? '5 min read' }}
-                            </div>
-                            <h5 class="card-title fw-bold mb-3">{{ $post->title }}</h5>
-
-                            <p class="card-text text-muted lead small">{{ $post->excerpt }}...
-                            </p>
-
-                            <div class="d-flex align-items-center mt-4 text-primary small">
-                                <span class="me-2">📅</span>
-                                {{ $post->published_at?->format('jS M, Y') ?? 'Draft' }}
-                            </div>
+                        <div class="position-absolute top-0 start-0 m-3">
+                            <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">
+                                {{ $post->category?->name ?? 'Uncategorized' }}
+                            </span>
                         </div>
                     </div>
-                </a>
+
+                    <div class="card-body">
+                        <div class=" align-items-center mb-3 text-primary small">
+                            <span class="me-2">⏱</span>
+                            {{ $post->read_time ?? '5 min read' }}
+                        </div>
+                        <h5 class="card-title fw-bold mb-3">{{ $post->title }}</h5>
+
+                        <p class="card-text text-muted lead small">{{ $post->excerpt }}...
+                        </p>
+
+                        <div class="d-flex align-items-center mt-4 align-items-end text-primary small">
+                            <span class="me-2">📅</span>
+                            {{ $post->published_at?->format('jS M, Y') ?? 'Draft' }}
+                        </div>
+                        <a href="{{ route('blog.show', $post) }}" class="stretched-link"></a>
+                    </div>
+                </div>
             </div>
             @endforeach
         </div>
