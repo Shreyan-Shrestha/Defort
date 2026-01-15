@@ -5,40 +5,41 @@
 <link rel="stylesheet" href="{{asset('css/index.css')}}">
 
 <style>
-    .diamond-image {
-        width: 100%;
-        max-width: 520px;
-        aspect-ratio: 1 / 1;
-        margin: 0 auto;
+    .outer-diamond {
+        width: 25.25rem;
+        /* Slightly larger than inner */
+        height: 25.25rem;
+        position: relative;
+        transform: rotate(45deg);
+        border-top: 8px solid #6d95d1;
+        border-right: 8px solid #6d95d1;
+        top: 70%;
     }
 
-    .diamond-clip {
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    overflow: hidden;
 
-    box-shadow:
-        inset -12px 0 0 #007bff;   /* right side border */
-}
+    .diamond-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 141.42%;
+        /* Approximately sqrt(2) to fill the diamond */
+        height: 141.42%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        overflow: hidden;
+    }
 
-    .diamond-clip img {
+    .diamond-inner img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
-        transform: scale(1);
-     
     }
 
-    @media (max-width: 991px) {
-        .diamond-image {
-            max-width: 380px;
-            margin-bottom: 2.5rem;
-        }
+    .diamond-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
     }
-
-
 </style>
 @section('content')
 <section class="container row justify-content-between w-100 m-0 mb-5 p-0">
@@ -56,23 +57,24 @@
     </div>
 </section>
 
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="row align-items-center g-5">
-
+<section class="py-5">
+    <div class="w-100 p-3">
+        <div class="row align-items-center justify-content-center w-100">
             <!-- Diamond Image Column -->
-            <div class="col-lg-6 col-md-6 text-center">
-                <div class="diamond-image mx-auto">
-                    <div class="diamond-clip shadow-lg">
-                        <img src="{{ asset('images/carousel/carousel3.jpg') }}"
-                            class="img-fluid"
-                            alt="Engineering and Health Services">
+            <div class="col-lg-4 ms-5 justify-content-center text-center">
+                <div class="outer-diamond m-3 bg-white p-3 rounded">
+                    <div class="diamond-container mx-auto">
+                        <div class="diamond-inner">
+                            <img src="{{ asset('images/carousel/carousel3.jpg') }}"
+                                class="img-fluid"
+                                alt="Engineering and Health Services">
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Text Content Column -->
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-7 col-md-6">
                 <div class="ps-lg-4">
 
                     <div class="section-title d-flex align-items-center mb-4">
@@ -81,9 +83,9 @@
                         <h5 class="mb-0 fw-bold">Who We Are</h5>
                     </div>
 
-                    <h1 class="mb-4">
-                        Building with <span class="text-primary">Integrity</span>,<br>
-                        Engineering with <span class="text-primary">Vision</span>
+                    <h1 class="mb-4"><P>
+                        Building with <span class="text-primary">Integrity</span>,</p>
+                        <p>Engineering with <span class="text-primary">Vision</span></p>
                     </h1>
 
                     <p class="lead mb-4">
