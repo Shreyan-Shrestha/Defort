@@ -13,7 +13,6 @@
         transform: rotate(45deg);
         border-top: 8px solid #6d95d1;
         border-right: 8px solid #6d95d1;
-        top: 70%;
     }
 
 
@@ -49,7 +48,7 @@
                 <h1><span style="font-size: 4rem;">Technical excellence in</span> <span style="color: #007bff; font-size:4rem;">Engineering</span> <span style="font-size: 3.3rem;">and</span> <span style="color: #007bff; font-size:4rem;">Health</span> <span style="font-size: 4rem;">projects</span></h1>
                 <p class="lead text-wrap pe-3 mt-4" style="font-size: 1.5rem;">Delivering compliant, sustainable and technically sound architectural<br> & construction solutions | Advancing Health solutions.</p>
             </div>
-            <div class="d-flex pe-2 mt-5">
+            <div class="d-flex pe-2 my-5">
                 <a href="/contact" class="btn btn-primary btn-lg me-3 px-4">Book a Consultation</a>
                 <a href="/services" class="btn btn-outline-primary btn-lg px-4 ms-4">View all Services</a>
             </div>
@@ -57,11 +56,11 @@
     </div>
 </section>
 
-<section class="py-5">
-    <div class="w-100 p-3">
+<section class="py-5 mt-5">
+    <div class="w-100 p-3 mt-5">
         <div class="row align-items-center justify-content-center w-100">
             <!-- Diamond Image Column -->
-            <div class="col-lg-4 ms-5 justify-content-center text-center">
+            <div class="col-lg-4 col-sm-2 ms-5 justify-content-center text-center">
                 <div class="outer-diamond m-3 bg-white p-3 rounded">
                     <div class="diamond-container mx-auto">
                         <div class="diamond-inner">

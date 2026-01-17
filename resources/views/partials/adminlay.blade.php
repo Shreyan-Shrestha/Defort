@@ -43,8 +43,8 @@
             }
 
             .navbar {
-                width: 100% !important; /* Adjusted to full width for better mobile experience */
-                height: auto !important; /* Height auto to adapt to content */
+                width: 100% !important; 
+                height: auto !important;
             }
 
             .content-wrapper {
@@ -101,7 +101,7 @@
         </div>
     </div>
 
-    <!-- Load Bootstrap JS only once -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -112,7 +112,7 @@
                     successMessage.classList.add('fade');
                     setTimeout(() => {
                         successMessage.remove();
-                    }, 500); // Match Bootstrap's fade transition duration
+                    }, 500);
                 }, 2000); // 2-second delay autoclose
             }
         });
