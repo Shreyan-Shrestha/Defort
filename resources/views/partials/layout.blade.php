@@ -102,44 +102,66 @@
         @yield('content')
     </div>
 
-    <footer class="mt-3 pb-3 text-white pt-4" style="background-color: #05285b;;">
+    <footer class="mt-3 pb-4 pt-5 px-3 text-white" style="background-color: #05285b;">
         <div class="container">
-            <div class="d-flex row flex-sm-row ms-2 justify-content-between">
-                <div class="col-md-3 text-wrap font-monospace">
-                    <img class="logo" src="{{ asset('images/logo.png') }}" style="height: 4.8rem; width:auto" alt="DE-FORT Logo">
-                    <p>We are DE-FORT, a full service [Civil/Structural/General] engineering
+            <div class="row g-4 g-lg-5 justify-content-between">
+                <div class="col-12 col-lg-4">
+                    <img class="logo mb-3"
+                        src="{{ asset('images/logo.png') }}"
+                        style="height: 4.8rem; width: auto;"
+                        alt="DE-FORT Logo">
+                    <p class="mb-0" style="font-family: monospace; opacity: 0.9;">
+                        We are DE-FORT, a full service [Civil/Structural/General] engineering
                         and construction firm dedicated to shaping resilient infrastructure
                         and inspiring spaces.
                     </p>
                 </div>
-                <div class="col-md-2">
-                    <h5>Quick Links:</h5>
-                    <ul class="list-unstyled my-2">
-                        <li class="my-1"><a href="#" class="text-white">Home</a></li>
-                        <li class="my-1"><a href="#" class="text-white">About Us</a></li>
-                        <li class="my-1"><a href="#" class="text-white">Services</a> </li>
-                        <li class="my-1"><a href="#" class="text-white">Projects</a></li>
-                        <li class="my-1"><a href="#" class="text-white">Blogs</a></li>
-                        <li class="my-1"><a href="#" class="text-white">Contact Us</a></li>
-                    </ul>
+
+                <div class="col-12 col-md-4">
+                    <div class="row g-4 justify-content-between">
+                        <div class="col-6 col-lg-4">
+                            <h5 class="mb-3">Quick Links</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Services</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Projects</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blogs</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-lg-8">
+                            <h5 class="mb-3">Services</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Structural Engineering & Design</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Civil & Site Development</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Construction Management</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">MEP Engineering</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="col-md-2">
-                    <h5>Services:</h5>
-                    <ul class="list-unstyled">
-                        <li class="my-1"><a href="#" class="text-white">Structurral Engineering & Design</a></li>
-                        <li class="my-1"><a href="#" class="text-white">Civil & Site Development</a></li>
-                        <li class="my-1"><a href="#" class="text-white">Construction Management</a></li>
-                        <li class="my-1"><a href="#" class="text-white">MEP Engineering</a></li>
-                    </ul>
+
+                <div class="col-12 col-lg-3">
+                    <h5 class="mb-3">Contact</h5>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+9771-5444086</p>
+                    <p class="mb-2"><i class="bi bi-envelope me-2"></i>info@defort.com</p>
+                    <p class="mb-0">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        Jawalakhel, Lalitpur Metropolitan City,Nepal
+                    </p>
                 </div>
-                <div class="col-md-3">
-                    <h5>Contact:</h5>
-                    <p><i class="bi bi-telephone-fill"></i> +9771-5444086</p>
-                    <h6><i class="bi bi-envelope"></i> info@defort.com</h6>
-                    <h6><i class="bi bi-geo-alt"></i> Jawalakhel, Lalitpur Metropolitan City, Nepal</h6>
-                </div>
+
             </div>
-            <p class="text-center mb-0">© 2026 DE-FORT. All rights reserved | Terms of Services | Privacy Policy</p>
+
+            <div class="text-center mt-5 pt-4 border-top border-white border-opacity-25">
+                <small>© 2026 DE-FORT. All rights reserved |
+                    <a href="#" class="text-white text-decoration-none">Terms of Services</a> |
+                    <a href="#" class="text-white text-decoration-none">Privacy Policy</a>
+                </small>
+            </div>
         </div>
     </footer>
 
