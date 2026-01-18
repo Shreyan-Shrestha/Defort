@@ -5,6 +5,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+    @media(max-width){
+        
+    }
+
     .outer-diamond {
         width: 22.25rem;
         /* Slightly larger than inner */
@@ -60,7 +64,7 @@
     <div class="w-100 p-3 mt-5">
         <div class="row align-items-center justify-content-center">
             <!-- Diamond Image Column -->
-            <div class="col-lg-4 justify-content-center text-center">
+            <div class="col-lg-4">
                 <div class="outer-diamond m-3 bg-white p-3 rounded">
                     <div class="diamond-container mx-auto">
                         <div class="diamond-inner">
@@ -73,7 +77,7 @@
             </div>
 
             <!-- Text Content Column -->
-            <div class="col-lg-7 col-md-6">
+            <div class="col-12 col-lg-6">
                 <div class="ps-lg-4 p-3">
 
                     <div class="section-title d-flex align-items-center mb-4">
@@ -268,7 +272,7 @@
                     <h1>Latest <span style="color: #007bff;">updates</span>, built insights, and <span style="color: #007bff;">expert</span> news </h2>
                 </div>
                 <div class="container my-3 text-center col-lg-3 d-flex justify-content-lg-end justify-content-center align-items-center justify-content-sm-start">
-                    <a href="{{ route('blog.index') }}" class="btn btn-outline-primary px-3 mx-3">
+                    <a href="#" class="btn btn-outline-primary px-3 mx-3">
                         View All Blogs ->
                     </a>
                 </div>

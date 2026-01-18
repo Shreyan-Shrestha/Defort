@@ -17,11 +17,21 @@
             }
 
             .outer-diamond {
-                height: 15rem;
-                width: 15rem;
                 float: right;
+                height: 12rem !important;
+                width: 12rem !important;
+                position: absolute;
+                right:0%;
+                bottom:65%;
             }
         }
+
+    @media(max-width:1300px){
+        .outer-diamond{
+            height: 18rem;
+            width: 18rem;
+        }
+    }
 
         html,
         body {
@@ -69,24 +79,23 @@
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
+                        <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/services">Services</a>
+                        <a class="nav-link" href="#">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/projects">Projects</a>
+                        <a class="nav-link" href="#">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/blog">Blogs</a>
+                        <a class="nav-link" href="#">Blogs</a>
                     </li>
                     <li class="nav-item pe-0">
                         <a class="nav-link pe-0" href="/contact"><button class="btn btn-light text-primary px-3">Contact Us</button></a>
                     </li>
                 </ul>
-            </div>
-
         </div>
+            </div>
     </nav>
 
     @if (session('success'))
@@ -120,12 +129,12 @@
                         <div class="col-6 col-lg-5">
                             <h5 class="mb-3">Quick Links</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                                <li class="mb-2"><a href="#/" class="text-white text-decoration-none">Home</a></li>
                                 <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
                                 <li class="mb-2"><a href="#" class="text-white text-decoration-none">Services</a></li>
                                 <li class="mb-2"><a href="#" class="text-white text-decoration-none">Projects</a></li>
                                 <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blogs</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                                <li class="mb-2"><a href="/contact" class="text-white text-decoration-none">Contact Us</a></li>
                             </ul>
                         </div>
 
@@ -146,10 +155,7 @@
                     <h5 class="mb-3">Contact</h5>
                     <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+9771-5444086</p>
                     <p class="mb-2"><i class="bi bi-envelope me-2"></i>info@defort.com</p>
-                    <p class="mb-0">
-                        <i class="bi bi-geo-alt me-2"></i>
-                        Jawalakhel, Lalitpur Metropolitan City,Nepal
-                    </p>
+                    <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Jawalakhel, Lalitpur Metropolitan <span class="ms-lg-4">City, Nepal</span></p>
                 </div>
 
             </div>

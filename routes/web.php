@@ -19,19 +19,27 @@ Route::get("/about",[DefortController::class,'about']);
 
 
 //Admin
-Route::get("/admin",[AdminController::class,'index']);
+Route::prefix('pneaiaslls838393')->middleware('admin.basic')->group(function () {  // or whatever your middleware is
 
-Route::get("/adminprojects",[AdminController::class,'projects']);
-Route::get('/projectadd', [AdminController::class,'addprojectform']);
-Route::post('/addproject', [AdminController::class,'addproject']);
-Route::get('/projectedit/{id}', [AdminController::class,'editproject']);
-Route::put('/projectedit/{id}', [AdminController::class,'editprojectsubmit']);
-Route::delete('/projectsdel/{id}',[AdminController::class,'delproject']);
+    // Dashboard / main admin page
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 
-Route::get('/admincontact', [AdminController::class,'contact']);
-Route::delete('/delcontact/{id}',[AdminController::class,'destroycontact']);
-Route::get("/adminabout",[AdminController::class,'about']);
-Route::put("/addabout",[AdminController::class,'addabout']);
+    // Projects section
+    Route::get('/projects', [AdminController::class, 'projects'])->name('admin.projects');
+
+    Route::get('/project/add', [AdminController::class, 'addprojectform'])->name('project.add');
+    Route::post('/project/add', [AdminController::class, 'addproject'])->name('project.store');
+
+    Route::get('/project/edit/{id}', [AdminController::class, 'editproject'])->name('project.edit');
+    Route::put('/project/edit/{id}', [AdminController::class, 'editprojectsubmit'])->name('project.update');
+
+    Route::delete('/project/delete/{id}', [AdminController::class, 'delproject'])->name('project.destroy');
+
+    // Contacts
+    Route::get('/contacts', [AdminController::class, 'contact'])->name('admin.contacts');
+
+    Route::delete('/contact/delete/{id}', [AdminController::class, 'destroycontact'])->name('contact.destroy');
+});
 
 // Blog Routes
 Route::prefix('blog')->name('blog.')->group(function () {
