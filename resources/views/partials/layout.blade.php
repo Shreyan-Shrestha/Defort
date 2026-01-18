@@ -14,7 +14,12 @@
         @media (max-width: 991.98px) {
             .navbar-collapse {
                 background-color: var(--bs-primary);
-                padding: 1rem;
+            }
+
+            .outer-diamond {
+                height: 15rem;
+                width: 15rem;
+                float: right;
             }
         }
 
@@ -33,22 +38,32 @@
 
         .nav-link {
             color: #fff;
+            margin-left: 0.625rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
 <body class="d-flex flex-column">
-    <nav class="navbar justify-content-center bg-primary navbar-dark navbar-expand-lg px-4" style="height: 5rem;">
-        <div class="container-fluid h-100">
-            <div class="d-flex align-items-center p-0 m-0">
-                <a class="navbar-brand" href="/">
-                    <img class="logo" src="{{ asset('images/logo.png') }}" style="height: 4.8rem; width:auto" alt="DE-FORT Logo">
-                </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#projects" aria-controls="projects" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar justify-content-center bg-primary navbar-dark navbar-expand-lg" style="height: 5rem;">
+        <div class="container-fluid w-100">
+            <a class="navbar-brand p-0" href="/">
+                <img class="logo" src="{{ asset('images/logo.png') }}" style="height: 4.5rem; width:auto" alt="DE-FORT Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hamburg" aria-controls="hamburg" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="projects">
+            <div class="collapse navbar-collapse" id="hamburg" style="z-index: 1; width:100vw;">
                 <ul class="navbar-nav ms-auto mb-lg-0 align-items-center text-white justify-content-evenly">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
@@ -81,24 +96,7 @@
     </div>
     @endif
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const successMessage = document.getElementById('success-message');
-            if (successMessage) {
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                    successMessage.classList.add('fade');
-                    // Remove the element from DOM after fade-out
-                    setTimeout(() => {
-                        successMessage.remove();
-                    }, 500);
-                }, 2000);
-            }
-        });
-    </script>
-
-    <div class="container-fullwidth overflow-y-auto flex-grow-1 p-0 m-0">
+    <div class="container-full overflow-y-auto flex-grow-1 p-0 m-0">
         @yield('content')
     </div>
 
@@ -117,9 +115,9 @@
                     </p>
                 </div>
 
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-5">
                     <div class="row g-4 justify-content-between">
-                        <div class="col-6 col-lg-4">
+                        <div class="col-6 col-lg-5">
                             <h5 class="mb-3">Quick Links</h5>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
@@ -131,7 +129,7 @@
                             </ul>
                         </div>
 
-                        <div class="col-6 col-lg-8">
+                        <div class="col-6 col-lg-7">
                             <h5 class="mb-3">Services</h5>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><a href="#" class="text-white text-decoration-none">Structural Engineering & Design</a></li>
@@ -166,6 +164,42 @@
     </footer>
 
     <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const successMessage = document.getElementById('success-message');
+            if (successMessage) {
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                    successMessage.classList.add('fade');
+                    // Remove the element from DOM after fade-out
+                    setTimeout(() => {
+                        successMessage.remove();
+                    }, 500);
+                }, 2000);
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.12 // start animation when ~12% of element is visible
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        //stop observing after animation plays once
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 
 </html>

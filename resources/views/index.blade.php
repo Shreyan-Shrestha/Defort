@@ -1,14 +1,14 @@
 @extends('partials.layout')
 
 @section('title')
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="{{asset('css/index.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
     .outer-diamond {
-        width: 25.25rem;
+        width: 22.25rem;
         /* Slightly larger than inner */
-        height: 25.25rem;
+        height: 22.25rem;
         position: relative;
         transform: rotate(45deg);
         border-top: 8px solid #6d95d1;
@@ -41,8 +41,8 @@
     }
 </style>
 @section('content')
-<section class="container row justify-content-between w-100 m-0 mb-5 p-0">
-    <div class="h-100 col-lg-9 mt-3">
+<section class="container row justify-content-between w-100 m-0 mb-5 p-0 reveal">
+    <div class="h-100 col-lg-9 mt-3 d-flex flex-shrink-1 reveal">
         <div class="h-100 pt-5 px-5 mt-5">
             <div class="section-subtitle mb-5" style="font-stretch: expanded;">
                 <h1><span style="font-size: 4rem;">Technical excellence in</span> <span style="color: #007bff; font-size:4rem;">Engineering</span> <span style="font-size: 3.3rem;">and</span> <span style="color: #007bff; font-size:4rem;">Health</span> <span style="font-size: 4rem;">projects</span></h1>
@@ -56,11 +56,11 @@
     </div>
 </section>
 
-<section class="py-5 mt-5">
+<section class="py-5 mt-5 reveal">
     <div class="w-100 p-3 mt-5">
-        <div class="row align-items-center justify-content-center w-100">
+        <div class="row align-items-center justify-content-center">
             <!-- Diamond Image Column -->
-            <div class="col-lg-4 col-sm-2 ms-5 justify-content-center text-center">
+            <div class="col-lg-4 justify-content-center text-center">
                 <div class="outer-diamond m-3 bg-white p-3 rounded">
                     <div class="diamond-container mx-auto">
                         <div class="diamond-inner">
@@ -74,16 +74,17 @@
 
             <!-- Text Content Column -->
             <div class="col-lg-7 col-md-6">
-                <div class="ps-lg-4">
+                <div class="ps-lg-4 p-3">
 
                     <div class="section-title d-flex align-items-center mb-4">
                         <span class="line-divider d-inline-block me-3"
                             style="background-color: #007bff; width:3.5rem; height:0.25rem;"></span>
-                        <h5 class="mb-0 fw-bold">Who We Are</h5>
+                        <h4 class="mb-0 fw-bold">Who We Are</h4>
                     </div>
 
-                    <h1 class="mb-4"><P>
-                        Building with <span class="text-primary">Integrity</span>,</p>
+                    <h1 class="mb-4">
+                        <P>
+                            Building with <span class="text-primary">Integrity</span>,</p>
                         <p>Engineering with <span class="text-primary">Vision</span></p>
                     </h1>
 
@@ -106,13 +107,161 @@
     </div>
 </section>
 
+<section class="p-5 mt-5 reveal">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 mb-5 mb-md-0 reveal">
+                <div class="pe-md-4">
+                    <div class="section-title d-flex align-items-center mb-4">
+                        <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:3rem; height:0.2rem;"></span>
+                        <h4><span class="fw-bold">Our Services</span></h4>
+                    </div>
+                    <h1 class="mb-4">
+                        Expert <span style="color: #007bff;">Solutions</span> for Complex
+                        <span style="color: #007bff;">Building</span> Challenges
+                    </h1>
+                    <p class="lead mb-5">
+                        From structural design to turnkey construction partner with experts
+                        who ensure quality at every phase.
+                    </p>
+                    <p class="lead mb-5">
+                        Delivering precision engineering and construction management for commercial,
+                        industrial, and infrastructure projects.
+                    </p>
 
-<section class="container-fluid pt-5 px-5 mb-3 pb-2 bg-body-tertiary my-3">
+                    <button class="btn btn-outline-primary mt-2">
+                        Get Started <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 reveal">
+                <div class="row g-4 h-100">
+                    <div class="col-6">
+                        <div class="card h-100 border-0 shadow-sm text-start" style="background-color: #f3f7fe;">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="bi bi-heart fs-3 text-primary"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Structural Engineering & Design</h6>
+                                <p class="card-text small text-muted mb-0">Expert analysis and innovative structural solutions for buildings, bridges, and Weadvanced modeling.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card h-100 border-0 shadow-sm text-start" style="background-color: #f3f7fe;">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="bi bi-file-earmark-text fs-3 text-primary"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Civil & Site Development</h6>
+                                <p class="card-text small text-muted mb-0">Comprehensive planning, grading, unity design, and infastructure for sites. We navigate your land for construction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card h-100 border-0 shadow-sm text-start" style="background-color: #f3f7fe;">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="bi bi-award text-primary fs-3"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Construction Management</h6>
+                                <p class="card-text small text-muted mb-0">Full-service project oversight, from pre-construction plannung to final delivery. We manage schedule, budget, and built to specification.</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card h-100 border-0 shadow-sm text-start" style="background-color: #f3f7fe;">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="fa-solid fa-microscope text-primary fs-3"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">MEP Engineering (Mechanical, Electrical, Plumbing)</h6>
+                                <p class="card-text small text-muted mb-0">Integrated systems design for optimal building performance, and occupant comfort.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid pt-5 px-5 mb-3 pb-2 my-3 reveal">
+    <div class="column pt-5 align-items-center">
+        <div class="section-title d-flex align-items-center justify-content-center mb-4">
+            <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:3rem; height:0.2rem;"></span>
+            <h4><span class="fw-bold"> Why Choose Us</span></h4>
+        </div>
+        <h1 class="mb-4 text-center">Beyond <span style="color: #007bff;"> Engineering</span> & Construction</h1>
+    </div>
+    <div class="container justify-content-center">
+        <div class="row justify-content-evenly align-items-center border-0 text-start">
+            <div class="col-12 col-md-3">
+                <div class="card h-100 border-0 text-start">
+                    <div class="card-body d-flex flex-column justify-content-center p-3">
+                        <div class="mb-3">
+                            <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                <i class="bi bi-heart fs-3 text-primary"></i>
+                            </span>
+                        </div>
+                        <h5 class="card-title fw-bold text-primary mb-2">A Partnership Mindset, Not a Vendor Relationship</h5>
+                        <p class="card-text small text-muted mb-0">Integrated systems design for optimal building performance, energy efficiency,
+                            and occupant comfort.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mt-5">
+                <div class="card-body d-flex flex-column justify-content-center p-3">
+                    <div class="mb-3">
+                        <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                            <i class="bi bi-award text-primary fs-1"></i>
+                        </span>
+                    </div>
+                    <h5 class="card-title fw-bold text-primary mb-2">Deep Technical Expertise, Delivered Simply</h5>
+                    <p class="card-text small text-muted mb-0">Comprehensive planning, grading, unity design, and infastructure for sites. We navigate your land for construction.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="card h-100 border-0 text-start">
+                    <div class="card-body d-flex flex-column justify-content-center p-3">
+                        <div class="mb-3">
+                            <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                <i class="fa-solid fa-microscope text-primary fs-3"></i>
+                            </span>
+                        </div>
+                        <h5 class="card-title fw-bold text-primary mb-2">Unwavering Commitment to Safety, and Quality</h5>
+                        <p class="card-text small text-muted mb-0">Integrated systems design for optimal building performance, energy efficiency,
+                            and occupant comfort.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="container-fluid pt-5 px-5 mb-3 pb-2 my-3 reveal">
     <div class="pt-5 mt-3">
         <div class="d-flex flex-column mb-4">
             <div class="section-title d-flex align-items-center">
                 <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:3rem; height:0.2rem;"></span>
-                <h5><span class="fw-bold"> Our Blogs & Articles</span></h5>
+                <h4><span class="fw-bold"> Our Blogs & Articles</span></h4>
             </div>
             <div class="row">
                 <div class="section-subtitle mt-2 col-lg-9 align-items-center d-flex justify-content-lg-start justify-content-center">
@@ -125,7 +274,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-md-flex flex-md-row mb-4 justify-content-between row">
+        <div class="d-md-flex flex-md-row mb-4 justify-content-between row reveal">
             @foreach($posts as $post)
             <div class=" row col-lg-4 mb-sm-2 d-flex align-items-stretch mt-3">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden d-flex h-100 flex-column p-3">
@@ -164,7 +313,5 @@
             @endforeach
         </div>
     </div>
-
-
 </section>
 @endsection

@@ -71,9 +71,6 @@
                             <a class="nav-link" href="/admin"><h4><i class="bi bi-speedometer2 me-2"></i>Dashboard</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/adminabout"><h4><i class="bi bi-info-circle me-2"></i>About Us</h4></a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="/adminprojects"><h4><i class="bi bi-kanban me-2"></i>Projects</h4></a>
                         </li>
                         <li class="nav-item">
