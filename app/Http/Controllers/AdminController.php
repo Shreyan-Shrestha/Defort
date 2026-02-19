@@ -47,7 +47,7 @@ class AdminController extends Controller
         // Create the project
         Projects::create($validated);
 
-        return redirect('/adminprojects')->with('success', 'Added Project successfully!');
+        return redirect('/pneaiaslls838393/projects')->with('success', 'Added Project successfully!');
     }
 
     public function editproject($id)
@@ -82,7 +82,7 @@ class AdminController extends Controller
         Storage::disk('public')->delete($oldImagePath);
     }
 
-    return redirect('/adminprojects')->with('success', 'Project updated successfully!');
+    return redirect('/pneaiaslls838393/projects')->with('success', 'Project updated successfully!');
 }
 
     public function delproject($id)
@@ -97,7 +97,7 @@ class AdminController extends Controller
         // Delete the project record
         Projects::where('id', $id)->delete();
 
-        return redirect('/adminprojects')->with('success', 'Project deleted successfully!');
+        return redirect('/pneaiaslls838393/projects')->with('success', 'Project deleted successfully!');
     }
 
     //Contact
@@ -110,28 +110,39 @@ class AdminController extends Controller
     public function destroycontact($id)
     {
         Contact::where('id', $id)->delete();
-        return redirect('/admincontact')->with('success', 'Message has been deleted');
+        return redirect('/pneaiaslls838393/contact')->with('success', 'Message has been deleted');
     }
 
-    //About
-    public function about()
+    //FAQs
+    public function faqs()
     {
-        About::firstOrCreate(['id' => 1]);
-        $about = About::where('id', 1)->first();
-        if ($about && $about->description) {
-        $about->description = strip_tags($about->description, '<p><strong><em><ul><ol><li><a>');
-        // Remove problematic characters
-        $about->description = str_replace(['`', "\n", "\r", '"', "'"], ['\\`', ' ', ' ', '\\"', "\\'"], $about->description);
-    }
-        return view('admin.about.about', ['about' => $about]);
+        $faqs = About::latest()->get();
+        return view('admin.about.faqs', ['faqs' => $faqs]);
     }
 
-    public function addabout(AboutRequest $request)
+    public function addfaqform()
+    {
+        return view('admin.about.addfaq');
+    }
+    public function addfaq(AboutRequest $request)
     {
         $validated = $request->validated();
-        $validated['description'] = strip_tags($validated['description'], '<p><strong><em><ul><ol><li><a>');
-        $validated['description'] = str_replace(['`', "\n", "\r"], ['\\`', ' ', ' '], $validated['description']);
-        About::where('id', 1)->update($validated);
-        return redirect('/adminabout')->with('success', 'About updated successfully!');
+        About::create($validated);
+        return redirect('/pneaiaslls838393/faqs')->with('success', 'Added FAQ successfully!');
     }
+    public function editfaq($id)
+    {
+        $faq = About::where('id', $id)->first();
+        return view('admin.about.editfaq', ['faq' => $faq]);
+    }
+    public function editfaqsubmit(AboutRequest $request)
+    {
+        $validated = $request->validated();
+        About::where('id', $request['id'])->update($validated);
+        return redirect('/pneaiaslls838393/faqs')->with('success', 'FAQ updated successfully!');
+    }
+    public function delfaq($id)    {
+        About::where('id', $id)->delete();
+        return redirect('/pneaiaslls838393/faqs')->with('success', 'FAQ deleted successfully!'); 
+    }   
 }

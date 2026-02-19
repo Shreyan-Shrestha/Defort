@@ -26,7 +26,7 @@
                     </div>
                     @endif
 
-                    <form method="POST" action="/projectedit/{id}" enctype="multipart/form-data">
+                    <form method="POST" action="/pneaiaslls838393/project/edit/{{$project['id']}}" enctype="multipart/form-data">
                         @csrf
                         @method("PUT")
                         <input value="{{ $project['id'] }}" name="id" hidden>
@@ -101,7 +101,7 @@
                         </div>
 
                         <div class="d-flex justify-content-between">
-                            <a href="/adminprojects" class="btn btn-secondary">Cancel</a>
+                            <a href="/pneaiaslls838393/projects" class="btn btn-secondary">Cancel</a>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>

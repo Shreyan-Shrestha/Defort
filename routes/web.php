@@ -19,7 +19,7 @@ Route::get("/about",[DefortController::class,'about']);
 
 
 //Admin
-Route::prefix('pneaiaslls838393')->middleware('admin.basic')->group(function () {  // or whatever your middleware is
+Route::prefix('pneaiaslls838393')->group(function () {
 
     // Dashboard / main admin page
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
@@ -36,9 +36,17 @@ Route::prefix('pneaiaslls838393')->middleware('admin.basic')->group(function () 
     Route::delete('/project/delete/{id}', [AdminController::class, 'delproject'])->name('project.destroy');
 
     // Contacts
-    Route::get('/contacts', [AdminController::class, 'contact'])->name('admin.contacts');
+    Route::get('/contact', [AdminController::class, 'contact'])->name('admin.contacts');
 
     Route::delete('/contact/delete/{id}', [AdminController::class, 'destroycontact'])->name('contact.destroy');
+
+    // FAQs
+    Route::get('/faqs', [AdminController::class, 'faqs'])->name('admin.faqs');
+    Route::get('/faq/add', [AdminController::class, 'addfaqform'])->name('faq.add');
+    Route::post('/faq/store', [AdminController::class, 'addfaq'])->name('faq.store');
+    Route::get('/faq/edit/{id}', [AdminController::class, 'editfaq'])->name('faq.edit');
+    Route::put('/faq/edit/{id}', [AdminController::class, 'editfaqsubmit'])->name('faq.update');
+    Route::delete('/faq/delete/{id}', [AdminController::class, 'delfaq'])->name('faq.destroy');
 });
 
 // Blog Routes

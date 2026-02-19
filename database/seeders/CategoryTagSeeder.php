@@ -20,6 +20,7 @@ class CategoryTagSeeder extends Seeder
             'Engineering',
             'Urban Design',
             'Construction',
+            'Civil Engineering',
             'Health',
         ];
 

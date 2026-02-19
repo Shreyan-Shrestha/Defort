@@ -71,10 +71,13 @@
                             <a class="nav-link" href="/pneaiaslls838393"><h4><i class="bi bi-speedometer2 me-2"></i>Dashboard</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pneaiaslls838393/projects"><h4><i class="bi bi-kanban me-2"></i>Projects</h4></a>
+                            <a class="nav-link" href="/pneaiaslls838393/faqs"><h4><i class="bi bi-info-circle me-2"></i>FAQs</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/admincontact"><h4><i class="bi bi-envelope me-2"></i>Messages</h4></a>
+                            <a class="nav-link" href="/pneaiaslls838393/projects"><h4><i class="bi bi-kanban me-2"></i>Projects</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pneaiaslls838393/contact"><h4><i class="bi bi-envelope me-2"></i>Messages</h4></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/blog/admin/posts"><h4><i class="bi bi-journal-text me-2"></i>Blog Posts</h4></a>

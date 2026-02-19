@@ -27,7 +27,7 @@
                         <td>{{$contact->subject}}</td>
                         <td>{{$contact->message}}</td>
                         <td>
-                            <form method="POST" action="/delcontact/{{$contact['id']}}">
+                            <form method="POST" action="/pneaiaslls838393/contact/delete/{{$contact->id}}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Delete this message?')">Delete</button>

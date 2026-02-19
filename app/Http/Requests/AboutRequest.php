@@ -22,7 +22,8 @@ class AboutRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "description" => ['nullable' , 'string' , 'max:8000' ],
+            "question" => ['string' , 'max:400' ],
+            "answer" => ['string' , 'max:1000' ],
         ];
     }
 }

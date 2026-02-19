@@ -46,7 +46,7 @@ class DefortController extends Controller
     }
 
     public function about(){
-        $about = About::where('id', 1)->first();
-        return view('about', ['about' => $about]);
+        $faqs = About::latest()->get();
+        return view('about', ['faqs' => $faqs]);
     }
 }

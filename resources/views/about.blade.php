@@ -1,17 +1,6 @@
 @extends('partials.layout')
 @section('title', 'About Us - DE-FORT')
 <style>
-    .outer-diamond {
-        width: 6.25rem;
-        /* Slightly larger than inner */
-        height: 6.25rem;
-        position: relative;
-        transform: rotate(45deg);
-        border: 5px solid;
-        color: #87b0db;
-    }
-
-
     #forborder {
         background-image: linear-gradient(#87b0db, #87b0db),
             linear-gradient(#87b0db, #87b0db),
@@ -23,7 +12,7 @@
         background-position: left bottom, left bottom, right top, right top;
     }
 
-    .principles {
+    #principles {
         border: solid #87b0db;
     }
 </style>
@@ -32,13 +21,7 @@
 <div class="container-fluid mt-4 p-5">
     <section class="w-100 column">
         <div class="row d-flex justify-content-start">
-            <div class="col-1 ms-4">
-                <div class="outer-diamond p-3">
-                    <div class="inner-diamond">
-                    </div>
-                </div>
-            </div>
-            <div class="col-8 ms-5">
+            <div class="col-8 col-sm-6">
                 <div class="section-title d-flex align-items-center">
                     <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
                     <h5><span class="fw-bold"> About Us</span></h5>
@@ -48,7 +31,7 @@
                 </p>
             </div>
         </div>
-        <div class="section-subtitle col-lg-6 col-sm-10 mt-5">
+        <div class="section-subtitle col-lg-6 col-sm-10 mt-3">
             <p class="lead">
                 To engineer and build sustainable, high-performance solutions that improve
                 communities, empower our clients, and set new standards for safety and quality
@@ -74,7 +57,7 @@
         </div>
     </section>
 
-    <section class="w-100 mt-5">
+    <section class="w-100 mt-5 px-5">
         <div class=" d-flex flex-column justify-content-center align-items-center">
             <div class=" section-title d-flex flex-row align-items-center">
                 <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
@@ -86,18 +69,110 @@
             </p>
         </div>
 
-        <div class="w-100 d-flex flex-sm-row flex-wrap align-items-evenly  justify-content-center gap-4">
-            <div class="col-4">
-                <div class="card principles rounded h-100 flex-column p-3">
-                    
-                    <div class="card-body">
-                        <div class="d-block-inline rounded p-3 col-auto" style="color:#007bff; background:#87b0db">
-                    <i class="bi bi-heart d-inline"></i>
+        <div class="w-100 mt-5 d-flex flex-sm-row flex-wrap gap-4">
+            <div class="card rounded h-100 flex-column b-0 p-3">
+                <div class="row g-4 justify-content-center align-items-center h-100">
+                    <div class="col-6 col-md-4">
+                        <div class="card h-100 shadow-sm text-start" id="principles">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="fa-solid fa-shield-heart text-primary fs-3"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Integrity First:</h6>
+                                <p class="card-text small text-muted mb-0">We do what's right, not what's easy. Honest communication and ethical practices are non-negotiable.</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="col-6 col-md-4">
+                        <div class="card h-100 shadow-sm text-start" id="principles">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="bi bi-award text-primary fs-3"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Relentless Excellence:</h6>
+                                <p class="card-text small text-muted mb-0">From concept to completion, we pursue perfection in every detail, driven byquality and precision.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <div class="card h-100 shadow-sm text-start" id="principles">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="fa-solid fa-brain text-primary fs-3"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Innovative Thinking:</h6>
+                                <p class="card-text small text-muted mb-0">We embrace new technologies and methodologies to solve old problems insmarter, more efficient ways.</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="card h-100 shadow-sm text-start" id="principles">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="fa-regular fa-handshake text-primary fs-3"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Collaborative Partnership:</h6>
+                                <p class="card-text small text-muted mb-0">We listen first. Your success is our success, and we achieve it through transparent teamwork.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <div class="card h-100 shadow-sm text-start" id="principles">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="fa-solid fa-helmet-safety text-primary fs-3"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Uncompromising Safety:</h6>
+                                <p class="card-text small text-muted mb-0">We believe every person deserves to go home safely. Safety is a core value, not just a policy.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="w-100 mt-4 pt-5 px-5">
+        <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
+            <div class=" section-title d-flex flex-row align-items-center">
+                <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
+                <h5><span class="fw-bold"> FAQs</span></h5>
+            </div>
+            <h2 class="mt-3">Frequently Asked <span style="color: #007bff;">Questions</span></h2>
+        </div>
+        <div class="justify-content-center align-items-center mt-4 d-flex">
+            <div class="accordion col-8" id="faqs">
+                @foreach ($faqs as $faq)
+                <div class="accordion-item mt-2">
+                    <h2 class="accordion-header" id="heading{{ $faq->id }}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $faq->id }}" aria-expanded="false" aria-controls="collapse{{ $faq->id }}">
+                            <strong>{{ $faq->question }}</strong>
+                        </button>
+                    </h2>
+                    <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $faq->id }}" data-bs-parent="#faqs">
+                        <div class="accordion-body">
+                            {{ $faq->answer }}
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+
     </section>
 </div>
 @endsection

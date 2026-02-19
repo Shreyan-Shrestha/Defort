@@ -26,7 +26,7 @@
                     </div>
                     @endif
 
-                    <form method="POST" action="/addproject" enctype="multipart/form-data">
+                    <form method="POST" action="/pneaiaslls838393/project/add" enctype="multipart/form-data">
                         @csrf
                         <img id="imagePreview" src="#" alt="Image Preview" class="img-fluid mb-3" style="display: none; max-height: 200px;"/>
                         <div class="mb-3">
@@ -95,7 +95,7 @@
                         </div>
 
                         <div class="d-flex justify-content-between">
-                            <a href="/adminprojects" class="btn btn-secondary">Cancel</a>
+                            <a href="/pneaiaslls838393/projects" class="btn btn-secondary">Cancel</a>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
