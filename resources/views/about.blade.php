@@ -20,7 +20,7 @@
 @section('content')
 <div class="container-fluid mt-4 p-5">
     <section class="w-100 column">
-        <div class="row d-flex justify-content-start">
+        <div class="row d-flex justify-content-start reveal">
             <div class="col-8 col-sm-6">
                 <div class="section-title d-flex align-items-center">
                     <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
@@ -31,7 +31,7 @@
                 </p>
             </div>
         </div>
-        <div class="section-subtitle col-lg-6 col-sm-10 mt-3">
+        <div class="section-subtitle col-lg-6 col-sm-10 mt-3 reveal">
             <p class="lead">
                 To engineer and build sustainable, high-performance solutions that improve
                 communities, empower our clients, and set new standards for safety and quality
@@ -41,12 +41,12 @@
     </section>
 
     <section class="d-flex flex-sm-row mt-5 py-5 justify-content-between position-relative">
-        <div id="forborder" class="col-5 p-3 d-flex justify-content-center">
+        <div id="forborder" class="col-5 p-3 d-flex justify-content-center reveal">
             <div class="image-wrapper col-5 h-100 w-100 col-sm-6">
                 <img class="img-fluid h-100 w-100 rounded" src="{{asset('images/carousel/carousel2.jpg')}}" style="aspect-ratio: 5/3;">
             </div>
         </div>
-        <div class="section-title col-lg-6 align-content-stretch ps-5 pt-3">
+        <div class="section-title col-lg-6 align-content-stretch ps-5 pt-3 reveal">
             <h1>To Engineer and Build <span style="color: #007bff">Sustainable</span>,<span style="color: #007bff;"> High-Performance</span> Solutions</h1>
             <p class="lead mt-3">We are DE-FORT, a full service [Civil/Structural/General] engineering and construction firm dedicated
                 to shaping resilient infastructure and inspiring spaces.</p>
@@ -58,8 +58,8 @@
     </section>
 
     <section class="w-100 mt-5 px-5">
-        <div class=" d-flex flex-column justify-content-center align-items-center">
-            <div class=" section-title d-flex flex-row align-items-center">
+        <div class=" d-flex flex-column justify-content-center align-items-center reveal">
+            <div class=" section-title d-flex flex-row align-items-center reveal">
                 <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
                 <h5><span class="fw-bold"> Our Core Values</span></h5>
             </div>
@@ -72,7 +72,7 @@
         <div class="w-100 mt-5 d-flex flex-sm-row flex-wrap gap-4">
             <div class="card rounded h-100 flex-column b-0 p-3">
                 <div class="row g-4 justify-content-center align-items-center h-100">
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-4 reveal">
                         <div class="card h-100 shadow-sm text-start" id="principles">
                             <div class="card-body d-flex flex-column justify-content-center p-3">
                                 <div class="mb-3">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-4 reveal">
                         <div class="card h-100 shadow-sm text-start" id="principles">
                             <div class="card-body d-flex flex-column justify-content-center p-3">
                                 <div class="mb-3">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-4 reveal">
                         <div class="card h-100 shadow-sm text-start" id="principles">
                             <div class="card-body d-flex flex-column justify-content-center p-3">
                                 <div class="mb-3">
@@ -114,7 +114,7 @@
                         </div>
                         </a>
                     </div>
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-4 reveal">
                         <div class="card h-100 shadow-sm text-start" id="principles">
                             <div class="card-body d-flex flex-column justify-content-center p-3">
                                 <div class="mb-3">
@@ -128,7 +128,7 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-4 reveal">
                         <div class="card h-100 shadow-sm text-start" id="principles">
                             <div class="card-body d-flex flex-column justify-content-center p-3">
                                 <div class="mb-3">
@@ -157,7 +157,7 @@
         <div class="justify-content-center align-items-center mt-4 d-flex">
             <div class="accordion col-8" id="faqs">
                 @foreach ($faqs as $faq)
-                <div class="accordion-item mt-2">
+                <div class="accordion-item mt-3 reveal">
                     <h2 class="accordion-header" id="heading{{ $faq->id }}">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $faq->id }}" aria-expanded="false" aria-controls="collapse{{ $faq->id }}">
                             <strong>{{ $faq->question }}</strong>

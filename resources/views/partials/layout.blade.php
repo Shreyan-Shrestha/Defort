@@ -110,7 +110,7 @@
         @yield('content')
     </div>
 
-    <footer class="mt-3 pb-4 pt-5 px-3 text-white" style="background-color: #05285b;">
+    <footer class="mt-3 pb-4 pt-5 px-3 text-white reveal" style="background-color: #05285b;">
         <div class="container">
             <div class="row g-4 g-lg-5 justify-content-between">
                 <div class="col-12 col-lg-4">
