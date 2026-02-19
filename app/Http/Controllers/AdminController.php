@@ -18,7 +18,16 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.admin');
+        $projectsCount = Projects::count();
+        $faqsCount = About::count();
+        $blogsCount = Contact::count();
+        $messagesCount = Contact::count();
+
+        view()->share('projectsCount', $projectsCount);
+        view()->share('faqsCount', $faqsCount);
+        view()->share('blogsCount', $blogsCount);
+        view()->share('messagesCount', $messagesCount);
+        return view('admin.admin', ['projectsCount' => $projectsCount, 'faqsCount' => $faqsCount, 'blogsCount' => $blogsCount, 'messagesCount' => $messagesCount]);
     }
 
     public function projects()
