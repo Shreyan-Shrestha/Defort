@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ContactRequest;
 use App\Models\Projects;
 use App\Models\Contact;
 use App\Models\About;
+use App\Models\Services;
+use App\Http\Requests\ServicesRequest;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -154,4 +155,31 @@ class AdminController extends Controller
         About::where('id', $id)->delete();
         return redirect('/pneaiaslls838393/faqs')->with('success', 'FAQ deleted successfully!'); 
     }   
+
+    //Services
+    public function services(){
+        $services = Services::latest()->get();
+        return view('admin.services.services', ['services' => $services]);
+    }
+    public function addserviceform(){
+        return view('admin.services.addservice');
+    }
+    public function addservice(ServicesRequest $request){
+        $validated = $request->validated();
+        Services::create($validated);
+        return redirect('/pneaiaslls838393/services')->with('success', 'Added Service successfully!');
+    }
+    public function editservice($id){
+        $service = Services::where('id', $id)->first();
+        return view('admin.services.editservice', ['service' => $service]);
+    }
+    public function editservicesubmit(ServicesRequest $request){
+        $validated = $request->validated();
+        Services::where('id', $request['id'])->update($validated);
+        return redirect('/pneaiaslls838393/services')->with('success', 'Service updated successfully!');
+    }
+    public function delservice($id)    {
+        Services::where('id', $id)->delete();
+        return redirect('/pneaiaslls838393/services')->with('success', 'Service deleted successfully!'); 
+    } 
 }
