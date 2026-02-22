@@ -17,6 +17,9 @@ Route::post("/addcontact",[DefortController::class,'addcontact']);
 //About
 Route::get("/about",[DefortController::class,'about']);
 
+//Services
+Route::get("/services",[DefortController::class,'services']);
+
 
 //Admin
 Route::prefix('pneaiaslls838393')->group(function () {
