@@ -124,6 +124,12 @@
             </div>
         </div>
     </nav>
+    <section class="container-fullwidth position-relative">
+        <div style="position: absolute;  z-index: -2; position: absolute; transform: rotate(-45deg); z-index: -5; right:-2rem; top:-14.7rem;">
+            <div class="rounded-2" style="background-color: #bbd4ff; height: 18rem; width:13rem; border-bottom: 0.5rem solid #fff;"></div>
+            <div class="rounded-2" style="height: 30rem; width:13rem; border: 0.5rem solid #bbd4ff"></div>
+        </div>
+    </section>
 
     @if (session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-message">
@@ -178,7 +184,7 @@
                 </div>
 
                 <div class="col-12 col-lg-3">
-                    <h5 class="mb-3">Contact</h5>
+                    <h5 class="mb-3">Contact Us:</h5>
                     <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+9771-5444086</p>
                     <p class="mb-2"><i class="bi bi-envelope me-2"></i>info@defort.com</p>
                     <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Jawalakhel, Lalitpur Metropolitan City, Nepal</p>
