@@ -14,17 +14,10 @@
         border-left: 0.4rem solid #007bff !important;
     }
 
+    #footer{
+        margin-top: 0% !important;
+    }
     @media (max-width: 991.98px) {
-        *{
-            font-size: medium !important;
-        }
-        h1, h1 span{
-            font-size: 1.75rem !important;
-        }
-        p,h6{
-            font-size: small !important;
-        }
-
         .hasText {
             font-size: small;
         }
@@ -43,6 +36,11 @@
         color: #007bff !important;
         font-size: 6rem !important;
     }
+
+        #contact-button {
+            font-size: small;
+            padding: 0% !important;
+        }
     }
 </style>
 @section('content')
@@ -190,14 +188,14 @@
         </div>
     </div>
 </section>
-<section class="container-fullwidth bg-primary-subtle p-5">
+<section class="container-fullwidth bg-primary-subtle p-md-5 p-2 mb-0">
     <div class="dflex row">
-        <div class="col-8 col-md-8 reveal">
+        <div class="col-9 col-md-8 reveal">
             <h1 class="text-primary">Need Specialized Expertise?</h1>
             <h5 class="text-muted">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</h5>
         </div>
-        <div class="col-4 col-md-4 d-flex justify-content-end align-items-center reveal">
-            <a href="/contact"><button class="btn btn-outline-primary px-5 py-2">Contact Us</button></a>
+        <div class="col-3 col-md-4 d-flex justify-content-end align-items-center reveal">
+            <a href="/contact"><button id="contact-button" class="btn btn-outline-primary px-md-5 py-2 px-2">Contact Us</button></a>
         </div>
 </section>
 @endsection
