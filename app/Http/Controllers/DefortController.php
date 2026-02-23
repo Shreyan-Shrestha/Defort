@@ -25,12 +25,12 @@ class DefortController extends Controller
 
     public function projects(){
         $projects = Projects::latest()->get();
-        return view('projects', ['projects' => $projects]);
+        return view('projects.projects', ['projects' => $projects]);
     }
 
     public function viewproject($id){
         $project = Projects::where('id', $id)->first();
-        return view('viewproject', ['project' => $project]);
+        return view('projects.viewproject', ['project' => $project]);
     }
 
     //Contact

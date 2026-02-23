@@ -68,7 +68,7 @@
     </div>
 </section>
 
-<section id="services" class="w-100 px-md-5 px-3 mt-5">
+<section id="services" class="w-100 px-md-5 px-3 pt-5 mt-5">
     <div class="row reveal g-4 justify-content-center">
         @foreach($services as $service)
         <div class="col-6 col-md-4 reveal">
