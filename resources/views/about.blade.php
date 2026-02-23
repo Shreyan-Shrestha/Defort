@@ -22,7 +22,7 @@
 
 @section('content')
 <div class="container-fluid mt-4 p-5">
-    <section class="w-100 column">
+    <section class="w-100 column ">
         <div class="row d-flex justify-content-start reveal">
             <div class="col-8 col-sm-6">
                 <div class="section-title d-flex align-items-center">
@@ -78,7 +78,7 @@
         </div>
     </section>
 
-    <section class="w-100 mt-5 px-5">
+    <section class="w-100 mt-5 px-md-5 px-2">
         <div class=" d-flex flex-column justify-content-center align-items-center reveal">
             <div class=" section-title d-flex flex-row align-items-center reveal">
                 <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
@@ -167,7 +167,7 @@
         </div>
     </section>
 
-    <section class="w-100 mt-4 pt-5 px-5">
+    <section class="w-100 mt-4 pt-md-5 px-2">
         <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
             <div class=" section-title d-flex flex-row align-items-center">
                 <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>

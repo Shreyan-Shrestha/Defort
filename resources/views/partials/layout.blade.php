@@ -25,9 +25,8 @@
                 right: 0%;
                 bottom: 65%;
             }
-
-            * {
-                font-size: medium !important;
+            *{
+                font-size: small !important;
             }
 
             h1,
@@ -39,6 +38,9 @@
 
             p span {
                 font-size: medium !important;
+            }
+            p .keepsmall{
+                font-size: small !important;
             }
         }
 
