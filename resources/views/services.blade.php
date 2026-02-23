@@ -5,18 +5,25 @@
         border-left: 0.313rem solid #dae9ff;
     }
 
-    #process .row:hover i {
-        color: #007bff !important;
-        font-size: 6rem !important;
+    #process .row:hover {
+        i {
+            color: #007bff !important;
+            font-size: 6rem !important;
+        }
+
+        .column2 {
+            border-left: 0.4rem solid #007bff !important;
+        }
+
+        .hasText span {
+            background-color: #007bff !important;
+        }
     }
 
-    #process .row:hover .column2 {
-        border-left: 0.4rem solid #007bff !important;
-    }
-
-    #footer{
+    #footer {
         margin-top: 0% !important;
     }
+
     @media (max-width: 991.98px) {
         .hasText {
             font-size: small;
@@ -28,14 +35,9 @@
         }
 
         #process .row:hover i {
-        color: #007bff !important;
-        font-size: 5rem !important;
-    }
-
-        #process .row:hover i {
-        color: #007bff !important;
-        font-size: 6rem !important;
-    }
+            color: #007bff !important;
+            font-size: 6rem !important;
+        }
 
         #contact-button {
             font-size: small;
@@ -66,33 +68,31 @@
     </div>
 </section>
 
-<section id="services" class="w-100 column px-md-5 px-3 mt-5">
-    <div class="row reveal">
-        <div class="w-100 mt-5 d-flex flex-sm-row flex-wrap gap-4 p-0 px-1">
-            <div class="w-100 card rounded h-100 flex-column border-0">
-                <div class="row g-4 justify-content-center align-items-center h-100">
-                    @foreach($services as $service)
-                    <div class="col-6 col-md-4 reveal">
-                        <div class="card h-md-auto border-0 text-start" id="principles" style="background-color: #f1f6ff;">
-                            <div class="card-body d-flex flex-column justify-content-center p-3">
-                                <div class="mb-4">
-                                    <span class="p-3 px-4 bg-primary-subtle rounded d-inline-block">
-                                        @if($service->icon)
-                                        <i class="{{ $service->icon }} text-primary fs-1"></i>
-                                        @else
-                                        <i class="bi bi-briefcase-fill text-primary fs-1"></i>
-                                        @endif
-                                    </span>
-                                </div>
-                                <h5 class="card-title fw-bold text-primary mb-3">{{$service->title}}</h5>
-                                <p class="card-text small text-muted mb-0"> {{$service->description}} </p>
-                            </div>
+<section id="services" class="w-100 px-md-5 px-3 mt-5">
+    <div class="row reveal g-4 justify-content-center">
+        @foreach($services as $service)
+        <div class="col-6 col-md-4 reveal">
+            <div class="card h-100 border-0 text-start shadow-sm" style="background-color: #f1f6ff;">
+                <div class="card-body d-flex flex-column justify-content-between p-3">
+                    <div>
+                        <div class="mb-4">
+                            <span class="p-3 px-4 bg-primary-subtle rounded d-inline-block">
+                                @if($service->icon)
+                                    <i class="{{ $service->icon }} text-primary fs-1"></i>
+                                @else
+                                    <i class="bi bi-briefcase-fill text-primary fs-1"></i>
+                                @endif
+                            </span>
                         </div>
+                        <h5 class="card-title fw-bold text-primary mb-3">{{ $service->title }}</h5>
+                        <p class="card-text small text-muted mt-auto mb-0">
+                            {{ $service->description }}
+                        </p>
                     </div>
-                    @endforeach
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </section>
 
@@ -111,12 +111,12 @@
     <div class="container-full mt-5 p-0 m-0 reveal">
         <div class="row" id="row-1">
             <div class="col-6 text-end column1 d-flex justify-content-end align-items-center pe-3">
-                <i class="fa-solid fa-rotate" style="font-size: 4rem; color:#dae9ff"></i>
+                <i class="fa-solid fa-rotate" style="font-size: 4rem; color: #dae9ff"></i>
             </div>
             <div class="col-6 column2 justify-content-center align-items-center p-4 px-2 px-md-5 hasText pb-5">
-                <div class="d-flex bg-primary d-inline-block mb-3 justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%;">
+                <span class="d-flex d-inline-block mb-3 justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>1</h4>
-                </div>
+                </span>
                 <h4 class="text-primary mb-3">Discovery & Planning</h4>
                 <p class="medium text-muted">We begin by deeply understanding your vision, constraints, and objectives. Our
                     team conducts comprehensive site analysis and feasibility studies to establish a
@@ -126,7 +126,7 @@
         </div>
         <div class="row" id="row-2">
             <div class="col-6 d-flex row justify-content-end align-items-center p-4 px-2 px-md-2 hasText text-end column1">
-                <span class="bg-primary d-inline-block mb-3 d-flex justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%;">
+                <span class="d-inline-block mb-3 d-flex justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>2</h4>
                 </span>
                 <h4 class="text-primary mb-3 p-0">Design & Engineering</h4>
@@ -145,9 +145,9 @@
                 <i class="fa-regular fa-paste" style="font-size: 4rem; color: #dae9ff"></i>
             </div>
             <div class="col-6 column2 justify-content-center align-items-center p-4 px-2 px-md-5 hasText pb-5">
-                <div class="d-flex bg-primary d-inline-block mb-3 justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%;">
+                <span class="d-flex d-inline-block mb-3 justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>3</h4>
-                </div>
+                </span>
                 <h4 class="text-primary mb-3">Discovery & Planning</h4>
                 <p class="medium text-muted">We begin by deeply understanding your vision, constraints, and objectives. Our
                     team conducts comprehensive site analysis and feasibility studies to establish a
@@ -157,7 +157,7 @@
         </div>
         <div class="row" id="row-4">
             <div class="col-6 d-flex row justify-content-end align-items-center p-4 px-2 px-md-2 hasText text-end column1">
-                <span class="bg-primary d-inline-block mb-3 d-flex justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%;">
+                <span class="d-inline-block mb-3 d-flex justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>4</h4>
                 </span>
                 <h4 class="text-primary mb-3 p-0">Construction & Oversight</h4>
@@ -176,9 +176,9 @@
                 <i class="fa-solid fa-trophy" style="font-size: 4rem; color: #dae9ff"></i>
             </div>
             <div class="col-6 column2 justify-content-center align-items-center p-4 px-2 px-md-5 hasText pb-3">
-                <div class="d-flex bg-primary d-inline-block mb-3 justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%;">
+                <span class="d-flex d-inline-block mb-3 justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>5</h4>
-                </div>
+                </span>
                 <h4 class="text-primary mb-3">Closeout & Beyond</h4>
                 <p class="medium text-muted">We ensure a polished transition from construction to occupancy through rigorous
                     final inspections and systems testing. Comprehensive training and documentation
