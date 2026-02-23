@@ -1,6 +1,6 @@
 @extends('partials.adminlay')
 
-@section('title', 'Project List - DE-FORT Tech and Health')
+@section('title', 'Admin Panel | Project List')
 
 <style>
     .td{

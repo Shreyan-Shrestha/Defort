@@ -22,17 +22,33 @@
                 height: 12rem !important;
                 width: 12rem !important;
                 position: absolute;
-                right:0%;
-                bottom:65%;
+                right: 0%;
+                bottom: 65%;
+            }
+
+            * {
+                font-size: medium !important;
+            }
+
+            h1,
+            h1 span,
+            h1 p,
+            h1 p span {
+                font-size: 1.75rem !important;
+            }
+
+            p span {
+                font-size: medium !important;
             }
         }
 
-    @media(max-width:1300px){
-        .outer-diamond{
-            height: 18rem;
-            width: 18rem;
+
+        @media(max-width:1300px) {
+            .outer-diamond {
+                height: 18rem;
+                width: 18rem;
+            }
         }
-    }
 
         html,
         body {
@@ -77,27 +93,43 @@
             <div class="collapse navbar-collapse" id="hamburg" style="z-index: 1; width:100vw;">
                 <ul class="navbar-nav ms-auto mb-lg-0 align-items-center text-white justify-content-evenly">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/">
+                            <p>Home</p>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
+                        <a class="nav-link" href="/about">
+                            <p>About</p>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link" href="/services">
+                            <p>Services</p>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="/projects">
+                            <p>Projects</p>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blogs</a>
+                        <a class="nav-link" href="{{ route('blog.index') }}">
+                            <p>Blogs</p>
+                        </a>
                     </li>
                     <li class="nav-item pe-0">
                         <a class="nav-link pe-0" href="/contact"><button class="btn btn-light text-primary px-3">Contact Us</button></a>
                     </li>
                 </ul>
-        </div>
             </div>
+        </div>
     </nav>
+    <section class="container-fullwidth position-relative">
+        <div style="position: absolute;  z-index: -2; position: absolute; transform: rotate(-45deg); z-index: -5; right:-2rem; top:-14.7rem;">
+            <div class="rounded-2" style="background-color: #bbd4ff; height: 18rem; width:13rem; border-bottom: 0.5rem solid #fff;"></div>
+            <div class="rounded-2" style="height: 30rem; width:13rem; border: 0.5rem solid #bbd4ff"></div>
+        </div>
+    </section>
 
     @if (session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-message">
@@ -110,7 +142,7 @@
         @yield('content')
     </div>
 
-    <footer class="mt-3 pb-4 pt-5 px-3 text-white reveal" style="background-color: #05285b;">
+    <footer id="footer" class="mt-3 mb-0 pb-4 pt-5 px-3 text-white reveal" style="background-color: #05285b;">
         <div class="container">
             <div class="row g-4 g-lg-5 justify-content-between">
                 <div class="col-12 col-lg-4">
@@ -130,12 +162,12 @@
                         <div class="col-6 col-lg-5">
                             <h5 class="mb-3">Quick Links</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="#/" class="text-white text-decoration-none">Home</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Services</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Projects</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blogs</a></li>
-                                <li class="mb-2"><a href="/contact" class="text-white text-decoration-none">Contact Us</a></li>
+                                <li class="mb-2"><a href="/" class="text-white text-decoration-none">Home</a></li>
+                                <li class="mb-2 "><a href="/about" class="text-white text-decoration-none">About Us</a></li>
+                                <li class="mb-2 "><a href="/services" class="text-white text-decoration-none">Services</a></li>
+                                <li class="mb-2 "><a href="/projects" class="text-white text-decoration-none">Projects</a></li>
+                                <li class="mb-2 "><a href="/blogs" class="text-white text-decoration-none">Blogs</a></li>
+                                <li class="mb-2 "><a href="/contact" class="text-white text-decoration-none">Contact Us</a></li>
                             </ul>
                         </div>
 
@@ -148,15 +180,14 @@
                                 <li class="mb-2"><a href="#" class="text-white text-decoration-none">MEP Engineering</a></li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
 
                 <div class="col-12 col-lg-3">
-                    <h5 class="mb-3">Contact</h5>
+                    <h5 class="mb-3">Contact Us:</h5>
                     <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+9771-5444086</p>
                     <p class="mb-2"><i class="bi bi-envelope me-2"></i>info@defort.com</p>
-                    <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Jawalakhel, Lalitpur Metropolitan <span class="ms-lg-4">City, Nepal</span></p>
+                    <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Jawalakhel, Lalitpur Metropolitan City, Nepal</p>
                 </div>
 
             </div>

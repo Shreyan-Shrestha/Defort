@@ -74,6 +74,9 @@
                             <a class="nav-link" href="/pneaiaslls838393/faqs"><h4><i class="bi bi-info-circle me-2"></i>FAQs</h4></a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/pneaiaslls838393/services"><h4><i class="bi bi-gear me-2"></i>Services</h4></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/pneaiaslls838393/projects"><h4><i class="bi bi-kanban me-2"></i>Projects</h4></a>
                         </li>
                         <li class="nav-item">

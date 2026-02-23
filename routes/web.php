@@ -17,6 +17,9 @@ Route::post("/addcontact",[DefortController::class,'addcontact']);
 //About
 Route::get("/about",[DefortController::class,'about']);
 
+//Services
+Route::get("/services",[DefortController::class,'services']);
+
 
 //Admin
 Route::prefix('pneaiaslls838393')->group(function () {
@@ -47,6 +50,14 @@ Route::prefix('pneaiaslls838393')->group(function () {
     Route::get('/faq/edit/{id}', [AdminController::class, 'editfaq'])->name('faq.edit');
     Route::put('/faq/edit/{id}', [AdminController::class, 'editfaqsubmit'])->name('faq.update');
     Route::delete('/faq/delete/{id}', [AdminController::class, 'delfaq'])->name('faq.destroy');
+
+    //Services
+    Route::get('/services', [AdminController::class, 'services'])->name('admin.services');
+    Route::get('/service/add', [AdminController::class, 'addserviceform'])->name('service.add');
+    Route::post('/service/store', [AdminController::class, 'addservice'])->name('service.store');
+    Route::get('/service/edit/{id}', [AdminController::class, 'editservice'])->name('service.edit');
+    Route::put('/service/edit/{id}', [AdminController::class, 'editservicesubmit'])->name('service.update');
+    Route::delete('/service/delete/{id}', [AdminController::class, 'delservice'])->name('service.destroy');
 });
 
 // Blog Routes

@@ -5,10 +5,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-    @media(max-width){
-        
-    }
-
     .outer-diamond {
         width: 22.25rem;
         /* Slightly larger than inner */
@@ -87,9 +83,8 @@
                     </div>
 
                     <h1 class="mb-4">
-                        <P>
-                            Building with <span class="text-primary">Integrity</span>,</p>
-                        <p>Engineering with <span class="text-primary">Vision</span></p>
+                        Building with <span class="text-primary">Integrity</span>,
+                        <p>Engineering with <span class="text-primary">Vision</span>
                     </h1>
 
                     <p class="lead mb-4">

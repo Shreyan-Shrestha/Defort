@@ -98,7 +98,7 @@
     <div class="col-lg-6 order-lg-2 order-2 reveal">
       <div class="d-flex flex-wrap justify-content-between align-content-between h-100 gap-4">
         <div class="col-5">
-          <div class="card h-100 text-center border-0 bg-primary-subtle text-primary">
+          <div class="card h-100 text-center border-0 text-primary" style="background-color: #dae9ff;">
             <div class="card-body d-flex flex-column justify-content-center p-4">
               <i class="bi bi-geo-alt-fill fs-1 contact-icon mb-3"></i>
               <h5 class="card-title text-black">Visit Us</h5>
@@ -108,7 +108,7 @@
         </div>
 
         <div class="col-5">
-          <div class="card h-100 text-center border-0 bg-primary-subtle text-primary contact-card">
+          <div class="card h-100 text-center border-0 text-primary contact-card" style="background-color: #dae9ff;">
             <a href="tel:+977-01-5444086" class="text-decoration-none text-primary stretched-link d-block h-100">
               <div class="card-body d-flex flex-column justify-content-center p-4">
                 <i class="bi bi-telephone-fill fs-1 contact-icon mb-3"></i>
@@ -121,7 +121,7 @@
         </div>
 
         <div class="col-5">
-          <div class="card h-100 text-center border-0 bg-primary-subtle text-primary" style="cursor: pointer;">
+          <div class="card h-100 text-center border-0 text-primary" style="cursor: pointer; background-color: #dae9ff;">
             <a href="mailto:info@de-fortnp.com?subject=Inquiry%20from%20Website" class=" text-decoration-none text-primary stretched-link d-block h-100">
               <div class="card-body d-flex flex-column justify-content-center p-4">
                 <i class="bi bi-envelope-fill fs-1 contact-icon mb-3"></i>
@@ -133,7 +133,7 @@
         </div>
 
         <div class="col-5">
-          <div class="card h-100 text-center border-0 bg-primary-subtle text-primary contact-card">
+          <div class="card h-100 text-center border-0 text-primary contact-card" style="background-color: #dae9ff;">
             <div class="card-body d-flex flex-column justify-content-center p-4">
               <i class="bi bi-clock-fill fs-1 contact-icon mb-3"></i>
               <h5 class="card-title text-black">Opening Time</h5>

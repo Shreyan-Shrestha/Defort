@@ -11,6 +11,7 @@ use App\Models\About;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Post;
 use App\Http\Controllers\PostController;
+use App\Models\Services;
 
 class DefortController extends Controller
 {
@@ -48,5 +49,11 @@ class DefortController extends Controller
     public function about(){
         $faqs = About::latest()->get();
         return view('about', ['faqs' => $faqs]);
+    }
+
+    //Services
+    public function services(){
+        $services = Services::latest()->get();
+        return view('services', ['services' => $services]);
     }
 }

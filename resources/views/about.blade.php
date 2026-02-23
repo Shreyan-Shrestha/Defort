@@ -1,6 +1,9 @@
 @extends('partials.layout')
 @section('title', 'About Us - DE-FORT')
 <style>
+    #footer{
+        margin-top: 0% !important;
+    }
     #forborder {
         background-image: linear-gradient(#87b0db, #87b0db),
             linear-gradient(#87b0db, #87b0db),
@@ -40,20 +43,38 @@
         </div>
     </section>
 
-    <section class="d-flex flex-sm-row mt-5 py-5 justify-content-between position-relative">
-        <div id="forborder" class="col-5 p-3 d-flex justify-content-center reveal">
-            <div class="image-wrapper col-5 h-100 w-100 col-sm-6">
-                <img class="img-fluid h-100 w-100 rounded" src="{{asset('images/carousel/carousel2.jpg')}}" style="aspect-ratio: 5/3;">
+    <section class="container-fullwidth mt-5 py-5 position-relative">
+        <div class="row align-items-center g-5">
+            <!-- Image column -->
+            <div class="col-12 col-lg-6 reveal">
+                <div class="image-wrapper">
+                    <img
+                        class="img-fluid rounded"
+                        src="{{ asset('images/carousel/carousel2.jpg') }}"
+                        alt="Sustainable engineering project"
+                        style="aspect-ratio: 5/3; object-fit: cover;">
+                </div>
             </div>
-        </div>
-        <div class="section-title col-lg-6 align-content-stretch ps-5 pt-3 reveal">
-            <h1>To Engineer and Build <span style="color: #007bff">Sustainable</span>,<span style="color: #007bff;"> High-Performance</span> Solutions</h1>
-            <p class="lead mt-3">We are DE-FORT, a full service [Civil/Structural/General] engineering and construction firm dedicated
-                to shaping resilient infastructure and inspiring spaces.</p>
-            <p class="lead mt-4">For over 20 years, we've transformed complex challenges into enduring solutions, guided by an unwavering
-                commitment to precision, partnership, and progress. We don't just build projects - we build trust foster innovation,
-                and deliver legacies that stand the test of time.
-            </p>
+
+            <!-- Text column -->
+            <div class="col-12 col-lg-6 reveal ps-lg-5">
+                <h1>
+                    To Engineer and Build
+                    <span style="color: #007bff">Sustainable</span>,
+                    <span style="color: #007bff">High-Performance</span> Solutions
+                </h1>
+
+                <p class="lead mt-4">
+                    We are DE-FORT, a full service [Civil/Structural/General] engineering and construction firm
+                    dedicated to shaping resilient infrastructure and inspiring spaces.
+                </p>
+
+                <p class="lead mt-4">
+                    For over 20 years, we've transformed complex challenges into enduring solutions, guided by an
+                    unwavering commitment to precision, partnership, and progress. We don't just build projects —
+                    we build trust, foster innovation, and deliver legacies that stand the test of time.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -155,7 +176,7 @@
             <h2 class="mt-3">Frequently Asked <span style="color: #007bff;">Questions</span></h2>
         </div>
         <div class="justify-content-center align-items-center mt-4 d-flex">
-            <div class="accordion col-8" id="faqs">
+            <div class="accordion col-12 p-0 p-md-5" id="faqs">
                 @foreach ($faqs as $faq)
                 <div class="accordion-item mt-3 reveal">
                     <h2 class="accordion-header" id="heading{{ $faq->id }}">
@@ -175,4 +196,14 @@
 
     </section>
 </div>
+<section class="container-fullwidth bg-primary-subtle p-md-5 p-3 mb-0">
+    <div class="dflex row">
+        <div class="col-8 col-md-8 reveal">
+            <h1 class="text-primary">Need Specialized Expertise?</h1>
+            <h5 class="text-muted">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</h5>
+        </div>
+        <div class="col-4 col-md-4 d-flex justify-content-end align-items-center reveal">
+            <a href="/contact"><button class="btn btn-outline-primary px-md-5 px-2 py-2">Contact Us</button></a>
+        </div>
+</section>
 @endsection
