@@ -124,7 +124,7 @@
             </div>
         </div>
     </nav>
-    <section class="container-fullwidth position-relative">
+    <section class="container-fullwidth position-relative" id="rotateddivs">
         <div style="position: absolute;  z-index: -2; position: absolute; transform: rotate(-45deg); z-index: -5; right:-2rem; top:-14.7rem;">
             <div class="rounded-2" style="background-color: #bbd4ff; height: 18rem; width:13rem; border-bottom: 0.5rem solid #fff;"></div>
             <div class="rounded-2" style="height: 30rem; width:13rem; border: 0.5rem solid #bbd4ff"></div>
@@ -142,7 +142,18 @@
         @yield('content')
     </div>
 
-    <footer id="footer" class="mt-3 mb-0 pb-4 pt-5 px-3 text-white reveal" style="background-color: #05285b;">
+    <section class="container-fullwidth" id="footerCTA">
+            <div class="p-5 text-start reveal row" style="background-color: #bbd4ff;">
+                <div class="col-12 col-lg-6">
+                <h2 class="mb-3 text-primary">Need Specialized Expertise?</h2>
+                <p class="mb-4 lead">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</p>
+                </div>
+                <div class="col-12 col-lg-6 d-flex align-items-center justify-content-lg-end">
+                <button onclick="window.location.href='/contact'" class="btn btn-outline-primary px-5 py-2">Contact Us<i class="bi bi-arrow-right-short text-primary"></i></button>
+                </div>
+            </div>
+    </section>
+    <footer id="footer" class="container-fullwidth mt-3 mb-0 pb-4 pt-5 px-3 text-white reveal" style="background-color: #05285b;">
         <div class="container">
             <div class="row g-4 g-lg-5 justify-content-between">
                 <div class="col-12 col-lg-4">
@@ -150,11 +161,14 @@
                         src="{{ asset('images/logo.png') }}"
                         style="height: 4.8rem; width: auto;"
                         alt="DE-FORT Logo">
-                    <p class="mb-0" style="font-family: monospace; opacity: 0.9;">
+                    <p class="mb-1" style="font-family: monospace; opacity: 0.9;">
                         We are DE-FORT, a full service [Civil/Structural/General] engineering
                         and construction firm dedicated to shaping resilient infrastructure
                         and inspiring spaces.
                     </p>
+                    <i class="bi bi-facebook me-3 mt-4" style="font-size: 1.5rem;"></i>
+                    <i class="bi bi-instagram me-3 mt-4" style="font-size: 1.5rem;"></i>
+                    <i class="bi bi-linkedin me-3 mt-4" style="font-size: 1.5rem;"></i>
                 </div>
 
                 <div class="col-12 col-md-5">
@@ -201,7 +215,6 @@
         </div>
     </footer>
 
-    <!-- <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const successMessage = document.getElementById('success-message');
