@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+@vite(['resources/css/app.scss', 'resources/js/app.js'])
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <title>@yield('title', 'DE-FORT Tech and Health')</title>
@@ -203,7 +201,7 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const successMessage = document.getElementById('success-message');
