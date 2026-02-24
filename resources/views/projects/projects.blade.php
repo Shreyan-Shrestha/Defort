@@ -62,7 +62,8 @@
                         @if($project->image)
                         <img src="{{ asset('storage/' . $project->image) }}"
                             class="w-100 h-100 object-fit-cover rounded"
-                            alt="{{ $project->projectname }}">
+                            alt="{{ $project->projectname }}"
+                            style="height: 15.625rem !important;">
                         @else
                         <img src="https://placehold.co/600x400?text={{ urlencode($project->projectname) }}"
                             class="w-100 h-100 object-fit-cover rounded"

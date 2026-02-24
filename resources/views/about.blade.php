@@ -196,14 +196,4 @@
 
     </section>
 </div>
-<section class="container-fullwidth bg-primary-subtle p-md-5 p-3 mb-0">
-    <div class="dflex row">
-        <div class="col-8 col-md-8 reveal">
-            <h1 class="text-primary">Need Specialized Expertise?</h1>
-            <h5 class="text-muted">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</h5>
-        </div>
-        <div class="col-4 col-md-4 d-flex justify-content-end align-items-center reveal">
-            <a href="/contact"><button class="btn btn-outline-primary px-md-5 px-2 py-2">Contact Us</button></a>
-        </div>
-</section>
 @endsection
