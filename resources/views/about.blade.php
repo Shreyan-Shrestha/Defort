@@ -1,9 +1,10 @@
 @extends('partials.layout')
 @section('title', 'About Us - DE-FORT')
 <style>
-    #footer{
+    #footer {
         margin-top: 0% !important;
     }
+
     #forborder {
         background-image: linear-gradient(#87b0db, #87b0db),
             linear-gradient(#87b0db, #87b0db),
@@ -21,8 +22,8 @@
 </style>
 
 @section('content')
-<div class="container-fluid mt-4 p-5">
-    <section class="w-100 column ">
+<div class="container-fullwidth mt-4 pt-5 pb-0">
+    <section class="w-100 column px-md-5 px-2 mt-5" id="pageintro">
         <div class="row d-flex justify-content-start reveal">
             <div class="col-8 col-sm-6">
                 <div class="section-title d-flex align-items-center">
@@ -43,7 +44,7 @@
         </div>
     </section>
 
-    <section class="container-fullwidth mt-5 py-5 position-relative">
+    <section class="container-fullwidth mt-5 py-5 px-md-5 px-2 position-relative">
         <div class="row align-items-center g-5">
             <!-- Image column -->
             <div class="col-12 col-lg-6 reveal">
@@ -194,6 +195,18 @@
             </div>
         </div>
 
+    </section>
+
+    <section class="container-fullwidth" id="footerCTA">
+        <div class="p-5 text-start reveal row" style="background-color: #bbd4ff;">
+            <div class="col-12 col-lg-6">
+                <h2 class="mb-3 text-primary">Need Specialized Expertise?</h2>
+                <p class="mb-4">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</p>
+            </div>
+            <div class="col-12 col-lg-6 d-flex align-items-center justify-content-lg-end">
+                <button onclick="window.location.href='/contact'" class="btn btn-outline-primary px-5 py-2">Contact Us<i class="bi bi-arrow-right-short text-primary"></i></button>
+            </div>
+        </div>
     </section>
 </div>
 @endsection

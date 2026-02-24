@@ -1,84 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-@vite(['resources/css/app.scss', 'resources/js/app.js'])
+@vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/contact.css', 'resources/css/index.css'])
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="stylesheet" href="{{asset('./css/index.css')}}">
     <title>@yield('title', 'DE-FORT Tech and Health')</title>
-
-    <style>
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: var(--bs-primary);
-            }
-
-            .outer-diamond {
-                float: right;
-                height: 12rem !important;
-                width: 12rem !important;
-                position: absolute;
-                right: 0%;
-                bottom: 65%;
-            }
-            *{
-                font-size: small !important;
-            }
-
-            h1,
-            h1 span,
-            h1 p,
-            h1 p span {
-                font-size: 1.75rem !important;
-            }
-
-            p span {
-                font-size: medium !important;
-            }
-            p .keepsmall{
-                font-size: small !important;
-            }
-        }
-
-
-        @media(max-width:1300px) {
-            .outer-diamond {
-                height: 18rem;
-                width: 18rem;
-            }
-        }
-
-        html,
-        body {
-            scrollbar-width: none;
-        }
-
-        ::-webkit-scrollbar {
-            width: 0;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .nav-link {
-            color: #fff;
-            margin-left: 0.625rem;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(35px);
-            transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 </head>
 
 <body class="d-flex flex-column">
@@ -138,22 +68,12 @@
     </div>
     @endif
 
-    <div class="container-full overflow-y-auto flex-grow-1 p-0 m-0">
+    <div class="container-full flex-grow-1 p-0 m-0">
         @yield('content')
     </div>
 
-    <section class="container-fullwidth" id="footerCTA">
-            <div class="p-5 text-start reveal row" style="background-color: #bbd4ff;">
-                <div class="col-12 col-lg-6">
-                <h2 class="mb-3 text-primary">Need Specialized Expertise?</h2>
-                <p class="mb-4 lead">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</p>
-                </div>
-                <div class="col-12 col-lg-6 d-flex align-items-center justify-content-lg-end">
-                <button onclick="window.location.href='/contact'" class="btn btn-outline-primary px-5 py-2">Contact Us<i class="bi bi-arrow-right-short text-primary"></i></button>
-                </div>
-            </div>
-    </section>
-    <footer id="footer" class="container-fullwidth mt-3 mb-0 pb-4 pt-5 px-3 text-white reveal" style="background-color: #05285b;">
+
+    <footer id="footer" class="container-fullwidth mb-0 pb-4 pt-5 px-3 text-white" style="background-color: #05285b;">
         <div class="container">
             <div class="row g-4 g-lg-5 justify-content-between">
                 <div class="col-12 col-lg-4">

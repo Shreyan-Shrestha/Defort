@@ -108,4 +108,16 @@
         {{ $projects->links() }}
     </div>
 </section>
+
+<section class="container-fullwidth" id="footerCTA">
+    <div class="p-5 text-start reveal row" style="background-color: #bbd4ff;">
+        <div class="col-12 col-lg-6">
+            <h2 class="mb-3 text-primary">Need Specialized Expertise?</h2>
+            <p class="mb-4">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</p>
+        </div>
+        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-lg-end">
+            <button onclick="window.location.href='/contact'" class="btn btn-outline-primary px-5 py-2">Contact Us<i class="bi bi-arrow-right-short text-primary"></i></button>
+        </div>
+    </div>
+</section>
 @endsection

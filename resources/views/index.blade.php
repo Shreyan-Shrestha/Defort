@@ -1,45 +1,7 @@
 @extends('partials.layout')
 
-@section('title')
-<link rel="stylesheet" href="{{asset('css/index.css')}}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+@section('title', 'DE-FORT | Home')
 
-<style>
-    .outer-diamond {
-        width: 22.25rem;
-        /* Slightly larger than inner */
-        height: 22.25rem;
-        position: relative;
-        transform: rotate(45deg);
-        border-top: 8px solid #6d95d1;
-        border-right: 8px solid #6d95d1;
-    }
-
-
-    .diamond-inner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 141.42%;
-        /* Approximately sqrt(2) to fill the diamond */
-        height: 141.42%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        overflow: hidden;
-    }
-
-    .diamond-inner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .diamond-container {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-    }
-</style>
 @section('content')
 <section class="container row justify-content-between w-100 m-0 mb-5 p-0 reveal">
     <div class="h-100 col-lg-9 mt-3 d-flex flex-shrink-1 reveal">

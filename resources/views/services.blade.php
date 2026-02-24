@@ -1,6 +1,7 @@
 @extends('partials.layout')
 @section('title','DE-FORT | Our Services')
 <style>
+
     .column2 {
         border-left: 0.313rem solid #dae9ff;
     }
@@ -18,10 +19,6 @@
         .hasText span {
             background-color: #007bff !important;
         }
-    }
-
-    #footer {
-        margin-top: 0% !important;
     }
 
     @media (max-width: 991.98px) {
@@ -78,9 +75,9 @@
                         <div class="mb-4">
                             <span class="p-3 px-4 bg-primary-subtle rounded d-inline-block">
                                 @if($service->icon)
-                                    <i class="{{ $service->icon }} text-primary fs-1"></i>
+                                <i class="{{ $service->icon }} text-primary fs-1"></i>
                                 @else
-                                    <i class="bi bi-briefcase-fill text-primary fs-1"></i>
+                                <i class="bi bi-briefcase-fill text-primary fs-1"></i>
                                 @endif
                             </span>
                         </div>
@@ -185,6 +182,18 @@
                     are provided for all building systems, followed by structured warranty
                     administration.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-fullwidth" id="footerCTA">
+    <div class="p-5 text-start reveal row" style="background-color: #bbd4ff;">
+        <div class="col-12 col-lg-6">
+            <h2 class="mb-3 text-primary">Need Specialized Expertise?</h2>
+            <p class="mb-4">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</p>
+        </div>
+        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-lg-end">
+            <button onclick="window.location.href='/contact'" class="btn btn-outline-primary px-5 py-2">Contact Us<i class="bi bi-arrow-right-short text-primary"></i></button>
         </div>
     </div>
 </section>
