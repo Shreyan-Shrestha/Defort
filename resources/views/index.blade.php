@@ -3,7 +3,7 @@
 @section('title', 'DE-FORT | Home')
 
 @section('content')
-<section class="container row justify-content-between w-100 m-0 mb-5 p-0 reveal">
+<section class="container row justify-content-between w-100 m-0 mb-md-5 p-0 reveal">
     <div class="h-100 col-lg-9 mt-3 d-flex flex-shrink-1 reveal">
         <div class="h-100 pt-5 px-5 mt-5">
             <div class="section-subtitle mb-5" style="font-stretch: expanded;">
@@ -19,7 +19,7 @@
 </section>
 
 <section class="container-fullwidth py-lg-5 mt-lg-5 px-md-5 px-3 reveal">
-    <div class="w-100 mt-5">
+    <div class="w-100 mt-md-5 mt-4">
         <div class="row align-items-center justify-content-center">
             <!-- Diamond Image Column -->
             <div class="col-lg-4">
@@ -34,7 +34,6 @@
                 </div>
             </div>
 
-            <!-- Text Content Column -->
             <div class="col-12 col-lg-6">
                 <div class="ps-lg-4 p-3">
 

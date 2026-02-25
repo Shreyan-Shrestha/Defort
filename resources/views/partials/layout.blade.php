@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="{{asset('./css/index.css')}}">
     <title>@yield('title', 'DE-FORT Tech and Health')</title>
 </head>
 
@@ -54,10 +53,10 @@
             </div>
         </div>
     </nav>
-    <section class="container-fullwidth position-relative" id="rotateddivs">
-        <div style="position: absolute;  z-index: -2; position: absolute; transform: rotate(-45deg); z-index: -5; right:-2rem; top:-14.7rem;">
-            <div class="rounded-2" style="background-color: #bbd4ff; height: 18rem; width:13rem; border-bottom: 0.5rem solid #fff;"></div>
-            <div class="rounded-2" style="height: 30rem; width:13rem; border: 0.5rem solid #bbd4ff"></div>
+    <section class="container-fullwidth position-relative p-0 m-0" id="rotatedDivs">
+        <div id="rotatewrapper">
+            <div class="rounded-2" id="rotatedTop"></div>
+            <div class="rounded-2" id="rotatedBottom"></div>
         </div>
     </section>
 
@@ -79,7 +78,7 @@
                 <div class="col-12 col-lg-4">
                     <img class="logo mb-3"
                         src="{{ asset('images/logo.png') }}"
-                        style="height: 5.8rem; width: auto;"
+                        style="height: 5rem; width: auto;"
                         alt="DE-FORT Logo">
                     <p class="mb-1" style="font-family: monospace; opacity: 0.9;">
                         We are DE-FORT, a full service [Civil/Structural/General] engineering

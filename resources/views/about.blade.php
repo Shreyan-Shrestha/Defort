@@ -1,10 +1,6 @@
 @extends('partials.layout')
 @section('title', 'About Us - DE-FORT')
 <style>
-    #footer {
-        margin-top: 0% !important;
-    }
-
     #forborder {
         background-image: linear-gradient(#87b0db, #87b0db),
             linear-gradient(#87b0db, #87b0db),
@@ -22,8 +18,8 @@
 </style>
 
 @section('content')
-<div class="container-fullwidth mt-4 pt-5 pb-0">
-    <section class="w-100 column px-md-5 px-2 mt-5" id="pageintro">
+<div class="container-fullwidth pt-md-5 pb-0">
+    <section class="w-100 column px-md-5 px-2 mt-5 pt-sm-3" id="pageintro">
         <div class="row d-flex justify-content-start reveal">
             <div class="col-8 col-sm-6">
                 <div class="section-title d-flex align-items-center">

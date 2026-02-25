@@ -1,13 +1,5 @@
 @extends('partials.layout')
 @section('title', 'Blogs - DE-FORT Tech and Health')
-<style>
-    @media (max-width: 992px) {
-        img {
-            height: 12.5rem !important;
-            object-fit: cover;
-        }
-    }
-</style>
 @section('content')
 <div class="container-fullwidth my-5">
     <section class="container-fullwidth column px-md-5 px-3 mt-5" id="pageintro">
@@ -41,7 +33,7 @@
                     @if($featured->featured_image)
                     <img src="{{ asset('storage/' . $featured->featured_image) }}" class="img-fluid rounded-start w-100" style="height: 25rem; object-fit: cover;" alt="{{ $featured->title }}">
                     @else
-                    <img src="https://placehold.co/600x400?text={{ $featured->title }}" class="img-fluid rounded-start w-100" alt="{{ $featured->title }}">
+                    <img src="https://placehold.co/600x400?text={{ $featured->title }}" class="img-fluid rounded-start w-100" alt="{{ $featured->title }} style="height: 25rem; object-fit: cover;"">
                     @endif
                 </div>
                 <div class="col-lg-6">
@@ -82,7 +74,7 @@
                             @if($post->featured_image)
                             <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 15.625rem; object-fit: cover;">
                             @else
-                            <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}">
+                            <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}" style="height: 15.625rem; object-fit: cover;">
                             @endif
 
                             <div class="position-absolute top-0 start-0 m-3">
