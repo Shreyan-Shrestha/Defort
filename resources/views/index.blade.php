@@ -18,8 +18,8 @@
     </div>
 </section>
 
-<section class="pb-5 py-md-5 mt-5 reveal">
-    <div class="w-100 p-3 mt-5">
+<section class="container-fullwidth py-lg-5 mt-lg-5 px-md-5 px-3 reveal">
+    <div class="w-100 mt-5">
         <div class="row align-items-center justify-content-center">
             <!-- Diamond Image Column -->
             <div class="col-lg-4">
@@ -68,8 +68,8 @@
     </div>
 </section>
 
-<section class="p-5 mt-5 reveal">
-    <div class="container">
+<section class="container-fullwidth py-lg-5 px-md-5 px-3 mt-5 reveal">
+    <div class="w-100">
         <div class="row align-items-center">
             <div class="col-12 col-md-6 mb-5 mb-md-0 reveal">
                 <div class="pe-md-4">
@@ -241,9 +241,9 @@
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden d-flex h-100 flex-column p-3">
                     <div class="position-relative">
                         @if($post->featured_image)
-                        <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 250px; object-fit: cover;">
+                        <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 15.625rem; object-fit: cover;">
                         @else
-                        <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}">
+                        <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}" style="height: 15.625rem; object-fit: cover;">
                         @endif
 
                         <div class="position-absolute top-0 start-0 m-3">
