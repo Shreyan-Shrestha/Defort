@@ -24,27 +24,27 @@
                 <ul class="navbar-nav ms-auto mb-lg-0 align-items-center text-white justify-content-evenly">
                     <li class="nav-item">
                         <a class="nav-link" href="/">
-                            <p>Home</p>
+                            Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about">
-                            <p>About</p>
+                            About
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/services">
-                            <p>Services</p>
+                            Services
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/projects">
-                            <p>Projects</p>
+                            Projects
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('blog.index') }}">
-                            <p>Blogs</p>
+                            Blogs
                         </a>
                     </li>
                     <li class="nav-item pe-0">
@@ -79,7 +79,7 @@
                 <div class="col-12 col-lg-4">
                     <img class="logo mb-3"
                         src="{{ asset('images/logo.png') }}"
-                        style="height: 4.8rem; width: auto;"
+                        style="height: 5.8rem; width: auto;"
                         alt="DE-FORT Logo">
                     <p class="mb-1" style="font-family: monospace; opacity: 0.9;">
                         We are DE-FORT, a full service [Civil/Structural/General] engineering

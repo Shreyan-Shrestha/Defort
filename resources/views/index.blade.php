@@ -18,7 +18,7 @@
     </div>
 </section>
 
-<section class="py-5 mt-5 reveal">
+<section class="pb-5 py-md-5 mt-5 reveal">
     <div class="w-100 p-3 mt-5">
         <div class="row align-items-center justify-content-center">
             <!-- Diamond Image Column -->
@@ -229,8 +229,8 @@
                     <h1>Latest <span style="color: #007bff;">updates</span>, built insights, and <span style="color: #007bff;">expert</span> news </h2>
                 </div>
                 <div class="container my-3 text-center col-lg-3 d-flex justify-content-lg-end justify-content-center align-items-center justify-content-sm-start">
-                    <a href="#" class="btn btn-outline-primary px-3 mx-3">
-                        View All Blogs ->
+                    <a href="#" class="btn btn-outline-primary px-5 py-2 mx-3 border-3">
+                        View All Blogs <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>

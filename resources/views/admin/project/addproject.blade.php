@@ -65,10 +65,12 @@
                             <label for="category" class="form-label"><b>Category</b></label>
                             <select class="form-select" id="category" name="category" required>
                                 <option value="" disabled selected>Select Category</option>
+                                <option value="Civil & Site Development">Civil & Site Development</option>
+                                <option value="Structural Engineering & Design">Structural Engineering & Design</option>
+                                <option value="Construction Management">Construction Management</option>
+                                <option value="MEP Engineering">MEP Engineering</option>
                                 <option value="Architecture">Architecture</option>
-                                <option value="Engineering">Engineering</option>
                                 <option value="Urban Design">Urban Design</option>
-                                <option value="Marketing">Construction</option>
                                 <option value="Valuation">Valuation</option>
                                 <option value="Project Management">Project Management</option>
                                 <option value="Health">Health</option>

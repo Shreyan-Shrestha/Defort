@@ -25,7 +25,7 @@ class DefortController extends Controller
     }
 
     public function projects(){
-        $projects = Projects::latest()->paginate(2);
+        $projects = Projects::latest()->paginate(6);
         return view('projects.projects', compact('projects'));
     }
 
