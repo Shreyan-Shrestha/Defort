@@ -11,6 +11,7 @@ use App\Models\About;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Post;
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Services;
 
 class DefortController extends Controller
@@ -24,13 +25,13 @@ class DefortController extends Controller
     }
 
     public function projects(){
-        $projects = Projects::latest()->get();
-        return view('projects', ['projects' => $projects]);
+        $projects = Projects::latest()->paginate(6);
+        return view('projects.projects', compact('projects'));
     }
 
     public function viewproject($id){
         $project = Projects::where('id', $id)->first();
-        return view('viewproject', ['project' => $project]);
+        return view('projects.viewproject', compact('project'));
     }
 
     //Contact
@@ -42,8 +43,10 @@ class DefortController extends Controller
         $validated = $request->validated();
         Contact::create($validated);
         return redirect('/contact')->with('success','Message received successfully!');
-        $data = $request->all();
-        Mail::to('herbanjahn@gmail.com')->send(new ContactUs($data));
+        
+        // Attempt to send email notification to admin
+        // $data = $request->all();
+        // Mail::to('contact@defort.com')->send(new ContactUs($data));
     }
 
     public function about(){

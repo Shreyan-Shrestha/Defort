@@ -1,16 +1,47 @@
 @extends('partials.layout')
+@section('title', 'Blogs - DE-FORT Tech and Health')
+<style>
+    @media (max-width: 992px) {
+        img {
+            height: 12.5rem !important;
+            object-fit: cover;
+        }
+    }
+</style>
 @section('content')
-<div class="container my-5">
-    @if($posts->isNotEmpty())
+<div class="container-fullwidth my-5">
+    <section class="container-fullwidth column px-md-5 px-3 mt-5" id="pageintro">
+        <div class="row d-flex justify-content-start reveal">
+            <div class="col-8 col-sm-6">
+                <div class="section-title d-flex align-items-center">
+                    <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
+                    <h5><span class="fw-bold"> Our Blogs & Articles</span></h5>
+                </div>
+                <p>
+                <h1>Latest<span style="color: #007bff;"> updates</span>, built insights, and
+                    <span class="text-primary">expert</span> news
+                </h1>
+                </p>
+            </div>
+        </div>
+        <div class="section-subtitle col-lg-6 col-sm-10 mt-3 reveal">
+            <p class="lead">
+                Explore our diverse portfolio of successfully delivered engineering and construction projects
+            </p>
+        </div>
+    </section>
+
+    <section class="container-fullwidth mt-5 px-md-5 px-3">
+        @if($posts->isNotEmpty())
         {{-- Featured Post (Latest Post - Horizontal Layout) --}}
         @php($featured = $posts->first())
         <div class="card mb-5 border-0 shadow-sm rounded-4 overflow-hidden bg-light">
             <div class="row g-0 align-items-center">
                 <div class="col-lg-6">
                     @if($featured->featured_image)
-                        <img src="{{ asset('storage/' . $featured->featured_image) }}" class="img-fluid rounded-start w-100" style="height: 400px; object-fit: cover;" alt="{{ $featured->title }}">
+                    <img src="{{ asset('storage/' . $featured->featured_image) }}" class="img-fluid rounded-start w-100" style="height: 25rem; object-fit: cover;" alt="{{ $featured->title }}">
                     @else
-                        <img src="https://placehold.co/600x400?text={{ $featured->title }}" class="img-fluid rounded-start w-100" alt="{{ $featured->title }}">
+                    <img src="https://placehold.co/600x400?text={{ $featured->title }}" class="img-fluid rounded-start w-100" alt="{{ $featured->title }}">
                     @endif
                 </div>
                 <div class="col-lg-6">
@@ -44,54 +75,55 @@
         {{-- Grid of Remaining Posts (Image + Category Badge Only) --}}
         <div class="row g-4">
             @foreach($posts as $post)
-                <div class="col-md-4">
-                    <a href="{{ route('blog.show', $post) }}" class="text-decoration-none text-dark">
-                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column">
-                            <div class="position-relative">
-                                @if($post->featured_image)
-                                    <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 250px; object-fit: cover;">
-                                @else
-                                    <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}">
-                                @endif
+            <div class="col-md-4">
+                <a href="{{ route('blog.show', $post) }}" class="text-decoration-none text-dark">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            @if($post->featured_image)
+                            <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 15.625rem; object-fit: cover;">
+                            @else
+                            <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}">
+                            @endif
 
-                                <div class="position-absolute top-0 start-0 m-3">
-                                    <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">
-                                        {{ $post->category?->name ?? 'Uncategorized' }}
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="card-body d-flex flex-column">
-                                <div class="d-flex align-items-center mb-3 text-primary small">
-                                    <span class="me-2">⏱</span>
-                                    {{ $post->read_time ?? '5 min read' }}
-                                </div>
-
-                                <h5 class="card-title fw-bold mb-3">{{ $post->title }}</h5>
-
-                                <p class="card-text text-muted small flex-grow-1">{{ $post->excerpt }}</p>
-
-                                <div class="d-flex align-items-center mt-4 text-primary small">
-                                    <span class="me-2">📅</span>
-                                    {{ $post->published_at?->format('jS M, Y') ?? 'Draft' }}
-                                </div>
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">
+                                    {{ $post->category?->name ?? 'Uncategorized' }}
+                                </span>
                             </div>
                         </div>
-                    </a>
-                </div>
+
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex align-items-center mb-3 text-primary small">
+                                <span class="me-2">⏱</span>
+                                {{ $post->read_time ?? '5 min read' }}
+                            </div>
+
+                            <h5 class="card-title fw-bold mb-3">{{ $post->title }}</h5>
+
+                            <p class="card-text text-muted small flex-grow-1">{{ $post->excerpt }}</p>
+
+                            <div class="d-flex align-items-center mt-4 text-primary small">
+                                <span class="me-2">📅</span>
+                                {{ $post->published_at?->format('jS M, Y') ?? 'Draft' }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
             @endforeach
         </div>
-    @else
+        @else
         <div class="text-center py-5">
             <p class="text-muted fs-4">No blog posts available yet.</p>
         </div>
-    @endif
+        @endif
 
-    {{-- Pagination (Centered) --}}
-    @if($posts->hasPages())
+        {{-- Pagination (Centered) --}}
+        @if($posts->hasPages())
         <div class="d-flex justify-content-center mt-5">
             {{ $posts->links() }}
         </div>
-    @endif
+        @endif
 </div>
+</section>
 @endsection

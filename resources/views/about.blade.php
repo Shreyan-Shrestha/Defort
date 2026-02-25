@@ -1,9 +1,10 @@
 @extends('partials.layout')
 @section('title', 'About Us - DE-FORT')
 <style>
-    #footer{
+    #footer {
         margin-top: 0% !important;
     }
+
     #forborder {
         background-image: linear-gradient(#87b0db, #87b0db),
             linear-gradient(#87b0db, #87b0db),
@@ -21,8 +22,8 @@
 </style>
 
 @section('content')
-<div class="container-fluid mt-4 p-5">
-    <section class="w-100 column">
+<div class="container-fullwidth mt-4 pt-5 pb-0">
+    <section class="w-100 column px-md-5 px-2 mt-5" id="pageintro">
         <div class="row d-flex justify-content-start reveal">
             <div class="col-8 col-sm-6">
                 <div class="section-title d-flex align-items-center">
@@ -43,7 +44,7 @@
         </div>
     </section>
 
-    <section class="container-fullwidth mt-5 py-5 position-relative">
+    <section class="container-fullwidth mt-5 py-5 px-md-5 px-2 position-relative">
         <div class="row align-items-center g-5">
             <!-- Image column -->
             <div class="col-12 col-lg-6 reveal">
@@ -78,7 +79,7 @@
         </div>
     </section>
 
-    <section class="w-100 mt-5 px-5">
+    <section class="w-100 mt-5 px-md-5 px-2">
         <div class=" d-flex flex-column justify-content-center align-items-center reveal">
             <div class=" section-title d-flex flex-row align-items-center reveal">
                 <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
@@ -167,7 +168,7 @@
         </div>
     </section>
 
-    <section class="w-100 mt-4 pt-5 px-5">
+    <section class="w-100 mt-4 pt-md-5 px-2">
         <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
             <div class=" section-title d-flex flex-row align-items-center">
                 <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
@@ -195,15 +196,17 @@
         </div>
 
     </section>
+
+    <section class="container-fullwidth" id="footerCTA">
+        <div class="p-5 text-start reveal row" style="background-color: #dce9ff;">
+            <div class="col-12 col-lg-6">
+                <h2 class="mb-3 text-primary">Need Specialized Expertise?</h2>
+                <p class="mb-4">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</p>
+            </div>
+            <div class="col-12 col-lg-6 d-flex align-items-center justify-content-lg-end">
+                <button onclick="window.location.href='/contact'" class="btn btn-outline-primary px-5 py-2 border-3">Contact Us <i class="bi bi-arrow-right-short text-primary"></i></button>
+            </div>
+        </div>
+    </section>
 </div>
-<section class="container-fullwidth bg-primary-subtle p-md-5 p-3 mb-0">
-    <div class="dflex row">
-        <div class="col-8 col-md-8 reveal">
-            <h1 class="text-primary">Need Specialized Expertise?</h1>
-            <h5 class="text-muted">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</h5>
-        </div>
-        <div class="col-4 col-md-4 d-flex justify-content-end align-items-center reveal">
-            <a href="/contact"><button class="btn btn-outline-primary px-md-5 px-2 py-2">Contact Us</button></a>
-        </div>
-</section>
 @endsection

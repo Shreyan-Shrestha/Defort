@@ -1,84 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+@vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/contact.css', 'resources/css/index.css'])
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="stylesheet" href="{{asset('./css/index.css')}}">
     <title>@yield('title', 'DE-FORT Tech and Health')</title>
-
-    <style>
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: var(--bs-primary);
-            }
-
-            .outer-diamond {
-                float: right;
-                height: 12rem !important;
-                width: 12rem !important;
-                position: absolute;
-                right: 0%;
-                bottom: 65%;
-            }
-
-            * {
-                font-size: medium !important;
-            }
-
-            h1,
-            h1 span,
-            h1 p,
-            h1 p span {
-                font-size: 1.75rem !important;
-            }
-
-            p span {
-                font-size: medium !important;
-            }
-        }
-
-
-        @media(max-width:1300px) {
-            .outer-diamond {
-                height: 18rem;
-                width: 18rem;
-            }
-        }
-
-        html,
-        body {
-            scrollbar-width: none;
-        }
-
-        ::-webkit-scrollbar {
-            width: 0;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .nav-link {
-            color: #fff;
-            margin-left: 0.625rem;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(35px);
-            transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 </head>
 
 <body class="d-flex flex-column">
@@ -94,27 +24,27 @@
                 <ul class="navbar-nav ms-auto mb-lg-0 align-items-center text-white justify-content-evenly">
                     <li class="nav-item">
                         <a class="nav-link" href="/">
-                            <p>Home</p>
+                            Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about">
-                            <p>About</p>
+                            About
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/services">
-                            <p>Services</p>
+                            Services
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/projects">
-                            <p>Projects</p>
+                            Projects
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('blog.index') }}">
-                            <p>Blogs</p>
+                            Blogs
                         </a>
                     </li>
                     <li class="nav-item pe-0">
@@ -124,7 +54,7 @@
             </div>
         </div>
     </nav>
-    <section class="container-fullwidth position-relative">
+    <section class="container-fullwidth position-relative" id="rotateddivs">
         <div style="position: absolute;  z-index: -2; position: absolute; transform: rotate(-45deg); z-index: -5; right:-2rem; top:-14.7rem;">
             <div class="rounded-2" style="background-color: #bbd4ff; height: 18rem; width:13rem; border-bottom: 0.5rem solid #fff;"></div>
             <div class="rounded-2" style="height: 30rem; width:13rem; border: 0.5rem solid #bbd4ff"></div>
@@ -138,23 +68,27 @@
     </div>
     @endif
 
-    <div class="container-full overflow-y-auto flex-grow-1 p-0 m-0">
+    <div class="container-full flex-grow-1 p-0 m-0">
         @yield('content')
     </div>
 
-    <footer id="footer" class="mt-3 mb-0 pb-4 pt-5 px-3 text-white reveal" style="background-color: #05285b;">
+
+    <footer id="footer" class="container-fullwidth mb-0 pb-4 pt-5 px-3 text-white" style="background-color: #05285b;">
         <div class="container">
             <div class="row g-4 g-lg-5 justify-content-between">
                 <div class="col-12 col-lg-4">
                     <img class="logo mb-3"
                         src="{{ asset('images/logo.png') }}"
-                        style="height: 4.8rem; width: auto;"
+                        style="height: 5.8rem; width: auto;"
                         alt="DE-FORT Logo">
-                    <p class="mb-0" style="font-family: monospace; opacity: 0.9;">
+                    <p class="mb-1" style="font-family: monospace; opacity: 0.9;">
                         We are DE-FORT, a full service [Civil/Structural/General] engineering
                         and construction firm dedicated to shaping resilient infrastructure
                         and inspiring spaces.
                     </p>
+                    <i class="bi bi-facebook me-3 mt-4" style="font-size: 1.5rem;"></i>
+                    <i class="bi bi-instagram me-3 mt-4" style="font-size: 1.5rem;"></i>
+                    <i class="bi bi-linkedin me-3 mt-4" style="font-size: 1.5rem;"></i>
                 </div>
 
                 <div class="col-12 col-md-5">
@@ -201,7 +135,6 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const successMessage = document.getElementById('success-message');

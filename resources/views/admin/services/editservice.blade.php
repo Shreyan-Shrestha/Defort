@@ -1,14 +1,18 @@
 @extends('partials.adminlay')
-@section('title','Admin Panel | Add a Service')
+@section('title','Admin Panel | Edit Service')
 @section('content')
-<div class="content mt-5 px-5 bg-white rounded shadow-sm">
+<div class="container-fullwidth mt-5 px-5 bg-white rounded shadow-sm">
     <h2 class="mb-4">Edit the Service Card</h2>
     <p class="lead">Update the details of the service card.</p>
     <form action="{{ route('service.update', $service->id) }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="icon" class="form-label">Icon Class</label>
+            @if($service->icon)
             <input type="text" class="form-control @error('icon') is-invalid @enderror" id="icon" name="icon" value="{{ old('icon', $service->icon) }}" placeholder="$service->icon">
+            @else
+            <input type="text" class="form-control @error('icon') is-invalid @enderror" id="icon" name="icon" value="{{ old('icon', $service->icon) }}" placeholder="No icon added yet">
+            @endif
             @error('icon')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror

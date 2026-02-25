@@ -1,6 +1,7 @@
 @extends('partials.layout')
 @section('title','DE-FORT | Our Services')
 <style>
+
     .column2 {
         border-left: 0.313rem solid #dae9ff;
     }
@@ -18,10 +19,6 @@
         .hasText span {
             background-color: #007bff !important;
         }
-    }
-
-    #footer {
-        margin-top: 0% !important;
     }
 
     @media (max-width: 991.98px) {
@@ -68,7 +65,7 @@
     </div>
 </section>
 
-<section id="services" class="w-100 px-md-5 px-3 mt-5">
+<section id="services" class="w-100 px-md-5 px-3 pt-5 mt-5">
     <div class="row reveal g-4 justify-content-center">
         @foreach($services as $service)
         <div class="col-6 col-md-4 reveal">
@@ -78,9 +75,9 @@
                         <div class="mb-4">
                             <span class="p-3 px-4 bg-primary-subtle rounded d-inline-block">
                                 @if($service->icon)
-                                    <i class="{{ $service->icon }} text-primary fs-1"></i>
+                                <i class="{{ $service->icon }} text-primary fs-1"></i>
                                 @else
-                                    <i class="bi bi-briefcase-fill text-primary fs-1"></i>
+                                <i class="bi bi-briefcase-fill text-primary fs-1"></i>
                                 @endif
                             </span>
                         </div>
@@ -188,14 +185,16 @@
         </div>
     </div>
 </section>
-<section class="container-fullwidth bg-primary-subtle p-md-5 p-2 mb-0">
-    <div class="dflex row">
-        <div class="col-9 col-md-8 reveal">
-            <h1 class="text-primary">Need Specialized Expertise?</h1>
-            <h5 class="text-muted">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</h5>
+
+<section class="container-fullwidth" id="footerCTA">
+    <div class="p-5 text-start reveal row" style="background-color: #dce9ff;">
+        <div class="col-12 col-lg-6">
+            <h2 class="mb-3 text-primary">Need Specialized Expertise?</h2>
+            <p class="mb-4">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</p>
         </div>
-        <div class="col-3 col-md-4 d-flex justify-content-end align-items-center reveal">
-            <a href="/contact"><button id="contact-button" class="btn btn-outline-primary px-md-5 py-2 px-2">Contact Us</button></a>
+        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-lg-end"> 
+            <button onclick="window.location.href='/contact'" class="btn btn-outline-primary px-5 py-2 border-3">Contact Us <i class="bi bi-arrow-right text-primary"></i></button>
         </div>
+    </div>
 </section>
 @endsection
