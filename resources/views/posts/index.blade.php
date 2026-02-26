@@ -39,7 +39,7 @@
                 <div class="col-lg-6">
                     <div class="card-body p-5">
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2 fs-6">
+                            <span class="badge bg-warning-subtle text-primary rounded-pill px-3 py-2 fs-6">
                                 {{ $featured->category?->name ?? 'Uncategorized' }}
                             </span>
                             <span class="text-muted small">{{ $featured->read_time ?? '5 min read' }}</span>
@@ -78,7 +78,7 @@
                             @endif
 
                             <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">
+                                <span class="badge bg-warning-subtle text-primary rounded-pill px-3 py-2">
                                     {{ $post->category?->name ?? 'Uncategorized' }}
                                 </span>
                             </div>

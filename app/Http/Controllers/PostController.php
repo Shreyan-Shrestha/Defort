@@ -40,8 +40,12 @@ class PostController extends Controller
         if (!$post->published_at) {
             abort(404);
         }
+        $posts=Post::published()
+            ->with('category')
+            ->latest('published_at')
+            ->paginate(3);
 
-        return view('posts.show', compact('post'));
+        return view('posts.show', compact('post', 'posts'));
     }
 
     /**
