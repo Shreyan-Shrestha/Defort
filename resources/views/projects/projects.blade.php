@@ -45,13 +45,13 @@
     <div class="container h-auto py-5">
         @if($projects->isEmpty())
         <div class="alert alert-info text-center">
-            Please <a href="/contact">Contact us</a> for any project information you wish to enquire about.
+            Please <a href="/contact">Contact us</a> for any project information, to learn about our services, for a consultatation, or for any other questions you wish to enquire about.
         </div>
 
         @else
-        <div class="d-flex flex-column gap-4">
+        <div class="d-flex flex-column gap-5">
             @foreach($projects as $project)
-            <div class="card border-0 bg-light shadow-sm h-100">
+            <div class="card border-0 bg-light shadow-sm h-100" style="height: 18.625rem !important;">
                 <div class="row g-0 h-100">
                     <!-- Image column – fixed aspect or height controlled -->
                     <div class="col-lg-4 col-md-5 col-sm-4 bg-light position-relative">
@@ -63,7 +63,7 @@
                         <img src="{{ asset('storage/' . $project->image) }}"
                             class="w-100 h-100 object-fit-cover rounded"
                             alt="{{ $project->projectname }}"
-                            style="height: 15.625rem !important;">
+                            >
                         @else
                         <img src="https://placehold.co/600x400?text={{ urlencode($project->projectname) }}"
                             class="w-100 h-100 object-fit-cover rounded"
@@ -73,12 +73,12 @@
 
                     <!-- Content column -->
                     <div class="col-lg-8 col-md-7 col-sm-8">
-                        <div class="card-body d-flex flex-column h-100 p-4 ps-lg-5">
+                        <div class="card-body d-flex flex-column h-100 p-4 ps-lg-5 pt-3">
 
                             @if($project->projectname)
-                            <h5 class="card-title fs-3 text-primary mb-3">
+                            <h1 class="card-title text-primary-emphasis fw-bold mb-3">
                                 {{ $project->projectname }}
-                            </h5>
+                            </h1>
                             @endif
 
                             @if($project->location)
@@ -89,7 +89,7 @@
 
                             <div>
                                 @if($project->description && strip_tags($project->description))
-                                <p class="card-text text-muted mt-auto mb-4 flex-grow-1">{!! \Illuminate\Support\Str::words(strip_tags($project->description), 50, '...') !!}</p>
+                                <p class="card-text text-muted mt-auto mb-4 flex-grow-1">{!! \Illuminate\Support\Str::words(strip_tags($project->description), 85,'<span class="text-primary">.....</span>') !!}</p>
                                 @endif
                             </div>
                             <!-- Link to view project details page

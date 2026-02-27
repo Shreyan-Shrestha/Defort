@@ -60,12 +60,21 @@
         </div>
     </section>
 
-    @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-message">
-        {{ session('success') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    @endif
+    <section class="container-fullwidth position-relative p-0 m-0" id="alerts">
+        @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-message">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+
+        @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="error-message">
+            {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+    </section>
 
     <div class="container-full flex-grow-1 p-0 m-0">
         @yield('content')
@@ -81,8 +90,8 @@
                         style="height: 5rem; width: auto;"
                         alt="DE-FORT Logo">
                     <p class="mb-1" style="font-family: monospace; opacity: 0.9;">
-                        We are DE-FORT, a full service [Civil/Structural/General] engineering
-                        and construction firm dedicated to shaping resilient infrastructure
+                        We are DE-FORT, a full service [Civil/Structural/General] Engineering
+                        and Construction firm dedicated to shaping resilient infrastructure
                         and inspiring spaces.
                     </p>
                     <i class="bi bi-facebook me-3 mt-4" style="font-size: 1.5rem;"></i>
@@ -99,7 +108,7 @@
                                 <li class="mb-2 "><a href="/about" class="text-white text-decoration-none">About Us</a></li>
                                 <li class="mb-2 "><a href="/services" class="text-white text-decoration-none">Services</a></li>
                                 <li class="mb-2 "><a href="/projects" class="text-white text-decoration-none">Projects</a></li>
-                                <li class="mb-2 "><a href="/blogs" class="text-white text-decoration-none">Blogs</a></li>
+                                <li class="mb-2 "><a href="/blog" class="text-white text-decoration-none">Blogs</a></li>
                                 <li class="mb-2 "><a href="/contact" class="text-white text-decoration-none">Contact Us</a></li>
                             </ul>
                         </div>

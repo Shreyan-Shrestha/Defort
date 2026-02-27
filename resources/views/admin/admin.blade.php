@@ -55,7 +55,7 @@
                 <p class="card-text text-primary">{{ $messagesCount }}</p>
             </div>
         </div>
-        <a href="/pneaiaslls838393/messages" class="stretched-link"></a>
+        <a href="/pneaiaslls838393/contact" class="stretched-link"></a>
     </div>
 </div>
 </div>
