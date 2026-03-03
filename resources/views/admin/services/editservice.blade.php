@@ -4,8 +4,9 @@
 <div class="container-fullwidth mt-5 px-5 bg-white rounded shadow-sm">
     <h2 class="mb-4">Edit the Service Card</h2>
     <p class="lead">Update the details of the service card.</p>
-    <form action="{{ route('service.update', $service->id) }}" method="POST">
+    <form action="{{ route('admin.service.update', $service->id) }}" method="POST">
         @csrf
+        @method('PUT')
         <div class="mb-3">
             <label for="icon" class="form-label">Icon Class</label>
             @if($service->icon)

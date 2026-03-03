@@ -29,7 +29,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
 
     Route::middleware('admin')->group(function () {
-        
+
         Route::get('/', [AdminController::class, 'index'])->name('index');
 
         // Projects section
@@ -79,6 +79,7 @@ Route::prefix('blog')->name('blog.')->group(function () {
 });
 
 Route::prefix('blog/admin')->name('blog.admin.')->group(function () {
+    Route::middleware('admin')->group(function () {
     Route::get('/posts', [PostController::class, 'adminIndex'])->name('posts.index');
     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
@@ -86,4 +87,5 @@ Route::prefix('blog/admin')->name('blog.admin.')->group(function () {
     Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
     Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
     Route::post('/upload-image', [PostController::class, 'uploadImage'])->name('upload.image');
+    });
 });

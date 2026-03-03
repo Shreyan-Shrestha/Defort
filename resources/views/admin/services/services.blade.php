@@ -4,7 +4,7 @@
 <div class="container-fullwidth mt-5 bg-white rounded shadow-sm">
     <h2 class="mb-4">Services</h2>
     <p class="lead">Manage the services offered by DE-FORT. Add, edit, or delete service cards to keep your offerings up-to-date.</p>
-    <a href="{{ route('service.add') }}" class="btn btn-primary mb-3">Add New Service Card</a>
+    <a href="{{ route('admin.service.add') }}" class="btn btn-primary mb-3">Add New Service Card</a>
     <div class="row px-5">
         @foreach($services as $service)
         <div class="col-md-4 mb-4">
@@ -17,8 +17,8 @@
                     <p class="card-text lead">{{ $service->description }}</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
-                    <a href="{{ route('service.edit', $service->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                    <form action="{{ route('service.destroy', $service->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this service?');">
+                    <a href="{{ route('admin.service.edit', $service->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="{{ route('admin.service.destroy', $service->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this service?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>

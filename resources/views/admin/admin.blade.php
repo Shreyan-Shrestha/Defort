@@ -18,7 +18,7 @@
                 <p class="card-text text-primary">{{ $faqsCount }}</p>
             </div>
         </div>
-        <a href="/pneaiaslls838393/faqs" class="stretched-link"></a>
+        <a href="admin.faqs" class="stretched-link"></a>
     </div>
     <div class="card mb-3 col-md-2 shadow-sm">
         <div class="card-body row justify-content-center align-items-center">
@@ -30,7 +30,7 @@
                 <p class="card-text text-primary">{{ $projectsCount }}</p>
             </div>
         </div>
-        <a href="/pneaiaslls838393/projects" class="stretched-link"></a>
+        <a href="admin.projects" class="stretched-link"></a>
     </div>
 
     <div class="card mb-3 col-md-2 shadow-sm">
@@ -55,7 +55,7 @@
                 <p class="card-text text-primary">{{ $messagesCount }}</p>
             </div>
         </div>
-        <a href="/pneaiaslls838393/contact" class="stretched-link"></a>
+        <a href="admin.contact" class="stretched-link"></a>
     </div>
 </div>
 </div>

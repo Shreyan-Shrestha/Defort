@@ -68,25 +68,35 @@
                 <div class="collapse navbar-collapse flex-column w-auto mt-3" id="adminNavbar">
                     <ul class="navbar-nav flex-column w-100">
                         <li class="nav-item">
-                            <a class="nav-link" href="/pneaiaslls838393"><h4><i class="bi bi-speedometer2 me-2"></i>Dashboard</h4></a>
+                            <a class="nav-link" href="{{ route('admin.index') }}"><h4><i class="bi bi-speedometer2 me-2"></i>Dashboard</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/pneaiaslls838393/faqs"><h4><i class="bi bi-info-circle me-2"></i>FAQs</h4></a>
+                            <a class="nav-link" href="{{ route('admin.faqs') }}"><h4><i class="bi bi-info-circle me-2"></i>FAQs</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/pneaiaslls838393/services"><h4><i class="bi bi-gear me-2"></i>Services</h4></a>
+                            <a class="nav-link" href="{{ route('admin.services') }}"><h4><i class="bi bi-gear me-2"></i>Services</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/pneaiaslls838393/projects"><h4><i class="bi bi-kanban me-2"></i>Projects</h4></a>
+                            <a class="nav-link" href="{{ route('admin.projects') }}"><h4><i class="bi bi-kanban me-2"></i>Projects</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/pneaiaslls838393/contact"><h4><i class="bi bi-envelope me-2"></i>Messages</h4></a>
+                            <a class="nav-link" href="{{ route('admin.contacts') }}"><h4><i class="bi bi-envelope me-2"></i>Messages</h4></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/blog/admin/posts"><h4><i class="bi bi-journal-text me-2"></i>Blog Posts</h4></a>
                         </li>
-                        <li class="nav-item mt-4">
-                            <a class="nav-link text-danger" href="/"><h4><i class="bi bi-box-arrow-right me-2"></i>Homepage</h4></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog/admin/categories"><h4><i class="bi bi-person-circle me-2"></i>Account</h4></a>
+                        </li>
+                        <li class="nav-item mt-5">
+                            <a class="nav-link" href="{{ route('admin.logout') }}"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <h4 class="text-danger"><i class="bi bi-box-arrow-right me-2"></i>Logout</h4>
+                            </a>
+                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>

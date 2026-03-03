@@ -5,7 +5,7 @@
     <h1 class="mb-4 display-5">Add New FAQ</h1>
     <p class="lead">Create a new Frequently Asked Question for the About page.</p>
 
-    <form action="/pneaiaslls838393/faq/store" method="POST">
+    <form action="{{ route('admin.faq.store') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="question" class="form-label">The Question</label>
@@ -16,7 +16,7 @@
             <textarea class="form-control" id="answer" name="answer" rows="5" required></textarea>
         </div>
         <button type="submit" class="btn btn-success">Add FAQ</button>
-        <a href="/pneaiaslls838393/faqs" class="btn btn-secondary">Back to FAQs</a>
+        <a href="admin.faqs" class="btn btn-secondary">Back to FAQs</a>
     </form>
 </div>
 @endsection
