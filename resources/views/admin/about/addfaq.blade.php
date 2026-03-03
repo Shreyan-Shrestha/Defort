@@ -16,7 +16,7 @@
             <textarea class="form-control" id="answer" name="answer" rows="5" required></textarea>
         </div>
         <button type="submit" class="btn btn-success">Add FAQ</button>
-        <a href="admin.faqs" class="btn btn-secondary">Back to FAQs</a>
+        <a href="{{ route('admin.faqs') }}" class="btn btn-secondary">Back to FAQs</a>
     </form>
 </div>
 @endsection

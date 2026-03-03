@@ -42,7 +42,7 @@ return [
         ],
         'admin' => [
             'driver' => 'session',
-            'provider' => 'adminauths',
+            'provider' => 'adminauth',
         ],
     ],
 
@@ -69,7 +69,7 @@ return [
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
 
-        'adminauths' => [
+        'adminauth' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\Adminauth::class),
         ],

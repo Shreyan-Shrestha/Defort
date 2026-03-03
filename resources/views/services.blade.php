@@ -43,7 +43,7 @@
     }
 </style>
 @section('content')
-<section class="w-100 column px-md-5 px-3 mt-5">
+<section class="column px-md-4 px-3 mt-5">
     <div class="row d-flex justify-content-start reveal">
         <div class="col-8 col-sm-6">
             <div class="section-title d-flex align-items-center">

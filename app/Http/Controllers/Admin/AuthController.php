@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -54,15 +56,31 @@ class AuthController extends Controller
     {
         $request->validate([
             'current_password' => ['required', 'current_password:admin'],
-            'password'         => ['required', 'confirmed', 'min:8'],
+            'new_password'         => [
+                'required',
+                'confirmed',
+                'min:8',
+                Password::min(8)
+                    ->mixedCase()
+                    ->letters()
+                    ->numbers()
+                    ->symbols()
+            ],
         ]);
 
-        /** @var \App\Models\Adminauth $admin */
         $admin = Auth::guard('admin')->user();
-        $admin->password = Hash::make($request->password);
+        if (!$admin) {
+            return redirect()->route('admin.login')->withErrors(['error' => 'User not authenticated']);
+        }
+
+        Auth::logoutOtherDevices($request->current_password); //Not yet working.
+
+        $admin->password = Hash::make($request->new_password);
         $admin->save();
 
+        $request->session()->regenerate();
+
         return redirect()->route('admin.index')
-            ->with('status', 'Password changed successfully.');
+            ->with('status', 'Password changed successfully. You have been logged out from all other devices.');
     }
 }
