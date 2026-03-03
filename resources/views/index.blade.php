@@ -26,7 +26,7 @@
                 <div class="outer-diamond m-3 bg-white p-3 rounded">
                     <div class="diamond-container mx-auto">
                         <div class="diamond-inner">
-                            <img src="{{ asset('images/carousel/carousel3.jpg') }}"
+                            <img src="{{ asset('images/homepage/diamond.jpg') }}"
                                 class="img-fluid"
                                 alt="Engineering and Health Services">
                         </div>

@@ -47,7 +47,7 @@
                 <div class="image-wrapper">
                     <img
                         class="img-fluid rounded"
-                        src="{{ asset('images/carousel/carousel2.jpg') }}"
+                        src="{{ asset('images/homepage/sustain.jpg') }}"
                         alt="Sustainable engineering project"
                         style="aspect-ratio: 5/3; object-fit: cover;">
                 </div>

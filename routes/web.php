@@ -4,60 +4,72 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DefortController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\AuthController;
 
-Route::get("/", [DefortController::class,'index']);
+Route::get("/", [DefortController::class, 'index']);
 //Projects
-Route::get("/projects", [DefortController::class,'projects']);
-Route::get("/viewproject/{id}", [DefortController::class,'viewproject']);
+Route::get("/projects", [DefortController::class, 'projects']);
+Route::get("/viewproject/{id}", [DefortController::class, 'viewproject']);
 
 //Contact
-Route::get("/contact",[DefortController::class,'contact']);
-Route::post("/addcontact",[DefortController::class,'addcontact']);
+Route::get("/contact", [DefortController::class, 'contact']);
+Route::post("/addcontact", [DefortController::class, 'addcontact']);
 
 //About
-Route::get("/about",[DefortController::class,'about']);
+Route::get("/about", [DefortController::class, 'about']);
 
 //Services
-Route::get("/services",[DefortController::class,'services']);
+Route::get("/services", [DefortController::class, 'services']);
 
 
 //Admin
-Route::prefix('pneaiaslls838393')->group(function () {
+Route::prefix('admin')->name('admin.')->group(function () {
 
-    // Dashboard / main admin page
-    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
 
-    // Projects section
-    Route::get('/projects', [AdminController::class, 'projects'])->name('admin.projects');
+    Route::middleware('admin')->group(function () {
+        
+        Route::get('/', [AdminController::class, 'index'])->name('index');
 
-    Route::get('/project/add', [AdminController::class, 'addprojectform'])->name('project.add');
-    Route::post('/project/add', [AdminController::class, 'addproject'])->name('project.store');
+        // Projects section
+        Route::get('/projects', [AdminController::class, 'projects'])->name('projects');
 
-    Route::get('/project/edit/{id}', [AdminController::class, 'editproject'])->name('project.edit');
-    Route::put('/project/edit/{id}', [AdminController::class, 'editprojectsubmit'])->name('project.update');
+        Route::get('/project/add', [AdminController::class, 'addprojectform'])->name('project.add');
+        Route::post('/project/add', [AdminController::class, 'addproject'])->name('project.store');
 
-    Route::delete('/project/delete/{id}', [AdminController::class, 'delproject'])->name('project.destroy');
+        Route::get('/project/edit/{id}', [AdminController::class, 'editproject'])->name('project.edit');
+        Route::put('/project/edit/{id}', [AdminController::class, 'editprojectsubmit'])->name('project.update');
 
-    // Contacts
-    Route::get('/contact', [AdminController::class, 'contact'])->name('admin.contacts');
+        Route::delete('/project/delete/{id}', [AdminController::class, 'delproject'])->name('project.destroy');
 
-    Route::delete('/contact/delete/{id}', [AdminController::class, 'destroycontact'])->name('contact.destroy');
+        // Contacts
+        Route::get('/contact', [AdminController::class, 'contact'])->name('contacts');
 
-    // FAQs
-    Route::get('/faqs', [AdminController::class, 'faqs'])->name('admin.faqs');
-    Route::get('/faq/add', [AdminController::class, 'addfaqform'])->name('faq.add');
-    Route::post('/faq/store', [AdminController::class, 'addfaq'])->name('faq.store');
-    Route::get('/faq/edit/{id}', [AdminController::class, 'editfaq'])->name('faq.edit');
-    Route::put('/faq/edit/{id}', [AdminController::class, 'editfaqsubmit'])->name('faq.update');
-    Route::delete('/faq/delete/{id}', [AdminController::class, 'delfaq'])->name('faq.destroy');
+        Route::delete('/contact/delete/{id}', [AdminController::class, 'destroycontact'])->name('contact.destroy');
 
-    //Services
-    Route::get('/services', [AdminController::class, 'services'])->name('admin.services');
-    Route::get('/service/add', [AdminController::class, 'addserviceform'])->name('service.add');
-    Route::post('/service/store', [AdminController::class, 'addservice'])->name('service.store');
-    Route::get('/service/edit/{id}', [AdminController::class, 'editservice'])->name('service.edit');
-    Route::put('/service/edit/{id}', [AdminController::class, 'editservicesubmit'])->name('service.update');
-    Route::delete('/service/delete/{id}', [AdminController::class, 'delservice'])->name('service.destroy');
+        // FAQs
+        Route::get('/faqs', [AdminController::class, 'faqs'])->name('faqs');
+        Route::get('/faq/add', [AdminController::class, 'addfaqform'])->name('faq.add');
+        Route::post('/faq/store', [AdminController::class, 'addfaq'])->name('faq.store');
+        Route::get('/faq/edit/{id}', [AdminController::class, 'editfaq'])->name('faq.edit');
+        Route::put('/faq/edit/{id}', [AdminController::class, 'editfaqsubmit'])->name('faq.update');
+        Route::delete('/faq/delete/{id}', [AdminController::class, 'delfaq'])->name('faq.destroy');
+
+        //Services
+        Route::get('/services', [AdminController::class, 'services'])->name('services');
+        Route::get('/service/add', [AdminController::class, 'addserviceform'])->name('service.add');
+        Route::post('/service/store', [AdminController::class, 'addservice'])->name('service.store');
+        Route::get('/service/edit/{id}', [AdminController::class, 'editservice'])->name('service.edit');
+        Route::put('/service/edit/{id}', [AdminController::class, 'editservicesubmit'])->name('service.update');
+        Route::delete('/service/delete/{id}', [AdminController::class, 'delservice'])->name('service.destroy');
+    });
+
+    Route::get('/change-password', [AuthController::class, 'showChangePassword'])->name('password.change');
+    Route::post('/change-password', [AuthController::class, 'updatePassword'])->name('password.update');
+
+    // Logout
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 // Blog Routes
