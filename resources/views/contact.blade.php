@@ -34,7 +34,7 @@
         <div class="card-body py-lg-4">
           <div class="d-flex flex-lg-row flex-md-row flex-column justify-content-center align-items-center">
             <div class="col-lg-6 p-lg-2 p-md-2 me-3" style="max-height: 65%; min-width:30%">
-              <img class="img-fluid h-100 w-auto rounded object-fit-cover" src="/images/cont.webp" alt="Contact Us">
+              <img class="img-fluid h-100 w-auto rounded object-fit-cover" src="/images/homepage/cont.webp" alt="Contact Us">
             </div>
             <div class="col-lg-6 ms-lg-3 mt-sm-2 mt-md-3 reveal px-4">
               <form method="POST" action="/addcontact">
