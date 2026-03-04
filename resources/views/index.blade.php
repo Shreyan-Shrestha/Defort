@@ -2,10 +2,17 @@
 
 @section('title', 'Home - DE-FORT Tech and Health')
 
+@section('rotatedContent')
+<div id="rotatedimg">
+                    <div class="rotated-inner">
+                        <img src="{{ asset('images/homepage/diamond.jpg') }}" class="object-fit-cover" alt="DE-FORT Hero Image">
+                    </div>
+            </div>
+@endsection
 @section('content')
-<section class="container row justify-content-between w-100 m-0 mb-md-5 p-0 reveal">
-    <div class="h-100 col-lg-9 mt-3 d-flex flex-shrink-1 reveal">
-        <div class="h-100 pt-5 px-5 mt-5">
+<section class="container-fullwidth row justify-content-between w-100 m-0 mb-md-5 p-0 reveal">
+    <div class="h-100 col-lg-9 col-9 mt-3 d-flex flex-shrink-1 reveal">
+        <div class="h-100 pt-5 px-2 px-md-5 mt-5">
             <div class="section-subtitle mb-5" style="font-stretch: expanded;">
                 <h1><span style="font-size: 4rem;">Technical excellence in</span> <span style="color: #007bff; font-size:4rem;">Engineering</span> <span style="font-size: 3.3rem;">and</span> <span style="color: #007bff; font-size:4rem;">Health</span> <span style="font-size: 4rem;">projects</span></h1>
                 <p class="lead text-wrap pe-3 mt-4" style="font-size: 1.5rem;">Delivering compliant, sustainable and technically sound architectural<br> & construction solutions | Advancing Health solutions.</p>
@@ -67,7 +74,7 @@
     </div>
 </section>
 
-<section class="container-fullwidth py-lg-5 px-md-5 px-3 mt-5 reveal">
+<section class="container-fullwidth py-lg-5 px-md-5 px-4 mt-5 reveal">
     <div class="w-100">
         <div class="row align-items-center">
             <div class="col-12 col-md-6 mb-5 mb-md-0 reveal">

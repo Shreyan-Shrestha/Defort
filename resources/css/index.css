@@ -44,6 +44,10 @@
     #rotatedDivs #rotatedBottom {
         width: 7.5rem !important;
     }
+    #rotatedimg {
+        width: 7.5rem !important;
+        height: 7.5rem !important;
+    }
 }
 
 html,
@@ -112,13 +116,37 @@ a {
 #rotatedTop {
     background-color: #bbd4ff;
     height: 18rem;
-    width: 13rem;
+    width: 14rem;
     border-bottom: 0.5rem solid #fff;
+}
+
+#rotatedimg {
+    position: relative;
+    margin-top: 0.2rem;
+    margin-bottom: 0.7rem;
+    width: 14rem;
+    height: 14rem;
+    overflow: hidden;
+}
+
+#rotatedimg .rotated-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 145.42%;
+    height: 142.42%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    overflow: hidden;
+}
+
+#rotatedimg .rotated-inner img {
+    width: 100%;
+    height: 100%;
 }
 
 #rotatedBottom {
     height: 30rem;
-    width: 13rem;
+    width: 14rem;
     border: 0.5rem solid #bbd4ff
 }
 
