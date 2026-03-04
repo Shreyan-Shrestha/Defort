@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="d-flex justify-content-between">
-                            <a href="/pneaiaslls838393/projects" class="btn btn-secondary">Cancel</a>
+                            <a href="{{ route('admin.projects') }}" class="btn btn-secondary">Cancel</a>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>

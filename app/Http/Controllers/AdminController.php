@@ -57,7 +57,7 @@ class AdminController extends Controller
         // Create the project
         Projects::create($validated);
 
-        return redirect('/pneaiaslls838393/projects')->with('success', 'Added Project successfully!');
+        return redirect()->route('admin.projects')->with('success', 'Added Project successfully!');
     }
 
     public function editproject($id)
@@ -92,7 +92,7 @@ class AdminController extends Controller
         Storage::disk('public')->delete($oldImagePath);
     }
 
-    return redirect('/pneaiaslls838393/projects')->with('success', 'Project updated successfully!');
+    return redirect()->route('admin.projects')->with('success', 'Project updated successfully!');
 }
 
     public function delproject($id)
@@ -107,7 +107,7 @@ class AdminController extends Controller
         // Delete the project record
         Projects::where('id', $id)->delete();
 
-        return redirect('/pneaiaslls838393/projects')->with('success', 'Project deleted successfully!');
+        return redirect()->route('admin.projects')->with('success', 'Project deleted successfully!');
     }
 
     //Contact
@@ -120,7 +120,7 @@ class AdminController extends Controller
     public function destroycontact($id)
     {
         Contact::where('id', $id)->delete();
-        return redirect('/pneaiaslls838393/contact')->with('success', 'Message has been deleted');
+        return redirect()->route('admin.contacts')->with('success', 'Message has been deleted');
     }
 
     //FAQs
@@ -138,7 +138,7 @@ class AdminController extends Controller
     {
         $validated = $request->validated();
         About::create($validated);
-        return redirect('/pneaiaslls838393/faqs')->with('success', 'Added FAQ successfully!');
+        return redirect()->route('admin.faqs')->with('success', 'Added FAQ successfully!');
     }
     public function editfaq($id)
     {
@@ -149,11 +149,11 @@ class AdminController extends Controller
     {
         $validated = $request->validated();
         About::where('id', $request['id'])->update($validated);
-        return redirect('/pneaiaslls838393/faqs')->with('success', 'FAQ updated successfully!');
+        return redirect()->route('admin.faqs')->with('success', 'FAQ updated successfully!');
     }
     public function delfaq($id)    {
         About::where('id', $id)->delete();
-        return redirect('/pneaiaslls838393/faqs')->with('success', 'FAQ deleted successfully!'); 
+        return redirect()->route('admin.faqs')->with('success', 'FAQ deleted successfully!'); 
     }   
 
     //Services
@@ -167,7 +167,7 @@ class AdminController extends Controller
     public function addservice(ServicesRequest $request){
         $validated = $request->validated();
         Services::create($validated);
-        return redirect('/pneaiaslls838393/services')->with('success', 'Added Service successfully!');
+        return redirect()->route('admin.services')->with('success', 'Added Service successfully!');
     }
     public function editservice($id){
         $service = Services::where('id', $id)->first();
@@ -176,10 +176,10 @@ class AdminController extends Controller
     public function editservicesubmit(ServicesRequest $request){
         $validated = $request->validated();
         Services::where('id', $request['id'])->update($validated);
-        return redirect('/pneaiaslls838393/services')->with('success', 'Service updated successfully!');
+        return redirect()->route('admin.services')->with('success', 'Service updated successfully!');
     }
     public function delservice($id)    {
         Services::where('id', $id)->delete();
-        return redirect('/pneaiaslls838393/services')->with('success', 'Service deleted successfully!'); 
+        return redirect()->route('admin.services')->with('success', 'Service deleted successfully!'); 
     } 
 }

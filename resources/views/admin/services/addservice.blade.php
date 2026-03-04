@@ -4,7 +4,7 @@
 <div class="content mt-5 px-5 bg-white rounded shadow-sm">
     <h2 class="mb-4">Add New Service Card</h2>
     <p class="lead">Fill out the form below to add a new service card to your website.</p>
-    <form action="{{ route('service.store') }}" method="POST">
+    <form action="{{ route('admin.service.store') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="icon" class="form-label">Icon Class</label> <span class="lead fs-6"> <small class="form-text text-muted">Use Bootstrap Icons classes for the icon (e.g., <code>bi bi-briefcase-fill</code>).</small></span>

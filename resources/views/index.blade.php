@@ -1,6 +1,6 @@
 @extends('partials.layout')
 
-@section('title', 'DE-FORT | Home')
+@section('title', 'Home - DE-FORT Tech and Health')
 
 @section('content')
 <section class="container row justify-content-between w-100 m-0 mb-md-5 p-0 reveal">
@@ -26,7 +26,7 @@
                 <div class="outer-diamond m-3 bg-white p-3 rounded">
                     <div class="diamond-container mx-auto">
                         <div class="diamond-inner">
-                            <img src="{{ asset('images/carousel/carousel3.jpg') }}"
+                            <img src="{{ asset('images/homepage/diamond.jpg') }}"
                                 class="img-fluid"
                                 alt="Engineering and Health Services">
                         </div>

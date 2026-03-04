@@ -10,7 +10,7 @@
 @section('content')
     <div class="content" style="padding: 50px 0;">
         <h2 class="text-center" style="margin-bottom: 30px;">Project List</h2>
-        <button class="btn btn-success mb-3" onclick="window.location.href='/pneaiaslls838393/project/add'">+Add New Project</button>
+        <button class="btn btn-success mb-3"><a href="{{ route('admin.project.add') }}" class="text-white text-decoration-none">+Add New Project</a></button>
         @if($projects->isEmpty())
             <div class="alert alert-info text-center">
                 No projects found.
@@ -49,8 +49,8 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="/pneaiaslls838393/project/edit/{{$project->id}}" class="btn btn-primary btn-sm">Edit</a>
-                                    <form class="mt-1" method="POST" action="/pneaiaslls838393/project/delete/{{$project['id']}}">
+                                    <a href="{{ route('admin.project.edit', $project->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                    <form class="mt-1" method="POST" action="{{ route('admin.project.destroy', $project['id']) }}">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this project ?')">Delete</button>

@@ -12,8 +12,13 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
     $middleware->alias([
-        'admin.basic' => \App\Http\Middleware\BasicAuthForAdmin::class,
+        'admin' => \App\Http\Middleware\AdminAuth::class,
     ]);
+
+    $middleware->appendtogroup('web', [
+        \Illuminate\Session\Middleware\AuthenticateSession::class,
+    ]);
+
 })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

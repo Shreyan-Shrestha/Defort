@@ -5,7 +5,7 @@
     <h1 class="mb-4 display-5">Edit FAQ</h1>
     <p class="lead">Update the details of an existing Frequently Asked Question.</p>
 
-    <form action="/pneaiaslls838393/faq/edit/{{ $faq->id }}" method="POST">
+    <form action="{{ route('admin.faq.update', $faq->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -17,7 +17,7 @@
             <textarea class="form-control" id="answer" name="answer" rows="5" required>{{ $faq->answer }}</textarea>
         </div>
         <button type="submit" class="btn btn-success">Update FAQ</button>
-        <a href="/pneaiaslls838393/faqs" class="btn btn-secondary">Back to FAQs</a>
+        <a href="{{ route('admin.faqs') }}" class="btn btn-secondary">Back to FAQs</a>
     </form>
 </div>
 @endsection

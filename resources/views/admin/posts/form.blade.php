@@ -1,7 +1,7 @@
 @extends('partials.adminlay')
 
 @section('content')
-<div class="container">
+<div class="container justify-content-center">
     <h1 class="mb-4 display-5">{{ $post->exists ? 'Edit' : 'Create' }} Post</h1>
 
     <!-- CSRF token for JS image uploads -->
@@ -36,9 +36,9 @@
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 align-items-end d-flex mb-4">
 
-                <div class="card">
+                <div class="card w-100">
                     <div class="card-body">
 
                         <div class="mb-3">
@@ -55,7 +55,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">Tags (comma separated)</label>
-                            <input type="text" name="tags" value="{{ old('tags', $post->tags->pluck('name')->implode(', ') ?? '') }}" class="form-control" placeholder="laravel, php, bootstrap">
+                            <input type="text" name="tags" value="{{ old('tags', $post->tags->pluck('name')->implode(', ') ?? '') }}" class="form-control" placeholder="e.g. Design, Construction, Nepal">
                         </div>
 
                         <div class="mb-3">
@@ -77,6 +77,7 @@
 
                         <div class="d-grid">
                             <button type="submit" class="btn btn-success btn-lg">Save Post</button>
+                            <button href="{{ route('blog.admin.posts.index') }}" class="btn btn-secondary btn-lg mt-2">Cancel</button>
                         </div>
 
                     </div>

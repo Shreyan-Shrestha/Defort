@@ -7,7 +7,7 @@
 
     <!-- FAQ List -->
     <div class="mb-4">
-        <a href="/pneaiaslls838393/faq/add" class="btn btn-primary mb-3">Add New FAQ</a>
+        <a href="{{ route('admin.faq.add') }}" class="btn btn-primary mb-3">Add New FAQ</a>
         @if($faqs->isEmpty())
         <p>No FAQs found. Start by adding a new one!</p>
         @else
@@ -19,8 +19,8 @@
                     {{ Str::limit($faq->answer, 100) }}
                 </div>
                 <div>
-                    <a href="/pneaiaslls838393/faq/edit/{{ $faq->id }}" class="btn btn-sm btn-secondary">Edit</a>
-                    <form action="/pneaiaslls838393/faq/delete/{{ $faq->id }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this FAQ?');">
+                    <a href="{{ route('admin.faq.edit', $faq->id) }}" class="btn btn-sm btn-secondary">Edit</a>
+                    <form action="{{ route('admin.faq.destroy', $faq->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this FAQ?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
