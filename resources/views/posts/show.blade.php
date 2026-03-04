@@ -1,4 +1,5 @@
 @extends('partials.layout')
+@section('title', $post->title . ' - DE-FORT Tech and Health')
 @section('content')
 <section>
     <div class="container my-4 px-4 px-md-5">

@@ -5,6 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="DE-FORT">
+    <meta name="description" content="We are DE-FORT, a full service [Civil/Structural/General] engineering and construction firm dedicated to shaping resilient infrastructure and inspiring spaces.For over 20 years, we've transformed complex challenges into enduring solutions, guided by an unwavering commitment to precision, partnership, and progress. We don't just build projects — we build trust, foster innovation, and deliver legacies that stand the test of time.">
+    <meta name="keywords" content="Nepal, Architecture, Construction, Kathmandu, Lalitpur, Design, construction company in nepal, engineer, BEST construction company in nepal, construction company near me, construction company in kathmandu, construction company in lalitpur, construction company in pokhara, construction company in nepal">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-16">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="30 days">
+
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>@yield('title', 'DE-FORT Tech and Health')</title>

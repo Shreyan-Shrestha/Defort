@@ -1,5 +1,5 @@
 @extends('partials.layout')
-@section('title','DE-FORT | Our Services')
+@section('title','Our Services - DE-FORT Tech and Health')
 <style>
 
     .column2 {

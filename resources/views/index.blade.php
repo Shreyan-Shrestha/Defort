@@ -1,6 +1,6 @@
 @extends('partials.layout')
 
-@section('title', 'DE-FORT | Home')
+@section('title', 'Home - DE-FORT Tech and Health')
 
 @section('content')
 <section class="container row justify-content-between w-100 m-0 mb-md-5 p-0 reveal">

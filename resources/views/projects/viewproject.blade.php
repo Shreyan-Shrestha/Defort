@@ -1,5 +1,5 @@
 @extends('partials.layout')
-@section('title', 'Projects - DE-FORT Tech and Health')
+@section('title', $project->projectname . ' - DE-FORT Tech and Health')
 @section('content')
 <style>
     /* Custom width for 6 cards per row on large screens */
