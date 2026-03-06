@@ -1,5 +1,5 @@
-# Defort
-> A Laravel-based website for Defort, a company specializing in engineering and health-related solutions.
+# DE-FORT
+> A Laravel-based website for DE-FORT, a company specializing in engineering and health-related solutions. 
 
 ---
 
@@ -10,8 +10,8 @@
   - [Dependencies](#dependencies)
   - [Environment](#environment)
   - [Database](#database)
-  - [Serve](#serve)
   - [Assets](#assets)
+  - [Serve](#serve)
 - [Notes](#notes)
 
 ---
@@ -24,8 +24,8 @@ This repository includes:
 * Controllers, requests and middleware under `app/Http`
 * Blade views and partials in `resources/views`
 * CSS in `resources/css` (`index.css`, `contact.css`) and Vite asset management
-* Database migrations, seeders, and factories for initial data
-* Local development environment via [Herd](https://herdapp.io)
+* Database migrations, seeders, and factories for initial data in MYSQL
+* Local development environment via [Herd](https://herdapp.io) and [XAMPP](https://www.apachefriends.org/index.html) 
 
 ## Getting Started
 
@@ -48,18 +48,19 @@ php artisan migrate --seed
 php artisan storage:link
 ```
 
+### Assets
+```bash
+npm run dev    # development build
+npm run build  # production build 
+```
+
 ### Serve
 * Use Herd (preferred): open Herd and select the project.
+Or,
 * After stopping Herd:
   ```bash
   php artisan serve
   ```
-
-### Assets
-```bash
-npm run dev    # development build
-npm run build  # production build
-```
 
 ## Notes
 
