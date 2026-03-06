@@ -19,7 +19,7 @@
 
 @section('content')
 <div class="container-fullwidth pt-md-5 pb-0">
-    <section class="w-100 column px-md-5 px-2 mt-5 pt-sm-3" id="pageintro">
+    <section class="w-100 column px-md-5 px-3 mt-5 pt-sm-3" id="pageintro">
         <div class="row d-flex justify-content-start reveal">
             <div class="col-8 col-sm-6">
                 <div class="section-title d-flex align-items-center">
@@ -40,7 +40,7 @@
         </div>
     </section>
 
-    <section class="container-fullwidth mt-5 py-5 px-md-5 px-2 position-relative">
+    <section class="container-fullwidth mt-5 py-5 px-md-5 px-3 position-relative">
         <div class="row align-items-center g-5">
             <!-- Image column -->
             <div class="col-12 col-lg-6 reveal">
@@ -75,7 +75,7 @@
         </div>
     </section>
 
-    <section class="w-100 mt-5 px-md-5 px-2">
+    <section class="w-100 mt-5 px-md-5 px-3">
         <div class=" d-flex flex-column justify-content-center align-items-center reveal">
             <div class=" section-title d-flex flex-row align-items-center reveal">
                 <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
@@ -164,7 +164,7 @@
         </div>
     </section>
 
-    <section class="w-100 mt-4 pt-md-5 px-2">
+    <section class="w-100 mt-4 pt-md-5 px-3">
         <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
             <div class=" section-title d-flex flex-row align-items-center">
                 <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
