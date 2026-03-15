@@ -166,7 +166,7 @@
     </div>
 </section>
 
-<section class="container-fluid pt-5 px-5 mb-3 pb-2 my-3 reveal">
+<section class="container-fluid pt-5 p-5 mb-5 pb-2 my-3 reveal">
     <div class="column pt-5 align-items-center">
         <div class="section-title d-flex align-items-center justify-content-center mb-4">
             <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:3rem; height:0.2rem;"></span>
@@ -223,6 +223,7 @@
 
 </section>
 
+@if($posts->isNotEmpty())
 <section class="container-fluid pt-5 px-5 mb-3 pb-2 my-3 reveal">
     <div class="pt-5 mt-3">
         <div class="d-flex flex-column mb-4">
@@ -281,4 +282,5 @@
         </div>
     </div>
 </section>
+@endif
 @endsection
