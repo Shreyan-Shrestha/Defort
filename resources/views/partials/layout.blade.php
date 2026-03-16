@@ -128,11 +128,12 @@
                         <div class="col-6 col-lg-7">
                             <h5 class="mb-3">Services</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Structural Engineering & Design</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Civil & Site Development</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Construction Management</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">MEP Engineering</a></li>
+                                <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Structural Engineering & Design</a></li>
+                                <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Civil & Site Development</a></li>
+                                <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Construction Management</a></li>
+                                <li class="mb-2"><a href="/services" class="text-white text-decoration-none">MEP Engineering</a></li>
                             </ul>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +144,6 @@
                     <p class="mb-2"><i class="bi bi-envelope me-2"></i>info@defort.com</p>
                     <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Jawalakhel, Lalitpur Metropolitan City, Nepal</p>
                 </div>
-
             </div>
 
             <div class="text-center mt-5 pt-4 border-top border-white border-opacity-25">
