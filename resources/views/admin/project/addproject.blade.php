@@ -26,7 +26,7 @@
                     </div>
                     @endif
 
-                    <form method="POST" action="/pneaiaslls838393/project/add" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.project.store') }}" enctype="multipart/form-data">
                         @csrf
                         <img id="imagePreview" src="#" alt="Image Preview" class="img-fluid mb-3" style="display: none; max-height: 200px;"/>
                         <div class="mb-3">
