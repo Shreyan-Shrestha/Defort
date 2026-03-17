@@ -21,7 +21,7 @@
                     <label class="form-label fw-bold">Title <span class="text-danger">*</span></label>
                     <input type="text" name="title" value="{{ old('title', $post->title ?? '') }}" class="form-control form-control-lg" required autofocus>
                     @error('title')
-                        <div class="text-danger small mt-1">{{ $message }}</div>
+                    <div class="text-danger small mt-1">{{ $message }}</div>
                     @enderror
                 </div>
 
@@ -30,7 +30,7 @@
                     <div id="editor" style="height: 400px;"></div>
                     <textarea name="body" id="body-hidden" style="display:none;">{{ old('body', $post->body ?? '') }}</textarea>
                     @error('body')
-                        <div class="text-danger small mt-1">{{ $message }}</div>
+                    <div class="text-danger small mt-1">{{ $message }}</div>
                     @enderror
                 </div>
 
@@ -46,9 +46,9 @@
                             <select name="category_id" class="form-select">
                                 <option value="">None</option>
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->id }}" {{ old('category_id', $post->category_id ?? '') == $category->id ? 'selected' : '' }}>
-                                        {{ $category->name }}
-                                    </option>
+                                <option value="{{ $category->id }}" {{ old('category_id', $post->category_id ?? '') == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
                                 @endforeach
                             </select>
                         </div>
@@ -62,11 +62,11 @@
                             <label class="form-label">Featured Image</label>
                             <input type="file" name="featured_image" class="form-control" accept="image/*">
                             @if($post->featured_image)
-                                <img src="{{ asset('storage/' . $post->featured_image) }}" class="img-thumbnail mt-3 d-block" style="max-height: 200px;" alt="Current featured image">
-                                <small class="text-muted">Current image (upload new to replace)</small>
+                            <img src="{{ asset('storage/' . $post->featured_image) }}" class="img-thumbnail mt-3 d-block" style="max-height: 200px;" alt="Current featured image">
+                            <small class="text-muted">Current image (upload new to replace)</small>
                             @endif
                             @error('featured_image')
-                                <div class="text-danger small mt-1">{{ $message }}</div>
+                            <div class="text-danger small mt-1">{{ $message }}</div>
                             @enderror
                         </div>
 
@@ -99,7 +99,7 @@
         });
 
         // Load initial content
-        const initialContent = @json(old('body', $post->body ?? ''));
+        const initialContent = @json(old('body', $post -> body ?? ''));
         if (initialContent) {
             quill.root.innerHTML = initialContent;
         }
@@ -118,31 +118,32 @@
                     formData.append('image', file);
 
                     fetch('{{ route('blog.admin.upload.image') }}', {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(result => {
-                        const range = quill.getSelection(true);
-                        quill.insertEmbed(range.index, 'image', result.url);
-                        quill.setSelection(range.index + 1);
-                    })
-                    .catch(error => {
-                        console.error('Image upload failed:', error);
-                        alert('Image upload failed. Please try again.');
-                    });
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                                }
+                            }
+                        )
+                        .then(response => response.json())
+                        .then(result => {
+                            const range = quill.getSelection(true);
+                            quill.insertEmbed(range.index, 'image', result.url);
+                            quill.setSelection(range.index + 1);
+                        })
+                        .catch(error => {
+                            console.error('Image upload failed:', error);
+                            alert('Image upload failed. Please try again.');
+                        });
                 }
             };
         });
 
         // Sync to hidden textarea on submit
-        const form = document.querySelector('form');
-        form.onsubmit = function() {
+        // Replace your current sync code with this
+        quill.on('text-change', function(delta, oldDelta, source) {
             document.getElementById('body-hidden').value = quill.root.innerHTML;
-        };
+        });
     </script>
 </div>
 @endsection

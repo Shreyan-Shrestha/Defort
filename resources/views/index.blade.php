@@ -224,7 +224,7 @@
 </section>
 
 @if($posts->isNotEmpty())
-<section class="container-fluid pt-5 px-5 mb-3 pb-2 my-3 reveal">
+<section class="container-fluid pt-5 px-5 pb-2 my-5 reveal">
     <div class="pt-5 mt-3">
         <div class="d-flex flex-column mb-4">
             <div class="section-title d-flex align-items-center">
@@ -242,7 +242,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-md-flex flex-md-row mb-4 justify-content-between row reveal">
+        <div class="d-md-flex flex-md-row mb-4 justify-content-start gap-4 row reveal">
             @foreach($posts as $post)
             <div class=" row col-lg-4 mb-sm-2 d-flex align-items-stretch mt-3">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden d-flex h-100 flex-column p-3">
@@ -254,7 +254,7 @@
                         @endif
 
                         <div class="position-absolute top-0 start-0 m-3">
-                            <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">
+                            <span class="badge bg-light text-primary rounded-pill px-3 py-2">
                                 {{ $post->category?->name ?? 'Uncategorized' }}
                             </span>
                         </div>
