@@ -4,10 +4,10 @@
 
 @section('rotatedContent')
 <div id="rotatedimg">
-                    <div class="rotated-inner">
-                        <img src="{{ asset('images/homepage/diamond.jpg') }}" class="object-fit-cover" alt="DE-FORT Hero Image">
-                    </div>
-            </div>
+    <div class="rotated-inner">
+        <img src="{{ asset('images/homepage/diamond.jpg') }}" class="object-fit-cover" alt="DE-FORT Hero Image">
+    </div>
+</div>
 @endsection
 @section('content')
 <section class="container-fullwidth row justify-content-between w-100 m-0 mb-md-5 p-0 reveal">
@@ -96,9 +96,9 @@
                         industrial, and infrastructure projects.
                     </p>
 
-                    <button class="btn btn-outline-primary mt-2">
+                    <a class="btn btn-outline-primary mt-2" href="/services">
                         Get Started <i class="bi bi-arrow-right"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -236,7 +236,7 @@
                     <h1>Latest <span style="color: #007bff;">updates</span>, built insights, and <span style="color: #007bff;">expert</span> news </h2>
                 </div>
                 <div class="container my-3 text-center col-lg-3 d-flex justify-content-lg-end justify-content-center align-items-center justify-content-sm-start">
-                    <a href="#" class="btn btn-outline-primary px-5 py-2 mx-3 border-3">
+                    <a href="{{ route('blog.index') }}" class="btn btn-outline-primary px-5 py-2 mx-3 border-3">
                         View All Blogs <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>

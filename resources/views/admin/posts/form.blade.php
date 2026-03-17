@@ -38,7 +38,7 @@
 
             <div class="col-md-4 align-items-end d-flex mb-4">
 
-                <div class="card w-100">
+                <div class="card w-100 pt-2">
                     <div class="card-body">
 
                         <div class="mb-3">

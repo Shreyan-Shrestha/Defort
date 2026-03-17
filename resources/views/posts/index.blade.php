@@ -2,7 +2,8 @@
 @section('title', 'Blogs - DE-FORT Tech and Health')
 @section('content')
 <div class="container-fullwidth my-5">
-    <section class="container-fullwidth column px-md-5 px-3 mt-5" id="pageintro">
+
+    <section class="container-fullwidth column px-md-5 px-4 mt-5" id="pageintro">
         <div class="row d-flex justify-content-start reveal">
             <div class="col-8 col-sm-6">
                 <div class="section-title d-flex align-items-center">
@@ -18,22 +19,22 @@
         </div>
         <div class="section-subtitle col-lg-6 col-sm-10 mt-3 reveal">
             <p class="lead">
-                Explore our diverse portfolio of successfully delivered engineering and construction projects
+                Explore our diverse blogs covering the latest trends, insights, and expert opinions in technology and health.
             </p>
         </div>
     </section>
 
-    <section class="container-fullwidth mt-5 px-md-5 px-3">
+    <section class="container-fullwidth mt-5 px-md-5 px-4 reveal">
         @if($posts->isNotEmpty())
         {{-- Featured Post (Latest Post - Horizontal Layout) --}}
         @php($featured = $posts->first())
-        <div class="card mb-5 border-0 shadow-sm rounded-4 overflow-hidden bg-light">
+        <div class="container card mb-5 border-0 shadow-sm rounded-4 overflow-hidden bg-light">
             <div class="row g-0 align-items-center">
                 <div class="col-lg-6">
                     @if($featured->featured_image)
-                    <img src="{{ asset('storage/' . $featured->featured_image) }}" class="img-fluid rounded-start w-100" style="height: 25rem; object-fit: cover;" alt="{{ $featured->title }}">
+                    <img src="{{ asset('storage/' . $featured->featured_image) }}" class="img-fluid rounded-start w-100" style="height: 20rem; object-fit: cover;" alt="{{ $featured->title }}">
                     @else
-                    <img src="https://placehold.co/600x400?text={{ $featured->title }}" class="img-fluid rounded-start w-100" alt="{{ $featured->title }} style="height: 25rem; object-fit: cover;"">
+                    <img src="https://placehold.co/600x400?text={{ $featured->title }}" class="img-fluid rounded-start w-100" alt="{{ $featured->title }}" style="height: 20rem; object-fit: cover;">
                     @endif
                 </div>
                 <div class="col-lg-6">
@@ -60,16 +61,15 @@
                 </div>
             </div>
         </div>
+    </section>
 
-        {{-- Latest Blogs Heading --}}
-        <h2 class="text-center fw-bold display-6 mb-5">Latest Blogs</h2>
-
-        {{-- Grid of Remaining Posts (Image + Category Badge Only) --}}
+    <section class="container-fullwidth mt-5 px-md-5 px-3 reveal">
+        {{-- Other Posts (Grid Layout) --}}
         <div class="row g-4">
             @foreach($posts as $post)
             <div class="col-md-4">
                 <a href="{{ route('blog.show', $post) }}" class="text-decoration-none text-dark">
-                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column reveal">
                         <div class="position-relative">
                             @if($post->featured_image)
                             <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 15.625rem; object-fit: cover;">
@@ -104,6 +104,7 @@
             </div>
             @endforeach
         </div>
+
         @else
         <div class="text-center py-5">
             <p class="text-muted fs-4">No blog posts available yet.</p>
@@ -116,6 +117,7 @@
             {{ $posts->links() }}
         </div>
         @endif
+    </section>
+
 </div>
-</section>
 @endsection

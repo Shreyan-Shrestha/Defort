@@ -101,7 +101,7 @@
                         src="{{ asset('images/logo.png') }}"
                         style="height: 5rem; width: auto;"
                         alt="DE-FORT Logo">
-                    <p class="mb-1" style="font-family: monospace; opacity: 0.9;">
+                    <p class="mb-3">
                         We are DE-FORT, a full service [Civil/Structural/General] Engineering
                         and Construction firm dedicated to shaping resilient infrastructure
                         and inspiring spaces.
