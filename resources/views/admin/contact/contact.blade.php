@@ -14,6 +14,7 @@
                 <tr>
                     <th>Name</th>
                     <th>E-mail</th>
+                    <th>Subject</th>
                     <th>Message</th>
                     <th>Actions</th>
                 </tr>
@@ -21,11 +22,12 @@
             <tbody>
                 @foreach($contacts as $contact)
                     <tr>
-                        <td>{{$contact->name}}</td>
+                        <td>{{$contact->firstname}} {{$contact->lastname}}</td>
                         <td>{{$contact->email}}</td>
+                        <td>{{$contact->subject}}</td>
                         <td>{{$contact->message}}</td>
                         <td>
-                            <form method="POST" action="/delcontact/{{$contact['id']}}">
+                            <form method="POST" action="{{route('admin.contact.destroy', $contact->id)}}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Delete this message?')">Delete</button>

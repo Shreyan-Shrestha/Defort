@@ -6,22 +6,34 @@ use App\Models\Projects;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
+use App\Mail\ContactUs;
 use App\Models\About;
+use Illuminate\Support\Facades\Mail;
+use App\Models\Post;
+use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Services;
 
 class DefortController extends Controller
 {
     public function index(){
-        return view('index');
+        $posts=Post::published()
+            ->with('category')
+            ->latest('published_at')
+            ->paginate(3);
+
+        $services = Services::latest()->get();
+        return view('index', ['posts' => $posts, 'services' => $services]);
     }
 
     public function projects(){
-        $projects = Projects::latest()->get();
-        return view('projects', ['projects' => $projects]);
+        $projects = Projects::latest()->paginate(6);
+        return view('projects.projects', compact('projects'));
     }
 
     public function viewproject($id){
         $project = Projects::where('id', $id)->first();
-        return view('viewproject', ['project' => $project]);
+        return view('projects.viewproject', compact('project'));
     }
 
     //Contact
@@ -32,11 +44,21 @@ class DefortController extends Controller
     public function addcontact(ContactRequest $request){
         $validated = $request->validated();
         Contact::create($validated);
-        return redirect('/')->with('success','Message received successfully!');
+        return redirect('/contact')->with('success','Message received successfully!');
+        
+        // Attempt to send email notification to admin
+        // $data = $request->all();
+        // Mail::to('contact@defort.com')->send(new ContactUs($data));
     }
 
     public function about(){
-        $about = About::where('id', 1)->first();
-        return view('about', ['about' => $about]);
+        $faqs = About::latest()->get();
+        return view('about', ['faqs' => $faqs]);
+    }
+
+    //Services
+    public function services(){
+        $services = Services::latest()->get();
+        return view('services', ['services' => $services]);
     }
 }

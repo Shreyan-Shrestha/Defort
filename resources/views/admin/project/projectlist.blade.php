@@ -1,18 +1,23 @@
 @extends('partials.adminlay')
 
-@section('title', 'Project List - DE-FORT Tech and Health')
+@section('title', 'Admin Panel | Project List')
 
+<style>
+    .td{
+        padding: 0;
+    }
+</style>
 @section('content')
     <div class="content" style="padding: 50px 0;">
         <h2 class="text-center" style="margin-bottom: 30px;">Project List</h2>
-        <button class="btn btn-success mb-3" onclick="window.location.href='/projectadd'">+Add New Project</button>
+        <button class="btn btn-success mb-3"><a href="{{ route('admin.project.add') }}" class="text-white text-decoration-none">+Add New Project</a></button>
         @if($projects->isEmpty())
             <div class="alert alert-info text-center">
                 No projects found.
             </div>
         @else
             <div class="table-responsive">
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped align-middle">
                     <thead>
                         <tr>
                             <th>S.N</th>
@@ -31,21 +36,21 @@
                                 <td>{{ $project->clientname ?? 'Not specified' }}</td>
                                 <td>
                                     <span class="label {{ $project->status ? 'label-success' : 'label-default' }}">
-                                        {{ $project->status ? 'Active' : 'Inactive' }}
+                                        {{ $project->status ? 'Completed' : 'Ongoing' }}
                                     </span>
                                 </td>
                                 <td>
                                     @if($project->description && strip_tags($project->description))
                                         <div class="ql-editor" style="padding: 0;">
-                                            {!! \Illuminate\Support\Str::words(strip_tags($project->description), 50, '...') !!}
+                                            <p>{!! \Illuminate\Support\Str::words(strip_tags($project->description), 20, '...') !!}</p>
                                         </div>
                                     @else
                                         Not specified
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="/projectedit/{{$project->id}}" class="btn btn-primary btn-sm">Edit</a>
-                                    <form class="mt-1" method="POST" action="/projectsdel/{{$project['id']}}">
+                                    <a href="{{ route('admin.project.edit', $project->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                    <form class="mt-1" method="POST" action="{{ route('admin.project.destroy', $project['id']) }}">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this project ?')">Delete</button>

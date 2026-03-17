@@ -1,94 +1,286 @@
 @extends('partials.layout')
 
-@section('title')
-<style>
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+@section('title', 'Home - DE-FORT Tech and Health')
 
-.fade-in {
-  animation: fadeIn 1s ease-in forwards;
-}
-</style>
-@section('content')
-<div class="carousel-slide shadow my-3" data-bs-ride="carousel" style="height: 40vh;">
-    <div class="carousel-inner">
-        <div class="carousel-item active h-100 w-100">
-            <img src="{{asset('images/carousel/carousel1.jpg')}}" class="img-fluid d-block w-100" style="object-fit: cover; width: 100%; height:40vh;" alt="DE-FORT1">
-            <div class="carousel-caption d-none d-md-block">
-                <h5><p class="lead mt-3">Army Project</p></h5>
-            </div>
-        </div>
-        <div class="carousel-item h-100 w-100">
-            <img src="{{asset('images/carousel/narapark.jpg')}}" class="img-fluid d-block w-100" style="object-fit: cover; width: 100%; height:40vh;" alt="DE-FORT2">
-        </div>
-        <div class="carousel-item h-100 w-100">
-            <img src="{{ asset('images/carousel/defort.jpg') }}" class="img-fluid d-block w-100" style="object-fit: cover; width: 100%; height:40vh;" alt="DE-FORT3">
-        </div>
-        <!-- <div class="carousel-item h-100 w-100">
-            <img src="..." class="d-block w-100" alt="DE-FORT4">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>1</h5>
-            </div>
-        </div> -->
+@section('rotatedContent')
+<div id="rotatedimg">
+    <div class="rotated-inner">
+        <img src="{{ asset('images/homepage/diamond.jpg') }}" class="object-fit-cover" alt="DE-FORT Hero Image">
     </div>
 </div>
-<div class="h-100 pt-5 px-5 pb-2 bg-body-tertiary border rounded-3 my-3 fade-in">
-    <h1 class="bg-dark-subtle d-inline px-2"> About Us </h1>
-    <p class="mt-2">DE-FORT was the reformation of then established company E-Fort Nepal (1998 AD) in 2004 AD with the goal of serving public and private sector in major areas of Infrastructural, Urban and regional development and other related engineering discipline. Under one single roof, singly owned and with one same management having own office building since year 2009, it has three wings. One as purely consulting wing “DE-FORT Designers P. Ltd. (Designers’ of 1992)” other as design Built Company “Development E-Fort Nepal P. Ltd. (A Group of Engineering  Endeavor)”  and  another  as  “E2E  Development  Incorporation  P.  Lt
-scattered  entrepreneurial, technical  and managerial efficiencies or  is  the  integration of  number of established firms and companies efforts for a different higher objective with the goal of serving public and private sector in major areas of real estate and infrastructural developments works.
+@endsection
+@section('content')
+<section class="container-fullwidth row justify-content-between w-100 m-0 mb-md-5 p-0 reveal">
+    <div class="h-100 col-lg-9 col-9 mt-3 d-flex flex-shrink-1 reveal">
+        <div class="h-100 pt-5 px-2 px-md-5 mt-5">
+            <div class="section-subtitle mb-5" style="font-stretch: expanded;">
+                <h1><span style="font-size: 4rem;">Technical excellence in</span> <span style="color: #007bff; font-size:4rem;">Engineering</span> <span style="font-size: 3.3rem;">and</span> <span style="color: #007bff; font-size:4rem;">Health</span> <span style="font-size: 4rem;">projects</span></h1>
+                <p class="lead text-wrap pe-3 mt-4" style="font-size: 1.5rem;">Delivering compliant, sustainable and technically sound architectural<br> & construction solutions | Advancing Health solutions.</p>
+            </div>
+            <div class="d-flex pe-2 my-5">
+                <a href="/contact" class="btn btn-primary btn-lg me-3 px-4">Book a Consultation</a>
+                <a href="/services" class="btn btn-outline-primary btn-lg px-4 ms-4">View all Services</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-DE-FORT has completed more than 700 no. of smaller and larger architectural, engineering, environmental and infrastructural Projects since its establishment  till today and hence gathered wide range of experience and professional network.
-
-DE-FORT has successfully completed 10 different Hospital projects as well, we are currently involved in more than 20 different projects from Hotel Buildings, Home stay, Office Extension, Commercial Buildings, Factory etc. within country and public complex (Nepali Temple) Design/Drawing at Sydney, Australia .
-
-The scope of DE-FORT includes, but not limited to Survey, Research, Design and Turnkey projects on infrastructural development works like Urban planning, GIS & Database projects, water supply and sanitary   engineering,   highway   engineering,   irrigation   design   building,   housing   and   commercial complexes, surveying. Likewise, the company has extended its services to include urban and infrastructural planning, Landscaping, Interior/Exterior designing, as well as training, Research & Development (R&D). Recently it has started its wings on leasing business, BOT and BOOT projects on infrastructural Development projects especially in urban areas. To provide diversified service, DE-FORT maintains a pool of high-caliber experts in various disciplines, apart from full-time in-house dedicated and capable staffs. 
-The company is fully equipped with the latest and advanced computer facilities and instruments, and makes full use of CADD (Computer Aided Design and Drafting) technologies; field Instruments as well as testing machines and equipment.
-</p>
-
-<hr style="border: 1px solid black; width: 100%;">
-
-<!-- <div class="h-100 p-5 my-3">
-    <h1 class="bg-dark-subtle d-inline px-2"> Our Services </h1>
-    <p class="mt-2">We offer a wide range of services including but not limited to the following:</p>
-    <ul>
-        <li>Construction</li>
-        <li>Architecture</li>
-        <li>Design</li>
-        <li>Consultation</li>
-    </ul>
-</div>
-<hr style="border: 1px solid black; width: 100%;"> -->
-
-<div class="h-100 pt-5 mt-3 fade-in">
-    <h1 class="bg-dark-subtle d-inline px-2"> <a href="/projects">Our Projects</a> </h1>
-    <p class="mt-2">We have successfully completed numerous projects across various sectors. Click to see more of our <a href="/projects"><u>Projects:</u></a></p>
-    <div class="d-flex flex-row justify-content-between w-200 w-lg-50 mb-4 px-2">
-            <div class="card shadow h-100 pt-3">
-                <div class="card-body p-3">
-                <img src="{{ asset('images/project/narapark.jpg') }}" class="card-img-top img-fluid rounded mb-3" alt="" style="max-height: 150px; object-fit: cover;"></a>
-                    <h5 class="card-title fs-4 text-center"><strong>Nara Park, Sankhamul</strong></h5>
-
-                    <hr style="border: 1px solid black; width: 100%;">
+<section class="container-fullwidth py-lg-5 mt-lg-5 px-md-5 px-3 reveal">
+    <div class="w-100 mt-md-5 mt-4">
+        <div class="row align-items-center justify-content-center">
+            <!-- Diamond Image Column -->
+            <div class="col-lg-4">
+                <div class="outer-diamond m-3 bg-white p-3 rounded">
+                    <div class="diamond-container mx-auto">
+                        <div class="diamond-inner">
+                            <img src="{{ asset('images/homepage/diamond.jpg') }}"
+                                class="img-fluid"
+                                alt="Engineering and Health Services">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card shadow h-100 pt-3">
-                <div class="card-body p-3">           
-                <img src="{{ asset('images/project/gagan.jpg')}}" class="card-img-top img-fluid rounded mb-3" alt="" style="max-height: 150px; object-fit: cover;"></a>
-                    <h5 class="card-title fs-4 text-center"><strong>Gagan Apartments, Lalitpur</strong></h5>
 
-                    <hr style="border: 1px solid black; width: 100%;">
+            <div class="col-12 col-lg-6">
+                <div class="ps-lg-4 p-3">
+
+                    <div class="section-title d-flex align-items-center mb-4">
+                        <span class="line-divider d-inline-block me-3"
+                            style="background-color: #007bff; width:3.5rem; height:0.25rem;"></span>
+                        <h4 class="mb-0 fw-bold">Who We Are</h4>
+                    </div>
+
+                    <h1 class="mb-4">
+                        Building with <span class="text-primary">Integrity</span>,
+                        <p>Engineering with <span class="text-primary">Vision</span>
+                    </h1>
+
+                    <p class="lead mb-4">
+                        We are <strong>DE-FORT</strong>, a full-service civil, structural, and general engineering
+                        and construction firm dedicated to shaping resilient infrastructure and inspiring spaces.
+                    </p>
+
+                    <p class="lead">
+                        For over 20 years, we've transformed complex challenges into enduring solutions.
+                        Guided by an unwavering commitment to precision, true partnership, and continuous progress,
+                        we don't just build structures — we build trust, foster innovation, and deliver legacies
+                        that stand the test of time.
+                    </p>
+
                 </div>
             </div>
-            <div class="card shadow h-100 pt-3">
-                <div class="card-body p-3">
-                <img src="{{ asset('images/project/m10.jpg')}}" class="card-img-top img-fluid rounded mb-3" alt="" style="max-height: 150px; object-fit: cover;"></a>
-                    <h5 class="card-title fs-4 text-center"><strong>Building Project, Lalitpur</strong></h5>
-                    <hr style="border: 1px solid black; width: 100%;">
+
+        </div>
+    </div>
+</section>
+
+<section class="container-fullwidth py-lg-5 px-md-5 px-4 mt-5 reveal">
+    <div class="w-100">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 mb-5 mb-md-0 reveal">
+                <div class="pe-md-4">
+                    <div class="section-title d-flex align-items-center mb-4">
+                        <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:3rem; height:0.2rem;"></span>
+                        <h4><span class="fw-bold">Our Services</span></h4>
+                    </div>
+                    <h1 class="mb-4">
+                        Expert <span style="color: #007bff;">Solutions</span> for Complex
+                        <span style="color: #007bff;">Building</span> Challenges
+                    </h1>
+                    <p class="lead mb-5">
+                        From structural design to turnkey construction partner with experts
+                        who ensure quality at every phase.
+                    </p>
+                    <p class="lead mb-5">
+                        Delivering precision engineering and construction management for commercial,
+                        industrial, and infrastructure projects.
+                    </p>
+
+                    <a class="btn btn-outline-primary mt-2" href="/services">
+                        Get Started <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 reveal">
+                <div class="row g-4 h-100">
+                    <div class="col-6">
+                        <div class="card h-100 border-0 shadow-sm text-start" style="background-color: #f3f7fe;">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="bi bi-heart fs-3 text-primary"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Structural Engineering & Design</h6>
+                                <p class="card-text small text-muted mb-0">Expert analysis and innovative structural solutions for buildings, bridges, and Weadvanced modeling.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card h-100 border-0 shadow-sm text-start" style="background-color: #f3f7fe;">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="bi bi-file-earmark-text fs-3 text-primary"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Civil & Site Development</h6>
+                                <p class="card-text small text-muted mb-0">Comprehensive planning, grading, unity design, and infastructure for sites. We navigate your land for construction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card h-100 border-0 shadow-sm text-start" style="background-color: #f3f7fe;">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="bi bi-award text-primary fs-3"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">Construction Management</h6>
+                                <p class="card-text small text-muted mb-0">Full-service project oversight, from pre-construction plannung to final delivery. We manage schedule, budget, and built to specification.</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card h-100 border-0 shadow-sm text-start" style="background-color: #f3f7fe;">
+                            <div class="card-body d-flex flex-column justify-content-center p-3">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="fa-solid fa-microscope text-primary fs-3"></i>
+                                    </span>
+                                </div>
+                                <h6 class="card-title fw-bold text-primary mb-2">MEP Engineering (Mechanical, Electrical, Plumbing)</h6>
+                                <p class="card-text small text-muted mb-0">Integrated systems design for optimal building performance, and occupant comfort.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-</div>
-</div>
+    </div>
+</section>
+
+<section class="container-fluid pt-5 p-5 mb-5 pb-2 my-3 reveal">
+    <div class="column pt-5 align-items-center">
+        <div class="section-title d-flex align-items-center justify-content-center mb-4">
+            <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:3rem; height:0.2rem;"></span>
+            <h4><span class="fw-bold"> Why Choose Us</span></h4>
+        </div>
+        <h1 class="mb-4 text-center">Beyond <span style="color: #007bff;"> Engineering</span> & Construction</h1>
+    </div>
+    <div class="container justify-content-center">
+        <div class="row justify-content-evenly align-items-center border-0 text-start">
+            <div class="col-12 col-md-3">
+                <div class="card h-100 border-0 text-start">
+                    <div class="card-body d-flex flex-column justify-content-center p-3">
+                        <div class="mb-3">
+                            <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                <i class="bi bi-heart fs-3 text-primary"></i>
+                            </span>
+                        </div>
+                        <h5 class="card-title fw-bold text-primary mb-2">A Partnership Mindset, Not a Vendor Relationship</h5>
+                        <p class="card-text small text-muted mb-0">Integrated systems design for optimal building performance, energy efficiency,
+                            and occupant comfort.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mt-5">
+                <div class="card-body d-flex flex-column justify-content-center p-3">
+                    <div class="mb-3">
+                        <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                            <i class="bi bi-award text-primary fs-1"></i>
+                        </span>
+                    </div>
+                    <h5 class="card-title fw-bold text-primary mb-2">Deep Technical Expertise, Delivered Simply</h5>
+                    <p class="card-text small text-muted mb-0">Comprehensive planning, grading, unity design, and infastructure for sites. We navigate your land for construction.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="card h-100 border-0 text-start">
+                    <div class="card-body d-flex flex-column justify-content-center p-3">
+                        <div class="mb-3">
+                            <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                <i class="fa-solid fa-microscope text-primary fs-3"></i>
+                            </span>
+                        </div>
+                        <h5 class="card-title fw-bold text-primary mb-2">Unwavering Commitment to Safety, and Quality</h5>
+                        <p class="card-text small text-muted mb-0">Integrated systems design for optimal building performance, energy efficiency,
+                            and occupant comfort.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+@if($posts->isNotEmpty())
+<section class="container-fluid pt-5 px-5 pb-2 my-5 reveal">
+    <div class="pt-5 mt-3">
+        <div class="d-flex flex-column mb-4">
+            <div class="section-title d-flex align-items-center">
+                <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:3rem; height:0.2rem;"></span>
+                <h4><span class="fw-bold"> Our Blogs & Articles</span></h4>
+            </div>
+            <div class="row">
+                <div class="section-subtitle mt-2 col-lg-9 align-items-center d-flex justify-content-lg-start justify-content-center">
+                    <h1>Latest <span style="color: #007bff;">updates</span>, built insights, and <span style="color: #007bff;">expert</span> news </h2>
+                </div>
+                <div class="container my-3 text-center col-lg-3 d-flex justify-content-lg-end justify-content-center align-items-center justify-content-sm-start">
+                    <a href="{{ route('blog.index') }}" class="btn btn-outline-primary px-5 py-2 mx-3 border-3">
+                        View All Blogs <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex flex-md-row mb-4 justify-content-start gap-4 row reveal">
+            @foreach($posts as $post)
+            <div class=" row col-lg-4 mb-sm-2 d-flex align-items-stretch mt-3">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden d-flex h-100 flex-column p-3">
+                    <div class="position-relative">
+                        @if($post->featured_image)
+                        <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 15.625rem; object-fit: cover;">
+                        @else
+                        <img src="https://placehold.co/400x250?text={{ $post->title }}" class="card-img-top" alt="{{ $post->title }}" style="height: 15.625rem; object-fit: cover;">
+                        @endif
+
+                        <div class="position-absolute top-0 start-0 m-3">
+                            <span class="badge bg-light text-primary rounded-pill px-3 py-2">
+                                {{ $post->category?->name ?? 'Uncategorized' }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class=" align-items-center mb-3 text-primary small">
+                            <span class="me-2">⏱</span>
+                            {{ $post->read_time ?? '5 min read' }}
+                        </div>
+                        <h5 class="card-title fw-bold mb-3">{{ $post->title }}</h5>
+
+                        <p class="card-text text-muted lead small">{{ $post->excerpt }}...
+                        </p>
+
+                        <div class="d-flex align-items-center mt-4 align-items-end text-primary small">
+                            <span class="me-2">📅</span>
+                            {{ $post->published_at?->format('jS M, Y') ?? 'Draft' }}
+                        </div>
+                        <a href="{{ route('blog.show', $post) }}" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
 @endsection

@@ -26,7 +26,7 @@
                     </div>
                     @endif
 
-                    <form method="POST" action="/addproject" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.project.store') }}" enctype="multipart/form-data">
                         @csrf
                         <img id="imagePreview" src="#" alt="Image Preview" class="img-fluid mb-3" style="display: none; max-height: 200px;"/>
                         <div class="mb-3">
@@ -65,11 +65,17 @@
                             <label for="category" class="form-label"><b>Category</b></label>
                             <select class="form-select" id="category" name="category" required>
                                 <option value="" disabled selected>Select Category</option>
-                                <option value="Building">Building</option>
-                                <option value="Bank">Bank</option>
-                                <option value="Hospital">Hospital</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Government">Government</option>
+                                <option value="Civil & Site Development">Civil & Site Development</option>
+                                <option value="Structural Engineering & Design">Structural Engineering & Design</option>
+                                <option value="Construction Management">Construction Management</option>
+                                <option value="MEP Engineering">MEP Engineering</option>
+                                <option value="Architecture">Architecture</option>
+                                <option value="Urban Design">Urban Design</option>
+                                <option value="Valuation">Valuation</option>
+                                <option value="Project Management">Project Management</option>
+                                <option value="Health">Health</option>
+                                <option value="Interior Design">Interior Design</option>
+                                <option value="Landscape Design">Landscape Design</option>
                             </select>
                         </div>
 
@@ -91,7 +97,7 @@
                         </div>
 
                         <div class="d-flex justify-content-between">
-                            <a href="/adminprojects" class="btn btn-secondary">Cancel</a>
+                            <a href="{{ route('admin.projects') }}" class="btn btn-secondary">Cancel</a>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
