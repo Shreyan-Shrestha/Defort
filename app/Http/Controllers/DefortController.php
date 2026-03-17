@@ -21,7 +21,9 @@ class DefortController extends Controller
             ->with('category')
             ->latest('published_at')
             ->paginate(3);
-        return view('index', ['posts' => $posts]);
+
+        $services = Services::latest()->get();
+        return view('index', ['posts' => $posts, 'services' => $services]);
     }
 
     public function projects(){

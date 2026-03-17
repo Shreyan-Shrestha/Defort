@@ -4,10 +4,10 @@
 
 @section('rotatedContent')
 <div id="rotatedimg">
-                    <div class="rotated-inner">
-                        <img src="{{ asset('images/homepage/diamond.jpg') }}" class="object-fit-cover" alt="DE-FORT Hero Image">
-                    </div>
-            </div>
+    <div class="rotated-inner">
+        <img src="{{ asset('images/homepage/diamond.jpg') }}" class="object-fit-cover" alt="DE-FORT Hero Image">
+    </div>
+</div>
 @endsection
 @section('content')
 <section class="container-fullwidth row justify-content-between w-100 m-0 mb-md-5 p-0 reveal">
@@ -96,9 +96,9 @@
                         industrial, and infrastructure projects.
                     </p>
 
-                    <button class="btn btn-outline-primary mt-2">
+                    <a class="btn btn-outline-primary mt-2" href="/services">
                         Get Started <i class="bi bi-arrow-right"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -166,7 +166,7 @@
     </div>
 </section>
 
-<section class="container-fluid pt-5 px-5 mb-3 pb-2 my-3 reveal">
+<section class="container-fluid pt-5 p-5 mb-5 pb-2 my-3 reveal">
     <div class="column pt-5 align-items-center">
         <div class="section-title d-flex align-items-center justify-content-center mb-4">
             <span class="line-divider d-inline-block me-3" style="background-color: #007bff; width:3rem; height:0.2rem;"></span>
@@ -223,7 +223,8 @@
 
 </section>
 
-<section class="container-fluid pt-5 px-5 mb-3 pb-2 my-3 reveal">
+@if($posts->isNotEmpty())
+<section class="container-fluid pt-5 px-5 pb-2 my-5 reveal">
     <div class="pt-5 mt-3">
         <div class="d-flex flex-column mb-4">
             <div class="section-title d-flex align-items-center">
@@ -235,13 +236,13 @@
                     <h1>Latest <span style="color: #007bff;">updates</span>, built insights, and <span style="color: #007bff;">expert</span> news </h2>
                 </div>
                 <div class="container my-3 text-center col-lg-3 d-flex justify-content-lg-end justify-content-center align-items-center justify-content-sm-start">
-                    <a href="#" class="btn btn-outline-primary px-5 py-2 mx-3 border-3">
+                    <a href="{{ route('blog.index') }}" class="btn btn-outline-primary px-5 py-2 mx-3 border-3">
                         View All Blogs <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="d-md-flex flex-md-row mb-4 justify-content-between row reveal">
+        <div class="d-md-flex flex-md-row mb-4 justify-content-start gap-4 row reveal">
             @foreach($posts as $post)
             <div class=" row col-lg-4 mb-sm-2 d-flex align-items-stretch mt-3">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden d-flex h-100 flex-column p-3">
@@ -253,7 +254,7 @@
                         @endif
 
                         <div class="position-absolute top-0 start-0 m-3">
-                            <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">
+                            <span class="badge bg-light text-primary rounded-pill px-3 py-2">
                                 {{ $post->category?->name ?? 'Uncategorized' }}
                             </span>
                         </div>
@@ -281,4 +282,5 @@
         </div>
     </div>
 </section>
+@endif
 @endsection

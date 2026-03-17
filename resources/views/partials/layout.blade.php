@@ -101,7 +101,7 @@
                         src="{{ asset('images/logo.png') }}"
                         style="height: 5rem; width: auto;"
                         alt="DE-FORT Logo">
-                    <p class="mb-1" style="font-family: monospace; opacity: 0.9;">
+                    <p class="mb-3">
                         We are DE-FORT, a full service [Civil/Structural/General] Engineering
                         and Construction firm dedicated to shaping resilient infrastructure
                         and inspiring spaces.
@@ -128,11 +128,18 @@
                         <div class="col-6 col-lg-7">
                             <h5 class="mb-3">Services</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Structural Engineering & Design</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Civil & Site Development</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Construction Management</a></li>
-                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">MEP Engineering</a></li>
+                                @if($services->isNotEmpty())
+                                    @foreach($services as $service)
+                                        <li class="mb-2"><a href="/services" class="text-white text-decoration-none">{{ $service->title }}</a></li>
+                                    @endforeach
+                                @else
+                                <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Structural Engineering & Design</a></li>
+                                <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Civil & Site Development</a></li>
+                                <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Construction Management</a></li>
+                                <li class="mb-2"><a href="/services" class="text-white text-decoration-none">MEP Engineering</a></li>
+                                @endif
                             </ul>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +150,6 @@
                     <p class="mb-2"><i class="bi bi-envelope me-2"></i>info@defort.com</p>
                     <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Jawalakhel, Lalitpur Metropolitan City, Nepal</p>
                 </div>
-
             </div>
 
             <div class="text-center mt-5 pt-4 border-top border-white border-opacity-25">
