@@ -51,13 +51,17 @@
             .content-wrapper {
                 width: 100%;
             }
+
+            ul li a#logout-link {
+              border: 1px solid #dc3545 !important;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="flex-container">
-        <nav class="navbar navbar-expand-lg bg-primary d-flex flex-column" data-bs-theme="dark" style="width: 16rem;">
+        <nav class="navbar navbar-expand-lg bg-primary d-flex flex-column" data-bs-theme="dark" style="width: 14rem;">
             <div class="container-fluid flex-column sticky-top h-75 justify-content-start align-items-center">
                 <div class="navbar-brand text-center mb-4">
                     <span class="fs-3 fw-bold">Admin Panel</span>
@@ -67,53 +71,53 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse flex-column w-auto mt-3" id="adminNavbar">
+                <div class="collapse navbar-collapse flex-column w-100 mt-3" id="adminNavbar">
                     <ul class="navbar-nav flex-column w-100">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.index') }}">
-                                <h4><i class="bi bi-speedometer2 me-2"></i>Dashboard</h4>
+                                <h5><i class="bi bi-speedometer2 me-2"></i>Dashboard</h5>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.faqs') }}">
-                                <h4><i class="bi bi-info-circle me-2"></i>FAQs</h4>
+                                <h5><i class="bi bi-info-circle me-2"></i>FAQs</h5>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.services') }}">
-                                <h4><i class="bi bi-gear me-2"></i>Services</h4>
+                                <h5><i class="bi bi-gear me-2"></i>Services</h5>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.projects') }}">
-                                <h4><i class="bi bi-kanban me-2"></i>Projects</h4>
+                                <h5><i class="bi bi-kanban me-2"></i>Projects</h5>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.contacts') }}">
-                                <h4><i class="bi bi-envelope me-2"></i>Messages</h4>
+                                <h5><i class="bi bi-envelope me-2"></i>Messages</h5>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('blog.admin.posts.index') }}">
-                                <h4><i class="bi bi-journal-text me-2"></i>Blog Posts</h4>
+                                <h5><i class="bi bi-journal-text me-2"></i>Blog Posts</h5>
                             </a>
                         </li>
                         <li class="nav-item dropdown mt-5">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <h4><i class="bi bi-person me-2"></i>Account</h4>
+                                <h5><i class="bi bi-person me-2"></i>Account</h5>
                             </a>
-                            <ul class="dropdown-menu p-3" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu col-6 col-md-12 p-3" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#changePasswordModal" data-bs-whatever="@mdo" onclick="event.preventDefault();">
-                                        <h4><i class="bi bi-key me-2"></i>Change Password</h4>
+                                    <button type="button" class="btn btn-outline-warning mb-2 w-100 px-2 py-2" data-bs-toggle="modal" data-bs-target="#changePasswordModal" data-bs-whatever="@mdo" onclick="event.preventDefault();">
+                                        <p class="p-0 py-1 m-0"><i class="bi bi-key me-2"></i>Change Password</p>
                                     </button>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="#"
+                                    <button class="btn btn-outline-danger px-2 w-100"  href="#" id="logout-link" style="border: 1px solid #dc3545;"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <h4 class="text-danger"><i class="bi bi-box-arrow-right me-2"></i>Logout</h4>
-                                    </a>
+                                        <h5 class="m-0 px-2 py-1" ><i class="bi bi-box-arrow-right me-2"></i>Logout</h5>
+                                    </button>
                                     <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
