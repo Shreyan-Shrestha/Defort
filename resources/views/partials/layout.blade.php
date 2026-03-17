@@ -128,10 +128,16 @@
                         <div class="col-6 col-lg-7">
                             <h5 class="mb-3">Services</h5>
                             <ul class="list-unstyled">
+                                @if($services->isNotEmpty())
+                                    @foreach($services as $service)
+                                        <li class="mb-2"><a href="/services" class="text-white text-decoration-none">{{ $service->title }}</a></li>
+                                    @endforeach
+                                @else
                                 <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Structural Engineering & Design</a></li>
                                 <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Civil & Site Development</a></li>
                                 <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Construction Management</a></li>
                                 <li class="mb-2"><a href="/services" class="text-white text-decoration-none">MEP Engineering</a></li>
+                                @endif
                             </ul>
                             </a>
                         </div>
