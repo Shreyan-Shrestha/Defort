@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title')->required();
             $table->text('description')->required();
             $table->timestamps();
-            $table->SoftDeletes();
+            $table->softDeletes();
         });
     }
 
