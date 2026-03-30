@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
 class ServicesRequest extends FormRequest
 {
@@ -22,7 +23,7 @@ class ServicesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "image" => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg,webp', 'max:5120'],
+            "image" => ['nullable', 'image', File::image()->max(5120)],
             "title" => ['required','string' , 'max:50'],
             "description" => ['required','string' , 'max:1000'],
         ];

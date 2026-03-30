@@ -92,7 +92,7 @@
                                 <p class="card-text text-muted mt-auto mb-4 flex-grow-1">{!! \Illuminate\Support\Str::words(strip_tags($project->description), 85,'<span class="text-primary">.....</span>') !!}</p>
                                 @endif
                             </div>
-                            <!-- Link to view project details page
+                            <!-- Link to view project details page removed for now, as the project details page is not yet implemented
                             <a href="/viewproject/{{ $project->id }}" class="btn btn-primary mt-auto align-self-start">
                                 View Details
                             </a> -->

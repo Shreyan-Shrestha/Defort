@@ -66,34 +66,34 @@ class AdminController extends Controller
         return view('admin.project.editproject', ['project' => $project]);
     }
 
-   public function editprojectsubmit(ProjectRequest $request)
-{
-    $validated = $request->validated();
+    public function editprojectsubmit(ProjectRequest $request)
+    {
+        $validated = $request->validated();
 
-    $oldImagePath = null;
+        $oldImagePath = null;
 
-    // Handling the image file upload ONLY if a new one is provided
-    if ($request->hasFile('image')) {
-        $image = $request->file('image');
-        $imageName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
-        $image->storeAs('images', $imageName, 'public');
-        $validated['image'] = 'images/' . $imageName;
+        // Handling the image file upload ONLY if a new one is provided
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('images/projects', $imageName, 'public');
+            $validated['image'] = 'images/projects/' . $imageName;
 
-        // Get the current (old) image path before updating
-        $project = Projects::find($request['id']);
-        $oldImagePath = $project->image;
+            // Get the current (old) image path before updating
+            $project = Projects::find($request['id']);
+            $oldImagePath = $project->image;
+        }
+
+        // Update the project
+        Projects::where('id', $request['id'])->update($validated);
+
+        // Delete old image file ONLY if a new one was uploaded
+        if ($oldImagePath && Storage::disk('public')->exists($oldImagePath)) {
+            Storage::disk('public')->delete($oldImagePath);
+        }
+
+        return redirect()->route('admin.projects')->with('success', 'Project updated successfully!');
     }
-
-    // Update the project
-    Projects::where('id', $request['id'])->update($validated);
-
-    // Delete old image file ONLY if a new one was uploaded
-    if ($oldImagePath && Storage::disk('public')->exists($oldImagePath)) {
-        Storage::disk('public')->delete($oldImagePath);
-    }
-
-    return redirect()->route('admin.projects')->with('success', 'Project updated successfully!');
-}
 
     public function delproject($id)
     {
@@ -151,43 +151,90 @@ class AdminController extends Controller
         About::where('id', $request['id'])->update($validated);
         return redirect()->route('admin.faqs')->with('success', 'FAQ updated successfully!');
     }
-    public function delfaq($id)    {
+    public function delfaq($id)
+    {
         About::where('id', $id)->delete();
-        return redirect()->route('admin.faqs')->with('success', 'FAQ deleted successfully!'); 
-    }   
+        return redirect()->route('admin.faqs')->with('success', 'FAQ deleted successfully!');
+    }
 
     //Services
-    public function services(){
+    public function services()
+    {
         $services = Services::latest()->get();
         return view('admin.services.services', ['services' => $services]);
     }
-    public function addserviceform(){
+
+    public function addserviceform()
+    {
         return view('admin.services.addservice');
     }
-    public function addservice(ServicesRequest $request){
+
+    public function addservice(ServicesRequest $request)
+    {
         $validated = $request->validated();
+
+        $imagePath = null;
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('images', $imageName, 'public'); // Store in storage/app/public/images
-            $validated['image'] = 'images/' . $imageName; // Add image path to validated data
+            $image->storeAs('images/services/', $imageName, 'public');
+            $imagePath = 'images/services/' . $imageName;
         }
 
-        Services::create($validated);
+        Services::create([
+                'image' => $imagePath,
+                'title' => $validated['title'],
+                'description' => $validated['description'],
+            
+            ]);
         return redirect()->route('admin.services')->with('success', 'Added Service successfully!');
     }
-    public function editservice($id){
+
+    public function editservice($id)
+    {
         $service = Services::where('id', $id)->first();
         return view('admin.services.editservice', ['service' => $service]);
     }
-    public function editservicesubmit(ServicesRequest $request){
+
+    public function editservicesubmit(ServicesRequest $request)
+    {
         $validated = $request->validated();
+
+        $oldImagePath = null;
+
+        // Handling the image file upload ONLY if a new one is provided
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('images', $imageName, 'public');
+            $validated['image'] = 'images/' . $imageName;
+
+            // Get the current (old) image path before updating
+            $service = Services::find($request['id']);
+            $oldImagePath = $service->image;
+        }
+
         Services::where('id', $request['id'])->update($validated);
+
+        // Delete old image file ONLY if a new one was uploaded
+        if ($oldImagePath && Storage::disk('public')->exists($oldImagePath)) {
+            Storage::disk('public')->delete($oldImagePath);
+        }
+
         return redirect()->route('admin.services')->with('success', 'Service updated successfully!');
     }
-    public function delservice($id)    {
+
+    public function delservice($id)
+    {
+        $service = Services::where('id', $id)->first();
+
+        if ($service->image && Storage::disk('public')->exists($service->image)) {
+            Storage::disk('public')->delete($service->image);
+        }
+
         Services::where('id', $id)->delete();
-        return redirect()->route('admin.services')->with('success', 'Service deleted successfully!'); 
-    } 
+
+        return redirect()->route('admin.services')->with('success', 'Service deleted successfully!');
+    }
 }

@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Services extends Model
 {
+    use SoftDeletes;
     protected $table = 'services';
     protected $fillable = [
         'icon',
         'title',
         'description',
     ];
-    use SoftDeletes;
+    
 }

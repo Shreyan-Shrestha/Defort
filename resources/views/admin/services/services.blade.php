@@ -10,9 +10,9 @@
         <div class="col-md-4 mb-4">
             <div class="card h-100">
                 <div class="card-body text-start">
-                    <span class="px-2 mb-1 bg-primary-subtle rounded d-inline-block">
-                        <i class="{{ $service->icon }} fs-3 text-primary mb-3"></i>
-                    </span>
+                    <div class="mb-3">
+                        <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}" class="img-fluid rounded">
+                    </div>
                     <h5 class="card-title text-primary">{{ $service->title }}</h5>
                     <p class="card-text lead">{{ $service->description }}</p>
                 </div>
