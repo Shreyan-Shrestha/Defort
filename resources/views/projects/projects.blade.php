@@ -51,7 +51,7 @@
         @else
         <div class="d-flex flex-column gap-5">
             @foreach($projects as $project)
-            <div class="card border-0 bg-light shadow-sm h-100" style="height: 18.625rem !important;">
+            <div class="card border-0 bg-light shadow-sm h-100">
                 <div class="row g-0 h-100">
                     <!-- Image column – fixed aspect or height controlled -->
                     <div class="col-lg-4 col-md-5 col-sm-4 bg-light position-relative">
@@ -63,10 +63,11 @@
                         <img src="{{ asset('storage/' . $project->image) }}"
                             class="w-100 h-100 object-fit-cover rounded"
                             alt="{{ $project->projectname }}"
+                            style="height: 16.625rem !important;"
                             >
                         @else
                         <img src="https://placehold.co/600x400?text={{ urlencode($project->projectname) }}"
-                            class="w-100 h-100 object-fit-cover rounded"
+                            class="w-100 h-100 object-fit-cover rounded" style="height: 16.625rem !important;"
                             alt="{{ $project->projectname }}">
                         @endif
                     </div>
