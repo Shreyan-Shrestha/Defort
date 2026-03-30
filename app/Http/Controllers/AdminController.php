@@ -166,6 +166,14 @@ class AdminController extends Controller
     }
     public function addservice(ServicesRequest $request){
         $validated = $request->validated();
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('images', $imageName, 'public'); // Store in storage/app/public/images
+            $validated['image'] = 'images/' . $imageName; // Add image path to validated data
+        }
+
         Services::create($validated);
         return redirect()->route('admin.services')->with('success', 'Added Service successfully!');
     }
