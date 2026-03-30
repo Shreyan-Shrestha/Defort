@@ -22,9 +22,9 @@ class ServicesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "icon" => ['nullable','string' , 'max:80' ],
-            "title" => ['required','string' , 'max:255' ],
-            "description" => ['required','string' , 'max:1000' ],
+            "image" => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg,webp', 'max:5120'],
+            "title" => ['required','string' , 'max:50'],
+            "description" => ['required','string' , 'max:1000'],
         ];
     }
 }
