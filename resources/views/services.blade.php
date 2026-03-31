@@ -73,13 +73,13 @@
                 <div class="card-body d-flex flex-column justify-content-between p-3">
                     <div>
                         <div class="mb-4">
-                            <span class="p-3 px-4 bg-primary-subtle rounded d-inline-block">
-                                @if($service->icon)
-                                <i class="{{ $service->icon }} text-primary fs-1"></i>
-                                @else
-                                <i class="bi bi-briefcase-fill text-primary fs-1"></i>
-                                @endif
-                            </span>
+                            @if($service->image)
+                            <img src="{{ asset($service->image) }}" alt="{{ $service->title }}" class="img-fluid image-top rounded" style="max-height: 13rem; width:100%; object-fit: cover;">
+                            @else
+                            <div class="d-flex justify-content-center align-items-center" style="height: 12rem; background-color: #dae9ff;">
+                                <img src="https://placehold.co/600x400?text={{ urlencode($service->title) }}" alt="{{ $service->title }}" class="img-fluid">
+                            </div>
+                            @endif
                         </div>
                         <h5 class="card-title fw-bold text-primary mb-3">{{ $service->title }}</h5>
                         <p class="card-text small text-muted mt-auto mb-0">
