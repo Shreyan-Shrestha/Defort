@@ -7,6 +7,7 @@ use App\Models\Projects;
 use App\Models\Contact;
 use App\Models\About;
 use App\Models\Services;
+use App\Models\Post;
 use App\Http\Requests\ServicesRequest;
 
 use Illuminate\Support\Facades\Storage;
@@ -21,7 +22,7 @@ class AdminController extends Controller
     {
         $projectsCount = Projects::count();
         $faqsCount = About::count();
-        $blogsCount = Contact::count();
+        $blogsCount = Post::count();
         $messagesCount = Contact::count();
 
         view()->share('projectsCount', $projectsCount);
