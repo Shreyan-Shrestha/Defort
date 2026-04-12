@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="{{ config('session.lifetime') * 60 }}">
     <title>Admin Login</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
@@ -13,7 +14,11 @@
 
         @if ($errors->any())
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-                {{ $errors->first('uname') }}
+                @if($errors->has('uname'))
+                    {{ $errors->first('uname') }}
+                @else
+                    {{ $errors->first() }}
+                @endif
             </div>
         @endif
 

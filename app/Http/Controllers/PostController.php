@@ -40,7 +40,7 @@ class PostController extends Controller
         if (!$post->published_at) {
             abort(404);
         }
-        $posts=Post::published()
+        $posts = Post::published()
             ->with('category')
             ->latest('published_at')
             ->paginate(3);
@@ -181,5 +181,25 @@ class PostController extends Controller
         }
 
         $post->tags()->sync($tagIds);
+    }
+
+    /**
+     * Publish a post
+     */
+    public function publish(Post $post)
+    {
+        $post->published_at = now();
+        $post->save();
+        return redirect()->route('blog.admin.posts.index')->with('success', 'Post published!');
+    }
+
+    /**
+     * Unpublish a post
+     */
+    public function unpublish(Post $post)
+    {
+        $post->published_at = null;
+        $post->save();
+        return redirect()->route('blog.admin.posts.index')->with('success', 'Post unpublished!');
     }
 }
