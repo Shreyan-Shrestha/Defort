@@ -87,4 +87,6 @@ Route::prefix('blog/admin')->name('blog.admin.')->middleware(['web', 'admin'])->
     Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
     Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
     Route::post('/upload-image', [PostController::class, 'uploadImage'])->name('upload.image');
+    Route::get('/posts/{post}/publish', [PostController::class, 'publish'])->name('posts.publish');
+    Route::get('/posts/{post}/unpublish', [PostController::class, 'unpublish'])->name('posts.unpublish');
 });
