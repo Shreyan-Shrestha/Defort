@@ -11,7 +11,7 @@
   - [Environment](#environment)
   - [Database](#database)
   - [Assets](#assets)
-  - [Serve](#serve)
+    
 - [Notes](#notes)
 
 ---
