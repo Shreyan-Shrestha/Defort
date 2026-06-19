@@ -55,7 +55,7 @@
                 <p class="card-text text-primary">{{ $messagesCount }}</p>
             </div>
         </div>
-        <a href="admin.contact" class="stretched-link"></a>
+        <a href="{{ route('admin.contacts') }}" class="stretched-link"></a>
     </div>
 </div>
 </div>
