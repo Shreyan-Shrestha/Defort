@@ -54,14 +54,6 @@ npm run dev    # development build
 npm run build  # production build 
 ```
 
-### Serve
-* Use Herd (preferred): open Herd and select the project.
-Or,
-* After stopping Herd:
-  ```bash
-  php artisan serve
-  ```
-
 ## Notes
 
 * Sessions use the database driver; ensure `sessions` table exists (`php artisan session:table` then migrate).
