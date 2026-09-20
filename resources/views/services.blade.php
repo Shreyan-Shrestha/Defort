@@ -1,7 +1,6 @@
 @extends('partials.layout')
 @section('title','Our Services - DE-FORT Tech and Health')
 <style>
-
     .column2 {
         border-left: 0.313rem solid #dae9ff;
     }
@@ -107,80 +106,77 @@
 
     <div class="container-full mt-5 p-0 m-0 reveal">
         <div class="row" id="row-1">
-            <div class="col-6 text-end column1 d-flex justify-content-end align-items-center pe-3">
+            <div class="col-6 text-end column1 d-flex justify-content-end align-items-center pe-4">
                 <i class="fa-solid fa-rotate" style="font-size: 4rem; color: #dae9ff"></i>
             </div>
             <div class="col-6 column2 justify-content-center align-items-center p-4 px-2 px-md-5 hasText pb-5">
                 <span class="d-flex d-inline-block mb-3 justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>1</h4>
                 </span>
-                <h4 class="text-primary mb-3">Discovery & Planning</h4>
-                <p class="medium text-muted">We begin by deeply understanding your vision, constraints, and objectives. Our
-                    team conducts comprehensive site analysis and feasibility studies to establish a
-                    solid foundation. We translate your goals into a clear conceptual design and
-                    realistic budget framework.</p>
+                <h4 class="text-primary mb-3">Project Discovery & Planning</h4>
+                <p class="medium text-muted">We begin by understanding your vision, requirements, and project objectives. 
+                    Through site assessments, feasibility studies, and strategic planning, we establish a clear direction, 
+                    scope, and budget for your project.</p>
             </div>
         </div>
+
         <div class="row" id="row-2">
-            <div class="col-6 d-flex row justify-content-end align-items-center p-4 px-2 px-md-2 hasText text-end column1">
+            <div class="col-6 d-flex row justify-content-end align-items-center p-4 px-2 px-md-4 hasText text-end column1">
                 <span class="d-inline-block mb-3 d-flex justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>2</h4>
                 </span>
                 <h4 class="text-primary mb-3 p-0">Design & Engineering</h4>
-                <p class="medium text-muted p-0">Our technical experts transform concepts into precise, buildable solutions. We
-                    progress from schematic designs to detailed engineering calculations, ensuring
-                    every structural, mechanical, and architectural element is optimized for
-                    performance, safety, and cost.</p>
-
+                <p class="medium text-muted p-0">Our architects and engineers transform ideas into practical, buildable solutions. 
+                    We develop detailed designs and technical plans, focusing on structural integrity, functionality, safety, and 
+                    cost efficiency.</p>
             </div>
             <div class="col-6 ms-4 ps-5 d-flex row text-start column1 d-flex justify-content-start align-items-center column2">
                 <i class="fa-solid fa-pen-ruler" style="font-size: 4rem; color: #dae9ff"></i>
             </div>
         </div>
+
         <div class="row" id="row-3">
-            <div class="col-6 text-end column1 d-flex justify-content-end align-items-center pe-3">
+            <div class="col-6 text-end column1 d-flex justify-content-end align-items-center pe-4">
                 <i class="fa-regular fa-paste" style="font-size: 4rem; color: #dae9ff"></i>
             </div>
             <div class="col-6 column2 justify-content-center align-items-center p-4 px-2 px-md-5 hasText pb-5">
                 <span class="d-flex d-inline-block mb-3 justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>3</h4>
                 </span>
-                <h4 class="text-primary mb-3">Discovery & Planning</h4>
-                <p class="medium text-muted">We begin by deeply understanding your vision, constraints, and objectives. Our
-                    team conducts comprehensive site analysis and feasibility studies to establish a
-                    solid foundation. We translate your goals into a clear conceptual design and
-                    realistic budget framework.</p>
+                <h4 class="text-primary mb-3">Execution & Construction</h4>
+                <p class="medium text-muted">We bring the approved designs to life through coordinated construction and 
+                    project execution. Our team manages resources, site activities, and construction standards to support
+                    efficient and quality-driven delivery.</p>
             </div>
         </div>
+
         <div class="row" id="row-4">
-            <div class="col-6 d-flex row justify-content-end align-items-center p-4 px-2 px-md-2 hasText text-end column1">
+            <div class="col-6 d-flex row justify-content-end align-items-center p-4 px-2 px-md-4 hasText text-end column1">
                 <span class="d-inline-block mb-3 d-flex justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>4</h4>
                 </span>
-                <h4 class="text-primary mb-3 p-0">Construction & Oversight</h4>
-                <p class="medium text-muted p-0">Our team provides hands-on management throughout the build phase, overseeing
-                    daily site operations with an emphasis on safety and schedule adherence. We
-                    implement robust systems for progress monitoring, quality control inspections, and
-                    proactive change</p>
-
+                <h4 class="text-primary mb-3 p-0">Quality Control & Project Oversight</h4>
+                <p class="medium text-muted p-0">We monitor project progress, workmanship, and compliance with approved plans and safety 
+                    requirements. Through regular inspections and coordinated supervision, we maintain quality and address project 
+                    challenges proactively.</p>
             </div>
             <div class="col-6 ms-4 ps-5 d-flex row text-start column1 d-flex justify-content-start align-items-center column2">
                 <i class="fa-solid fa-helmet-safety" style="font-size: 4rem; color: #dae9ff"></i>
             </div>
         </div>
+
         <div class="row" id="row-5">
-            <div class="col-6 text-end column1 d-flex justify-content-end align-items-center pe-3">
+            <div class="col-6 text-end column1 d-flex justify-content-end align-items-center pe-4">
                 <i class="fa-solid fa-trophy" style="font-size: 4rem; color: #dae9ff"></i>
             </div>
             <div class="col-6 column2 justify-content-center align-items-center p-4 px-2 px-md-5 hasText pb-3">
                 <span class="d-flex d-inline-block mb-3 justify-content-center align-items-center text-light" style=" height: 4rem; width: 4rem; border-radius: 50%; background-color: #dae9ff;">
                     <h4>5</h4>
                 </span>
-                <h4 class="text-primary mb-3">Closeout & Beyond</h4>
-                <p class="medium text-muted">We ensure a polished transition from construction to occupancy through rigorous
-                    final inspections and systems testing. Comprehensive training and documentation
-                    are provided for all building systems, followed by structured warranty
-                    administration.</p>
+                <h4 class="text-primary mb-3">Completion & Handover</h4>
+                <p class="medium text-muted">We complete final inspections, address outstanding requirements, and prepare the project 
+                    for handover. Relevant documentation and project information are provided to support a smooth transition to 
+                    occupancy or operation.</p>
             </div>
         </div>
     </div>
@@ -192,7 +188,7 @@
             <h2 class="mb-3 text-primary">Need Specialized Expertise?</h2>
             <p class="mb-4">Our team of licensed professionals is ready to tackle your most complex engineering challenges.</p>
         </div>
-        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-lg-end"> 
+        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-lg-end">
             <button onclick="window.location.href='/contact'" class="btn btn-outline-primary px-5 py-2 border-3">Contact Us <i class="bi bi-arrow-right text-primary"></i></button>
         </div>
     </div>
