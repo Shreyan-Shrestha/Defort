@@ -2,24 +2,24 @@
 
 @section('title', 'Home - DE-FORT Tech and Health')
 
-@section('rotatedContent')
-<div id="rotatedimg">
-    <div class="rotated-inner">
-        <img src="{{ asset('images/homepage/diamond.jpg') }}" class="object-fit-cover" alt="DE-FORT Hero Image">
-    </div>
-</div>
-@endsection
 @section('content')
 <section class="container-fullwidth row justify-content-between w-100 m-0 mb-md-5 p-0 reveal">
-    <div class="h-100 col-lg-9 col-9 mt-3 d-flex flex-shrink-1 reveal">
+    <div class="h-100 col-lg-8 col-8 mt-3 d-flex flex-shrink-1 reveal">
         <div class="h-100 pt-5 px-2 px-md-5 mt-5">
             <div class="section-subtitle mb-5" style="font-stretch: expanded;">
-                <h1><span style="font-size: 4rem;">Technical excellence in</span> <span style="color: #007bff; font-size:4rem;">Engineering</span> <span style="font-size: 3.3rem;">and</span> <span style="color: #007bff; font-size:4rem;">Health</span> <span style="font-size: 4rem;">projects</span></h1>
-                <p class="lead text-wrap pe-3 mt-4" style="font-size: 1.5rem;">Delivering compliant, sustainable and technically sound architectural<br> & construction solutions | Advancing Health solutions.</p>
+                <h1><span style="font-size: 3rem;">Technical Excellence in</span> <span style="color: #007bff; font-size:3rem;">Engineering </span>/<span style="color: #007bff; font-size:3rem;"> Architectural</span> / <span style="color: #007bff; font-size:3rem;"> Infastructural</span> <span style="font-size: 3.3rem;">and</span> <span style="color: #007bff; font-size:3rem;">Health</span> <span style="font-size: 3rem;">Projects</span></h1>
+                <p class="lead text-wrap pe-3 mt-4" style="font-size: 1.5rem;">Delivering compliant, sustainable and technically sound designs, plannings<br> & Turnkey construction solutions | Advancing Health solutions.</p>
             </div>
             <div class="d-flex pe-2 my-5">
                 <a href="/contact" class="btn btn-primary btn-lg me-3 px-4">Book a Consultation</a>
                 <a href="/services" class="btn btn-outline-primary btn-lg px-4 ms-4">View all Services</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-4 mt-5 reveal">
+        <div class="mt-5" style="height: 10.75rem;">
+            <div class="image-wrapper h-100" style="aspect-ratio: 2402/2572 !important;">
+                <img src="{{asset('images/homepage/hero.jpeg')}}" class="img-fluid" alt="DE-FORT" style="object-fit:contain; height:100%; width:100%; border-radius: 10%; border: 10px solid #bbd4ff;">
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
                 <div class="outer-diamond m-3 bg-white p-3 rounded">
                     <div class="diamond-container mx-auto">
                         <div class="diamond-inner">
-                            <img src="{{ asset('images/homepage/diamond.jpg') }}"
+                            <img src="{{ asset('images/homepage/diamond.jpeg') }}"
                                 class="img-fluid"
                                 alt="Engineering and Health Services">
                         </div>
@@ -47,24 +47,17 @@
                     <div class="section-title d-flex align-items-center mb-4">
                         <span class="line-divider d-inline-block me-3"
                             style="background-color: #007bff; width:3.5rem; height:0.25rem;"></span>
-                        <h4 class="mb-0 fw-bold">Who We Are</h4>
+                        <h2 class="mb-0 fw-bold">Who We Are</h2>
                     </div>
 
-                    <h1 class="mb-4">
-                        Building with <span class="text-primary">Integrity</span>,
-                        <p>Engineering with <span class="text-primary">Vision</span>
-                    </h1>
-
-                    <p class="lead mb-4">
-                        We are <strong>DE-FORT</strong>, a full-service civil, structural, and general engineering
-                        and construction firm dedicated to shaping resilient infrastructure and inspiring spaces.
-                    </p>
-
                     <p class="lead">
-                        For over 20 years, we've transformed complex challenges into enduring solutions.
-                        Guided by an unwavering commitment to precision, true partnership, and continuous progress,
-                        we don't just build structures — we build trust, foster innovation, and deliver legacies
-                        that stand the test of time.
+                        From our humble beginnings to a multidisciplinary future, we continue to design, develop, and
+                        deliver with purpose. Rooted as the vision of Effort Nepal, our journey has evolved the company
+                        through Development Effort and Defort Designers, progressively expanding our expertise and commitment
+                        to excellence. Today, as Defort Tech and Health pvt. ltd., we bring together multidisciplinary capabilities
+                        in engineering, architecture, urban planning, and health infrastructure to deliver innovative, sustainable, and
+                        impactful solutions. Our evolution reflects a continued pursuit of knowledge, collaboration, and a better-built
+                        future.
                     </p>
 
                 </div>
@@ -109,7 +102,7 @@
                             <div class="card-body d-flex flex-column justify-content-center p-3">
                                 <div class="mb-3">
                                     <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                        <i class="bi bi-heart fs-3 text-primary"></i>
+                                        <i class="fa fa-drafting-compass fs-3 text-primary"></i>
                                     </span>
                                 </div>
                                 <h6 class="card-title fw-bold text-primary mb-2">Structural Engineering & Design</h6>
@@ -123,7 +116,7 @@
                             <div class="card-body d-flex flex-column justify-content-center p-3">
                                 <div class="mb-3">
                                     <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                        <i class="bi bi-file-earmark-text fs-3 text-primary"></i>
+                                        <i class="fa-solid fa-helmet-safety fs-3 text-primary"></i>
                                     </span>
                                 </div>
                                 <h6 class="card-title fw-bold text-primary mb-2">Civil & Site Development</h6>
@@ -137,11 +130,11 @@
                             <div class="card-body d-flex flex-column justify-content-center p-3">
                                 <div class="mb-3">
                                     <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                        <i class="bi bi-award text-primary fs-3"></i>
+                                        <i class="fa fa-building text-primary fs-3"></i>
                                     </span>
                                 </div>
                                 <h6 class="card-title fw-bold text-primary mb-2">Construction Management</h6>
-                                <p class="card-text small text-muted mb-0">Full-service project oversight, from pre-construction plannung to final delivery. We manage schedule, budget, and built to specification.</p>
+                                <p class="card-text small text-muted mb-0">Full-service project oversight, from pre-construction planning to final delivery. We manage schedule, budget, and build to specification.</p>
                             </div>
                         </div>
                         </a>
@@ -151,12 +144,13 @@
                         <div class="card h-100 border-0 shadow-sm text-start" style="background-color: #f3f7fe;">
                             <div class="card-body d-flex flex-column justify-content-center p-3">
                                 <div class="mb-3">
-                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                        <i class="fa-solid fa-microscope text-primary fs-3"></i>
+                                    <span class="p-3 py-4 bg-primary-subtle rounded d-inline-block">
+                                        <i class="fa fa-tools text-primary fs-3"></i>
                                     </span>
                                 </div>
-                                <h6 class="card-title fw-bold text-primary mb-2">MEP Engineering (Mechanical, Electrical, Plumbing)</h6>
-                                <p class="card-text small text-muted mb-0">Integrated systems design for optimal building performance, and occupant comfort.</p>
+                                <h6 class="card-title fw-bold text-primary mb-2">MEP Engineering</h6>
+                                <p class="card-text small text-muted mb-0">We deliver integrated MEP (Mechanical, Electrical, Plumbing) engineering solutions
+                                    to ensure efficient, safe, reliable, and sustainable building systems. </p>
                             </div>
                         </div>
                     </div>
@@ -175,31 +169,48 @@
         <h1 class="mb-4 text-center">Beyond <span style="color: #007bff;"> Engineering</span> & Construction</h1>
     </div>
     <div class="container justify-content-center">
-        <div class="row justify-content-evenly align-items-center border-0 text-start">
+        <div class="row justify-content-evenly align-items-start border-0 text-start">
             <div class="col-12 col-md-3">
                 <div class="card h-100 border-0 text-start">
                     <div class="card-body d-flex flex-column justify-content-center p-3">
                         <div class="mb-3">
                             <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                <i class="bi bi-heart fs-3 text-primary"></i>
+                                <i class="fa-regular fa-handshake text-primary fs-3"></i>
                             </span>
                         </div>
                         <h5 class="card-title fw-bold text-primary mb-2">A Partnership Mindset, Not a Vendor Relationship</h5>
-                        <p class="card-text small text-muted mb-0">Integrated systems design for optimal building performance, energy efficiency,
-                            and occupant comfort.
+                        <p class="card-text small text-muted mb-0">We work alongside our clients as trusted partners, building lasting relationships through collaboration,
+                            transparency, and shared commitment to every project's success.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 mt-5">
-                <div class="card-body d-flex flex-column justify-content-center p-3">
-                    <div class="mb-3">
-                        <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                            <i class="bi bi-award text-primary fs-1"></i>
-                        </span>
+
+            <div class="col-12 col-md-3 mt-5">
+                <div class="card h-100 border-0 text-start">
+                    <div class="card-body d-flex flex-column justify-content-center p-3">
+                        <div class="mb-3">
+                            <span class="p-2 px-3 bg-primary-subtle rounded d-inline-block">
+                                <i class="bi bi-chat-square-text text-primary fs-3"></i>
+                            </span>
+                        </div>
+                        <h5 class="card-title fw-bold text-primary mb-2">Transparent Communication</h5>
+                        <p class="card-text small text-muted mb-0">We encourage open communication and clear project coordination, helping clients understand key decisions, requirements, and progress throughout the project lifecycle. </p>
                     </div>
-                    <h5 class="card-title fw-bold text-primary mb-2">Deep Technical Expertise, Delivered Simply</h5>
-                    <p class="card-text small text-muted mb-0">Comprehensive planning, grading, unity design, and infastructure for sites. We navigate your land for construction.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3 mt-5">
+                <div class="card h-100 border-0 text-start">
+                    <div class="card-body d-flex flex-column justify-content-center p-3">
+                        <div class="mb-3">
+                            <span class="p-2 px-3 bg-primary-subtle rounded d-inline-block">
+                                <i class="fa fa-line-chart text-primary fs-3"></i>
+                            </span>
+                        </div>
+                        <h5 class="card-title fw-bold text-primary mb-2">Purpose-Driven Impact</h5>
+                        <p class="card-text small text-muted mb-0">We aim to contribute to meaningful development through infrastructure and built environments that respond to community needs and support lasting social value.</p>
+                    </div>
                 </div>
             </div>
 
@@ -208,7 +219,7 @@
                     <div class="card-body d-flex flex-column justify-content-center p-3">
                         <div class="mb-3">
                             <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                <i class="fa-solid fa-microscope text-primary fs-3"></i>
+                                <i class="fa-solid fa-helmet-safety text-primary fs-3"></i>
                             </span>
                         </div>
                         <h5 class="card-title fw-bold text-primary mb-2">Unwavering Commitment to Safety, and Quality</h5>

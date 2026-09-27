@@ -28,16 +28,14 @@
                 </div>
 
                 <p>
-                <h1>About <span style="color: #007bff;">DE-FORT Tech</span></h1>
+                <h1><span style="color: #007bff;">DE-FORT TECH and HEALTH</span></h1>
                 </p>
             </div>
         </div>
 
         <div class="section-subtitle col-lg-6 col-sm-10 mt-3 reveal">
             <p class="lead">
-                To engineer and build sustainable, high-performance solutions that improve
-                communities, empower our clients, and set new standards for safety and quality
-                in the industry.
+                Delivering compliant, sustainable and technically sound designs, plannings & Turnkey construction solutions | Advancing Health solutions.
             </p>
         </div>
     </section>
@@ -47,29 +45,21 @@
             <div class="col-12 col-lg-6 reveal">
                 <div class="image-wrapper">
                     <img
-                        class="img-fluid rounded"
-                        src="{{ asset('images/homepage/sustain.jpg') }}"
+                        class="img-fluid"
+                        src="{{ asset('images/homepage/vision.png') }}"
                         alt="Sustainable engineering project"
-                        style="aspect-ratio: 5/3; object-fit: cover;">
+                        style="aspect-ratio: 5/3; object-fit: contain; border: radius 10%;">
                 </div>
             </div>
 
             <div class="col-12 col-lg-6 reveal ps-lg-5">
                 <h1>
-                    To Engineer and Build
-                    <span style="color: #007bff">Sustainable</span>,
-                    <span style="color: #007bff">High-Performance</span> Solutions
+                    <span style="color: #007bff;">Vision</span>
                 </h1>
 
                 <p class="lead mt-4">
-                    We are DE-FORT, a full service [Civil/Structural/General] engineering and construction firm
-                    dedicated to shaping resilient infrastructure and inspiring spaces.
-                </p>
-
-                <p class="lead mt-4">
-                    For over 20 years, we've transformed complex challenges into enduring solutions, guided by an
-                    unwavering commitment to precision, partnership, and progress. We don't just build projects —
-                    we build trust, foster innovation, and deliver legacies that stand the test of time.
+                    We are in the 4<sup>th</sup> decade of our journey, evolving since the 1992 through experience, innovation,
+                    and a steadfast commitment to shaping better places, better infrastructure, and a better future.
                 </p>
             </div>
         </div>
@@ -78,15 +68,10 @@
     <section class="w-100 mt-5 px-md-5 px-3">
         <div class=" d-flex flex-column justify-content-center align-items-center reveal">
             <div class=" section-title d-flex flex-row align-items-center reveal">
-                <span class="line-divider d-inline-block me-3 align-self-center" style="background-color: #007bff; width:2.5rem; height:0.2rem;"></span>
-                <h5><span class="fw-bold"> Our Core Values</span></h5>
+                 <h1>
+                    <span style="color: #007bff;">Mission</span>
+                </h1>
             </div>
-
-            <h2 class="mt-3">Our Guiding <span style="color: #007bff;">Principles</span></h2>
-
-            <p class="lead mt-3">Our core values are the foundation of every decision we make, every relationship we build,
-                every project we deliver.
-            </p>
         </div>
 
         <div class="w-100 mt-5 d-flex flex-sm-row flex-wrap gap-4">
@@ -97,12 +82,12 @@
                             <div class="card-body d-flex flex-column justify-content-center p-4">
                                 <div class="mb-3">
                                     <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                        <i class="fa-solid fa-shield-heart text-primary fs-3"></i>
+                                        <i class="fa-solid fa-helmet-safety text-primary fs-3"></i>
                                     </span>
                                 </div>
-                                
-                                <h6 class="card-title fw-bold text-primary mb-2">Integrity First:</h6>
-                                <p class="card-text small text-muted mb-0">We do what's right, not what's easy. Honest communication and ethical practices are non-negotiable.</p>
+
+                                <h6 class="card-title fw-bold text-primary mb-2">Engineering Excellence</h6>
+                                <p class="card-text small text-muted mb-0">To deliver innovative and technically sound engineering solutions that uphold the highest standards of quality, safety, and performance.</p>
                             </div>
                         </div>
                     </div>
@@ -112,12 +97,12 @@
                             <div class="card-body d-flex flex-column justify-content-center p-4">
                                 <div class="mb-3">
                                     <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                        <i class="bi bi-award text-primary fs-3"></i>
+                                        <i class="fa fa-cogs text-primary fs-3"></i>
                                     </span>
                                 </div>
 
-                                <h6 class="card-title fw-bold text-primary mb-2">Relentless Excellence:</h6>
-                                <p class="card-text small text-muted mb-0">From concept to completion, we pursue perfection in every detail, driven byquality and precision.</p>
+                                <h6 class="card-title fw-bold text-primary mb-2">Integrated Multidisciplinary Solutions</h6>
+                                <p class="card-text small text-muted mb-0">To integrate engineering, architecture, urban planning, and health expertise to develop comprehensive solutions for complex project requirements.</p>
                             </div>
                         </div>
                     </div>
@@ -127,17 +112,32 @@
                             <div class="card-body d-flex flex-column justify-content-center p-4">
                                 <div class="mb-3">
                                     <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                        <i class="fa-solid fa-brain text-primary fs-3"></i>
+                                        <i class="fa fa-recycle text-primary fs-3"></i>
                                     </span>
                                 </div>
 
-                                <h6 class="card-title fw-bold text-primary mb-2">Innovative Thinking:</h6>
-                                <p class="card-text small text-muted mb-0">We embrace new technologies and methodologies to solve old problems insmarter, more efficient ways.</p>
+                                <h6 class="card-title fw-bold text-primary mb-2">Sustainable Development</h6>
+                                <p class="card-text small text-muted mb-0">To promote environmentally responsible and sustainable practices that contribute to resilient communities and a better built environment.</p>
                             </div>
                         </div>
                         </a>
                     </div>
-                    
+
+                    <div class="col-6 col-md-4 reveal">
+                        <div class="card h-100 shadow-sm text-start" id="principles">
+                            <div class="card-body d-flex flex-column justify-content-center p-4">
+                                <div class="mb-3">
+                                    <span class="p-3 bg-primary-subtle rounded d-inline-block">
+                                        <i class="fa fa-lightbulb text-primary fs-3"></i>
+                                    </span>
+                                </div>
+
+                                <h6 class="card-title fw-bold text-primary mb-2">Architectural Innovation</h6>
+                                <p class="card-text small text-muted mb-0">To create functional, aesthetically meaningful, and context-sensitive architectural designs that balance creativity, usability, and technical excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-6 col-md-4 reveal">
                         <div class="card h-100 shadow-sm text-start" id="principles">
                             <div class="card-body d-flex flex-column justify-content-center p-4">
@@ -147,8 +147,8 @@
                                     </span>
                                 </div>
 
-                                <h6 class="card-title fw-bold text-primary mb-2">Collaborative Partnership:</h6>
-                                <p class="card-text small text-muted mb-0">We listen first. Your success is our success, and we achieve it through transparent teamwork.</p>
+                                <h6 class="card-title fw-bold text-primary mb-2">Client-Centered Delivery</h6>
+                                <p class="card-text small text-muted mb-0">To understand our clients' goals and deliver tailored solutions that reflect their requirements, expectations, and project objectives.</p>
                             </div>
                         </div>
                     </div>
@@ -158,12 +158,12 @@
                             <div class="card-body d-flex flex-column justify-content-center p-4">
                                 <div class="mb-3">
                                     <span class="p-3 bg-primary-subtle rounded d-inline-block">
-                                        <i class="fa-solid fa-helmet-safety text-primary fs-3"></i>
+                                        <i class="fa fa-users text-primary fs-3"></i>
                                     </span>
                                 </div>
 
-                                <h6 class="card-title fw-bold text-primary mb-2">Uncompromising Safety:</h6>
-                                <p class="card-text small text-muted mb-0">We believe every person deserves to go home safely. Safety is a core value, not just a policy.</p>
+                                <h6 class="card-title fw-bold text-primary mb-2">Community Impact & Social Responsibility</h6>
+                                <p class="card-text small text-muted mb-0">To contribute to the development of safer, more accessible, and sustainable communities through responsible infrastructure and built-environment projects.</p>
                             </div>
                         </div>
                     </div>
