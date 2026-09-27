@@ -16,9 +16,9 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-4 col-4 mt-5 reveal">
+    <div class="col-lg-4 col-4 mt-5 reveal d-flex justify-content-center">
         <div class="mt-5" style="height: 10.75rem;">
-            <div class="image-wrapper h-100" style="aspect-ratio: 2402/2572 !important;">
+            <div class="image-wrapper h-100 reveal" style="aspect-ratio: 2402/2572 !important;">
                 <img src="{{asset('images/homepage/hero.jpeg')}}" class="img-fluid" alt="DE-FORT" style="object-fit:contain; height:100%; width:100%; border-radius: 10%; border: 10px solid #bbd4ff;">
             </div>
         </div>
